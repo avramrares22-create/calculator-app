@@ -551,9 +551,140 @@ h1.title{font-weight:800;letter-spacing:-.01em}
 @keyframes bgrow{from{opacity:0;transform:scale(.6)}}
 @keyframes auraP{50%{transform:scale(1.06)}}
 @media (max-height:700px){.card{min-height:160px}}
+
+/* v5.4: Brain Coins, ice shields, frozen look, streak cutscene, records */
+.gdefs{position:absolute;width:0;height:0;overflow:hidden}
+.coin{width:18px;height:18px;flex:none;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.45))}
+.coinp{display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 10px 0 6px;border-radius:16px;background:rgba(255,200,40,.08);border:1px solid rgba(255,205,60,.22);color:#FFD966;font:700 15px/1 var(--font-num);font-variant-numeric:tabular-nums;flex:none;transition:transform .15s}
+.coinp .coin{width:20px;height:20px}
+.coinp:active{transform:scale(.94)}
+.coinp b.bump{animation:pop .4s}
+.coinp.full{box-shadow:0 0 16px -4px rgba(255,200,40,.6)}
+@media (max-width:420px){.lvt span{display:none}}
+.days .sn{display:none}
+.wallet .wl{display:flex;align-items:center;gap:14px}
+.wl-coin{width:58px;height:58px;border-radius:19px;display:grid;place-items:center;flex:none;background:radial-gradient(circle at 50% 38%,rgba(255,214,10,.32),rgba(255,180,0,.06) 70%);box-shadow:0 0 30px -8px rgba(255,190,0,.6),inset 0 1px 0 rgba(255,255,255,.12);perspective:200px}
+.wl-coin .coin{width:38px;height:38px;animation:coinTurn 7s ease-in-out infinite}
+.wallet .main{flex:1;min-width:0}
+.wallet .main b{display:block;font:800 30px/1.1 var(--font-num);font-variant-numeric:tabular-nums;color:#FFE08A}
+.bar.gold i{background:linear-gradient(90deg,#FFD60A,#FF9F0A);box-shadow:0 0 10px rgba(255,190,0,.45)}
+.wallet .mstats{margin-top:14px}
+.shop{display:flex;align-items:center;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.shop .main{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.sh-ic{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;flex:none;color:#D9F4FF;background:linear-gradient(140deg,rgba(150,228,255,.32),rgba(47,143,216,.16));box-shadow:0 0 24px -6px rgba(100,210,255,.6),inset 0 1px 0 rgba(255,255,255,.22);border:1px solid rgba(170,230,255,.25)}
+.sh-ic svg{width:26px;height:26px;stroke-width:1.8;filter:drop-shadow(0 0 4px rgba(160,230,255,.8))}
+.sh-ic.got{animation:gotIt .75s cubic-bezier(.2,1.5,.4,1)}
+.frzdots{display:inline-flex;gap:5px;margin-left:8px;vertical-align:middle}
+.frzdots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.12)}
+.frzdots i.on{background:radial-gradient(circle at 35% 35%,#fff,#7FDBFF 60%,#2F8FD8);box-shadow:0 0 8px rgba(100,210,255,.85)}
+.buy{display:inline-flex;align-items:center;gap:5px;height:38px;padding:0 15px 0 10px;border-radius:19px;flex:none;background:linear-gradient(180deg,#FFE58C,#FFC21A);color:#3A2600;font:800 16px/1 var(--font-num);box-shadow:0 3px 0 #B97C00,0 12px 24px -12px rgba(255,190,0,.8),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .08s,box-shadow .08s}
+.buy .coin{width:20px;height:20px}
+.buy:active{transform:translateY(2px);box-shadow:0 1px 0 #B97C00}
+.buy.off{background:rgba(255,255,255,.06);color:var(--label3);box-shadow:none}
+.buy.off .coin{filter:grayscale(1) opacity(.45)}
+.buy.shake{animation:shake .4s}
+.fly{position:fixed;left:0;top:0;width:22px;height:22px;z-index:70;pointer-events:none;will-change:transform}
+.fly .coin{width:22px;height:22px;filter:drop-shadow(0 0 6px rgba(255,200,40,.8))}
+.ico.rec{background:linear-gradient(140deg,rgba(255,214,10,.2),rgba(255,159,10,.08));color:#FFD966}
+.mcard .coinline{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font:700 15px var(--font-num);color:#FFD966}
+.mcard .coinline.lost{color:var(--bad-text)}
+.mcard .coinline .coin{width:20px;height:20px}
+.bcap .ice{color:#A9E9FF;font-weight:600}
+.brain .gv,.sc-b .gv{fill:none;stroke-opacity:.5;stroke-linecap:round}
+.sc-b .gh{fill:none;stroke:#fff;stroke-opacity:.2;stroke-linecap:round}
+.sc-b .edge{fill:none;stroke-opacity:.35;stroke-width:1.1}
+.sc-b .nd,.brain .nd{fill:#fff;opacity:.85;animation:tw 3.2s ease-in-out infinite}
+.sc-b .nd.still,.brain .nd.still{animation:none;opacity:.95}
+.sc-b .pl{fill:#F0EAFF;filter:drop-shadow(0 0 3px #B39BFF)}
+.sc-b .hit{fill:transparent}
+.glint{animation:glint 4.5s ease-in-out infinite}
+.sc-b .breathe{transform-box:fill-box;transform-origin:50% 50%;animation:breathe 4.5s ease-in-out infinite}
+
+/* frozen: an icy coat on the whole app while a shield holds the streak */
+.frost{position:fixed;inset:0;z-index:12;pointer-events:none;opacity:0;visibility:hidden;transition:opacity 1.4s ease,visibility 0s linear 1.4s;overflow:hidden}
+body.frozen .frost{opacity:1;visibility:visible;transition:opacity 1.4s ease}
+.frost::before{content:"";position:absolute;inset:0;background:radial-gradient(130% 90% at 50% 50%,transparent 58%,rgba(150,215,255,.12) 80%,rgba(215,242,255,.26) 100%)}
+.frost svg,.sc-ice svg:not(.cks){position:absolute;width:56vw;max-width:270px;height:auto}
+.frost svg{opacity:.55}
+.frost .tl,.sc-ice .tl{left:0;top:0}
+.frost .tr,.sc-ice .tr{right:0;top:0;transform:scaleX(-1)}
+.frost .bl,.sc-ice .bl{left:0;bottom:0;transform:scaleY(-1)}
+.frost .br,.sc-ice .br{right:0;bottom:0;transform:scale(-1)}
+.flake{position:absolute;top:-8px;width:var(--s);height:var(--s);border-radius:50%;background:#fff;opacity:.75;box-shadow:0 0 6px rgba(200,240,255,.9);animation:snow var(--d) linear var(--dl) infinite}
+body.frozen{--accent:#5CC8FF;--accent2:#7FA8FF;--accent-text:#A9E4FF;--accent-edge:#2A7FB8;--accent-glow:rgba(92,200,255,.45);--hint-text:#BFE6FF;
+  background:radial-gradient(130% 55% at 50% -12%,rgba(100,200,255,.26),rgba(100,200,255,0) 62%),radial-gradient(90% 40% at 105% 0%,rgba(170,210,255,.16),rgba(170,210,255,0) 60%),#070B12}
+body.frozen .card{border-color:rgba(170,225,255,.22);box-shadow:0 26px 50px -26px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 36px rgba(140,210,255,.08)}
+body.frozen .card::before{background:radial-gradient(85% 70% at 50% 0%,rgba(110,205,255,.2),rgba(110,205,255,0) 70%)}
+body.frozen .key{background:linear-gradient(180deg,#1E2733,#171E28);border-color:rgba(170,225,255,.09)}
+body.frozen .key.ok,body.frozen .btn.primary{background:linear-gradient(180deg,#9FE3FF,#56BDF2 55%,#3C9FE2);box-shadow:0 4px 0 #2272A8,0 16px 30px -12px rgba(92,200,255,.55)}
+body.frozen .chip[aria-selected="true"]{background:rgba(100,200,255,.14);border-color:rgba(120,210,255,.6);box-shadow:0 0 20px -6px rgba(92,200,255,.5)}
+body.frozen .chip[aria-selected="true"] .g{background:linear-gradient(135deg,#7FDBFF,#4F8BFF)}
+body.frozen .days{color:#BFEFFF;background:rgba(100,200,255,.12);border-color:rgba(140,215,255,.35);box-shadow:0 0 18px -6px rgba(100,210,255,.6)}
+body.frozen .days .fl{display:none}
+body.frozen .days .sn{display:block}
+body.frozen .ring .prog{stroke:#7FDBFF;filter:drop-shadow(0 0 4px rgba(127,219,255,.6))}
+body.frozen .flame{background:radial-gradient(circle at 50% 40%,rgba(127,219,255,.4),rgba(127,219,255,.08));color:#BFEFFF;box-shadow:0 0 26px -6px rgba(100,210,255,.65)}
+body.frozen .lvb,body.frozen .lvbig:not(.rl),body.frozen .mbadge:not(.bad){box-shadow:0 6px 18px -6px rgba(92,200,255,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+body.frozen #paneSeg{background:rgba(24,34,46,.84);border-color:rgba(170,225,255,.16)}
+
+/* cutscene */
+.scene{position:fixed;inset:0;z-index:48;display:grid;place-items:center;overflow:hidden;--t:0s;-webkit-user-select:none;user-select:none}
+.scene.thaw{--t:1.5s}
+.scene.out{animation:fadeOut .33s ease forwards}
+.sc-bg{position:absolute;inset:0;background:radial-gradient(80% 55% at 50% 40%,rgba(70,45,160,.6),rgba(6,6,12,.95) 75%);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2);animation:fadeIn .4s ease backwards}
+.scene.thaw .sc-bg{background:radial-gradient(80% 55% at 50% 40%,rgba(40,110,170,.55),rgba(5,8,14,.95) 75%);animation:fadeIn .4s ease backwards,warm 1s ease 1.2s forwards}
+.sc-c{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 24px calc(24px + env(safe-area-inset-bottom,0px));width:min(380px,100%)}
+.sc-art{position:relative;width:min(300px,76vw);aspect-ratio:228/166}
+.sc-glow{position:absolute;inset:-35%;border-radius:50%;background:radial-gradient(closest-side,rgba(150,110,255,.6),rgba(79,123,255,.18) 55%,transparent);animation:glowIn 1.3s ease calc(var(--t) + .1s) backwards}
+.sc-b{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sc-b.lit{filter:drop-shadow(0 0 24px rgba(138,99,255,.6));animation:lightUp 1.2s cubic-bezier(.3,.7,.3,1) var(--t) backwards}
+.sc-b.ice{filter:drop-shadow(0 0 18px rgba(100,210,255,.55));animation:iceOut .8s ease calc(var(--t) - .2s) forwards}
+.sc-fl{position:absolute;left:50%;bottom:-74px;width:80px;height:80px;margin-left:-40px;animation:ignite .9s cubic-bezier(.2,1.5,.4,1) calc(var(--t) + .45s) backwards}
+.sc-fl svg{width:100%;height:100%;transform-origin:50% 92%;filter:drop-shadow(0 0 16px rgba(255,150,20,.85)) drop-shadow(0 0 40px rgba(255,90,20,.45));animation:flicker 1.4s ease-in-out infinite}
+.sc-ey{margin:88px 0 0;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFC56B;animation:riseIn .5s ease calc(var(--t) + .7s) backwards}
+.sc-n{display:flex;flex-direction:column;align-items:center;margin-top:4px;animation:riseIn .55s cubic-bezier(.2,.8,.2,1) calc(var(--t) + .8s) backwards}
+.sc-n b{font:800 72px/1.02 var(--font-num);letter-spacing:-.03em;font-variant-numeric:tabular-nums;background:linear-gradient(180deg,#FFF6D6,#FFC24A 60%,#FF8A1F);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 22px rgba(255,150,20,.45))}
+.sc-n span{font-size:14px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.1em}
+.sc-msg{margin:14px 0 0;font-size:21px;line-height:1.25;font-weight:700;text-wrap:balance;animation:riseIn .5s ease calc(var(--t) + 1.05s) backwards}
+.sc-coin{display:flex;align-items:center;gap:6px;min-height:30px;margin-top:12px;font:600 15px var(--font-num);color:#FFD966;animation:riseIn .5s ease calc(var(--t) + 1.3s) backwards}
+.sc-coin b{font-weight:800;font-size:17px}
+.sc-coin span{color:rgba(255,217,102,.8)}
+.sc-coin .coin{width:24px;height:24px}
+.sc-go{margin-top:22px;width:min(260px,70vw);animation:riseIn .5s ease calc(var(--t) + 1.7s) backwards}
+.sc-ice{position:absolute;inset:0;pointer-events:none;display:none}
+.scene.thaw .sc-ice{display:block;background:linear-gradient(180deg,rgba(210,240,255,.22),rgba(140,200,245,.16));-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);animation:melt .9s ease-in 1s forwards}
+.sc-ice svg:not(.cks){opacity:.9}
+.cks{position:absolute;inset:0;width:100%;height:100%}
+.ck{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw .6s cubic-bezier(.5,0,.2,1) forwards;filter:drop-shadow(0 0 3px #9FE3FF)}
+.drop{position:absolute;width:6px;height:9px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:linear-gradient(180deg,rgba(240,250,255,.95),rgba(127,219,255,.85));box-shadow:0 0 6px rgba(160,230,255,.8);opacity:0;animation:dropF .9s ease-in forwards}
+.scene.skip,.scene.skip *{animation-delay:0s!important;animation-duration:.01s!important}
+.scene.skip .sc-fl svg{animation-duration:1.4s!important}
+.scene.skip.out{animation-duration:.33s!important}
+@keyframes coinTurn{0%,78%,100%{transform:rotateY(0)}88%{transform:rotateY(180deg) scale(1.06)}}
+@keyframes gotIt{0%{transform:scale(1)}35%{transform:scale(1.4) rotate(-10deg)}70%{transform:scale(.95) rotate(4deg)}100%{transform:none}}
+@keyframes snow{to{transform:translate(var(--dx),calc(100vh + 20px))}}
+@keyframes glint{0%,55%{transform:translateX(0)}100%{transform:translateX(330px)}}
+@keyframes fadeOut{to{opacity:0}}
+@keyframes warm{to{background:radial-gradient(80% 55% at 50% 40%,rgba(70,45,160,.6),rgba(6,6,12,.95) 75%)}}
+@keyframes glowIn{0%{opacity:0;transform:scale(.3)}55%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
+@keyframes lightUp{0%{filter:grayscale(1) brightness(.35) drop-shadow(0 0 0 transparent);transform:scale(.92)}55%{filter:brightness(1.45) saturate(1.25) drop-shadow(0 0 40px rgba(170,140,255,.9));transform:scale(1.05)}100%{filter:drop-shadow(0 0 24px rgba(138,99,255,.6));transform:scale(1)}}
+@keyframes iceOut{0%{opacity:1;filter:drop-shadow(0 0 18px rgba(100,210,255,.55))}100%{opacity:0;filter:brightness(1.8) blur(3px);transform:scale(1.04)}}
+@keyframes ignite{0%{opacity:0;transform:scale(0) translateY(20px)}60%{opacity:1;transform:scale(1.25)}100%{opacity:1;transform:none}}
+@keyframes flicker{0%,100%{transform:scale(1,1) rotate(0)}25%{transform:scale(.96,1.05) rotate(-2deg)}50%{transform:scale(1.03,.97) rotate(1.5deg)}75%{transform:scale(.98,1.04) rotate(-1deg)}}
+@keyframes riseIn{from{opacity:0;transform:translateY(14px)}}
+@keyframes melt{0%{opacity:1}100%{opacity:0;transform:translateY(16px) scale(1.04);filter:blur(10px)}}
+@keyframes dropF{0%{opacity:0;transform:translateY(0)}15%{opacity:1}100%{opacity:0;transform:translateY(55vh) scaleY(1.6)}}
+@media (prefers-reduced-motion:reduce){.flake{display:none}}
 </style>
 
 <canvas id="fx" aria-hidden="true"></canvas>
+<svg class="gdefs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<radialGradient id="cgO" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#FFF3B0"/><stop offset=".5" stop-color="#FFC933"/><stop offset="1" stop-color="#D98200"/></radialGradient>
+<radialGradient id="cgI" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#FFE680"/><stop offset="1" stop-color="#F0A500"/></radialGradient>
+<radialGradient id="flO" cx=".5" cy=".78" r=".75"><stop offset="0" stop-color="#FFE48A"/><stop offset=".45" stop-color="#FF9F0A"/><stop offset="1" stop-color="#FF453A"/></radialGradient>
+<radialGradient id="flI" cx=".5" cy=".8" r=".65"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#FFF1BF"/><stop offset="1" stop-color="#FFC94A"/></radialGradient>
+</defs></svg>
+<div class="frost" id="frost" aria-hidden="true"></div>
 
 <main class="app" id="app">
   <header class="hdr">
@@ -562,7 +693,8 @@ h1.title{font-weight:800;letter-spacing:-.01em}
       <span class="lvb" id="lvN">1</span>
       <span class="lvi"><span class="lvt" id="lvTitle">Nivel 1 · Începător</span><span class="lvbar"><i id="lvFill"></i></span></span>
     </button>
-    <button class="days" id="daysPill" aria-label="Zile la rând"><svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg><span id="daysTxt">0</span></button>
+    <button class="coinp" id="coinPill" aria-label="Brain Coins"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.6" fill="url(#cgO)"/><circle cx="12" cy="12" r="8.1" fill="url(#cgI)"/><circle cx="12" cy="12" r="8.1" fill="none" stroke="#FFF6CF" stroke-opacity=".55" stroke-width=".8"/><path d="M9 15.4c-1.5-.2-2.4-1.3-2.2-2.6.1-.8.7-1.4 1.4-1.6-.2-1.1.5-2.2 1.6-2.3.6-.9 1.8-1 2.6-.4.8-.5 2-.3 2.5.6 1.1.2 1.8 1.3 1.5 2.4.7.4 1.1 1.2.9 2-.3 1.2-1.5 1.9-2.7 1.7-.5.7-1.7.9-2.5.4-.8.4-2 .4-3.1-.2z" fill="#B36F00" fill-opacity=".5"/></svg><b id="coinTxt">0</b></button>
+    <button class="days" id="daysPill" aria-label="Zile la rând"><svg class="i sn" viewBox="0 0 24 24"><path d="M12 2.5v19M3.8 7.25l16.4 9.5M3.8 16.75l16.4-9.5M12 2.5 9.6 4.9M12 2.5l2.4 2.4M12 21.5l-2.4-2.4M12 21.5l2.4-2.4"/></svg><svg class="i fill fl" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg><span id="daysTxt">0</span></button>
     <button class="ring" id="ring" aria-label="Obiectivul zilei">
       <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3DDC97"/><stop offset="1" stop-color="#22C8E8"/></linearGradient></defs><circle class="track" cx="24" cy="24" r="20" stroke-width="5.5"/><circle class="prog" id="ringProg" cx="24" cy="24" r="20" stroke-width="5.5" stroke-dasharray="125.66" stroke-dashoffset="125.66"/></svg>
       <span id="ringTxt">0</span>
@@ -651,7 +783,7 @@ h1.title{font-weight:800;letter-spacing:-.01em}
     <div class="kst" id="evSum"></div>
     <h3 class="sec">Creierul tău</h3>
     <div class="group brain"><svg id="brainSvg" viewBox="6 4 228 166" role="img" aria-label="Creierul tău: crește cu XP-ul, se ofilește când nu exersezi"></svg><p class="bcap" id="brainCap"></p><div class="bbar" id="brainBar"></div></div>
-    <p class="note">Creierul crește odată cu XP-ul tău și strălucește când exersezi. Fiecare exercițiu adaugă neuroni, iar impulsurile se înmulțesc cu fiecare treaptă. Dacă XP-ul scade sau nu mai exersezi, se ofilește, iar zonele neexersate se pătează. Atinge o zonă ca să-i vezi nivelul.</p>
+    <p class="note">Creierul crește odată cu XP-ul tău, pe trepte: Se trezește (500), Activ (1.000), Ager (1.500), Sclipitor (2.200), Genial (3.000). Fiecare exercițiu adaugă neuroni, iar impulsurile se înmulțesc cu fiecare treaptă. Sănătatea vine din două lucruri: cât de recent ai exersat (cea mai mare parte; scade până la zero după o săptămână fără exersare) și cum s-a mișcat XP-ul în ultimele 7 zile (+200 XP o umple, −200 o golește). Sub 60% e obosit, sub 40% se ofilește și se lasă în jos. O zonă neexersată 4 zile se pătează. Când un scut îți ține seria, creierul îngheață până atingi obiectivul. Atinge o zonă ca să-i vezi nivelul.</p>
   </div>
 
   <div class="pane" id="pane-q" hidden>
@@ -659,10 +791,20 @@ h1.title{font-weight:800;letter-spacing:-.01em}
     <h3 class="sec">Provocările zilei</h3>
     <div class="group" id="qList"></div>
     <p class="note">Provocări noi în fiecare zi. Termină-le pe toate trei ca să deschizi cufărul.</p>
+    <h3 class="sec" id="walletSec">Brain Coins</h3>
+    <div class="group box wallet">
+      <div class="wl"><div class="wl-coin" id="bcIc"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.6" fill="url(#cgO)"/><circle cx="12" cy="12" r="8.1" fill="url(#cgI)"/><circle cx="12" cy="12" r="8.1" fill="none" stroke="#FFF6CF" stroke-opacity=".55" stroke-width=".8"/><path d="M9 15.4c-1.5-.2-2.4-1.3-2.2-2.6.1-.8.7-1.4 1.4-1.6-.2-1.1.5-2.2 1.6-2.3.6-.9 1.8-1 2.6-.4.8-.5 2-.3 2.5.6 1.1.2 1.8 1.3 1.5 2.4.7.4 1.1 1.2.9 2-.3 1.2-1.5 1.9-2.7 1.7-.5.7-1.7.9-2.5.4-.8.4-2 .4-3.1-.2z" fill="#B36F00" fill-opacity=".5"/></svg></div>
+        <div class="main"><b id="bcN">0</b><span class="t2" id="bcSub"></span><div class="bar gold"><i id="bcBar"></i></div></div></div>
+      <div class="mstats" id="bcStats"></div>
+      <div class="shop"><div class="sh-ic" id="frzIc"><svg class="i" viewBox="0 0 24 24"><path d="M12 2.5v19M3.8 7.25l16.4 9.5M3.8 16.75l16.4-9.5M12 2.5 9.6 4.9M12 2.5l2.4 2.4M12 21.5l-2.4-2.4M12 21.5l2.4-2.4M3.8 7.25l3.3.9M3.8 7.25l.9 3.3M20.2 16.75l-3.3-.9M20.2 16.75l-.9-3.3M3.8 16.75l.9-3.3M3.8 16.75l3.3-.9M20.2 7.25l-.9 3.3M20.2 7.25l-3.3.9"/></svg></div>
+        <div class="main"><span class="t1">Scut de gheață<span class="frzdots" id="frzDots"></span></span><span class="t2" id="frzSub"></span></div>
+        <button class="buy" id="buyFrz"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.6" fill="url(#cgO)"/><circle cx="12" cy="12" r="8.1" fill="url(#cgI)"/></svg>25</button></div>
+    </div>
+    <p class="note">Câștigi: +4 la obiectivul zilei, +4 la cufăr, +2 la o rundă perfectă (+3 la Greu), +1 la fiecare nivel nou și +10 la fiecare 7 zile de serie. Pierzi 10 pentru fiecare zi ratată fără scut și 1 pentru o rundă abandonată. Portofelul ține cel mult 60; ce trece peste se pierde. Poți avea cel mult 2 scuturi, iar cel mult 2 zile la rând pot fi înghețate.</p>
     <h3 class="sec">Seria și calendarul</h3>
     <div class="group box">
       <div class="sh">
-        <div class="flame"><svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg></div>
+        <div class="flame" id="sFlame"><svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg></div>
         <div class="main"><b id="sDays">0 zile</b><div class="t2" id="sDaysSub"></div></div>
         <div class="rec">Record<b id="sBestDays">0</b></div>
       </div>
@@ -682,10 +824,12 @@ h1.title{font-weight:800;letter-spacing:-.01em}
       <div class="tile"><b id="tRight">0</b><span>exerciții rezolvate</span></div>
       <div class="tile"><b id="tAcc">—</b><span>precizie din prima</span></div>
       <div class="tile"><b id="tSpeed">—</b><span>viteză medie</span></div>
-      <div class="tile"><b id="tBest">0</b><span>record la rând</span></div>
       <div class="tile"><b id="tTime">0</b><span>timp exersat în total</span></div>
+      <div class="tile"><b id="tBest">0</b><span>record la rând</span></div>
       <div class="tile"><b id="tToday">0</b><span>timp exersat azi</span></div>
     </div>
+    <h3 class="sec">Recorduri de bătut</h3>
+    <div class="group" id="recList"></div>
     <h3 class="sec">Pe categorii</h3>
     <div class="group" id="catList"></div>
     <h3 class="sec">Unde greșești cel mai des</h3>
@@ -763,6 +907,18 @@ h1.title{font-weight:800;letter-spacing:-.01em}
 
 <div class="modal" id="modal" hidden><div class="mcard" id="mcard" role="dialog" aria-modal="true"></div></div>
 <div class="toast" id="toast" role="status"></div>
+<div class="scene" id="scene" hidden role="dialog" aria-modal="true" aria-label="Seria zilei">
+  <div class="sc-bg"></div>
+  <div class="sc-c">
+    <div class="sc-art"><div class="sc-glow"></div><svg class="sc-b lit" id="scLit" viewBox="6 4 228 166" aria-hidden="true"></svg><svg class="sc-b ice" id="scIce" viewBox="6 4 228 166" aria-hidden="true"></svg><div class="sc-fl" id="scFl"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="url(#flO)" d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/><path fill="url(#flI)" transform="translate(12 21.4) scale(.56) translate(-12 -21.5)" d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg></div></div>
+    <p class="sc-ey" id="scEy"></p>
+    <div class="sc-n"><b id="scN">0</b><span id="scNl">zile la rând</span></div>
+    <p class="sc-msg" id="scMsg"></p>
+    <div class="sc-coin" id="scCoin"></div>
+    <button class="btn primary sc-go" id="scGo">Continuă</button>
+  </div>
+  <div class="sc-ice" id="scSheet"></div>
+</div>
 
 <script>
 /*GEN-START*/
@@ -977,13 +1133,13 @@ function space(){
 /*GEN-END*/
 (()=>{
 const $=s=>document.getElementById(s);
-const VERSION='5.3';
+const VERSION='5.4';
 const CATS=['add','sub','mul','div','neg','rad'];
 const CN={add:'Adunare',sub:'Scădere',mul:'Înmulțire',div:'Împărțire',neg:'Negative',rad:'Radicali'};
 const DIFFS=['Ușor','Mediu','Greu'];
 const GOALS=[10,20,30,50];
 const DR=[900,1300,1700];
-const START=800,TAX=15,KBASE=40,SK0=1000;
+const BC_CAP_=60,START=800,TAX=15,KBASE=40,SK0=1000;
 const WRONG=[12,8,5],SLOW=[6,4,2];
 const PAR={add:[3,5,9],sub:[3,6,10],mul:[3,7,14],div:[3,7,14],neg:[4,6,10],rad:[3,6,10]};
 const ROUND=10,LIVES=3;
@@ -1015,13 +1171,14 @@ const pct=(c,w)=>c+w?Math.round(c/(c+w)*100):null;
 const fmtN=n=>{const r=Math.round(n);return(r<0?'−':'')+Math.abs(r).toLocaleString('ro-RO');};
 const pl=(n,one,many)=>n===1?`1 ${one}`:`${fmtN(n)}${n>=20&&(n%100===0||n%100>=20)?' de':''} ${many}`;
 const zile=n=>pl(n,'zi','zile');
+const corecte=n=>n===1?'un răspuns corect':`${fmtN(n)} corecte`;
 const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fmtX=m=>'×'+m.toFixed(1).replace('.',',');
 
 /* ---------- state ---------- */
 const fresh=()=>({v:5,cat:'mix',lastCat:'mix',diff:1,goal:20,snd:true,best:0,right:0,first:0,wrong:0,seen:0,times:[],days:{},bestDays:0,cs:{},kinds:{},mis:[],xp:START,log:[],q:null,pb:{},lastRound:null,settled:ydKey(),rated:0,
-  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0,tt:0});
+  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0,tt:0,bc:{n:10,earned:10,spent:0,lost:0,over:0,bought:0},rbest:null});
 let S=fresh(),migrated=false;
 function applyState(o){
   S=fresh();migrated=false;o=o||{};
@@ -1046,6 +1203,9 @@ function applyState(o){
   for(const k of['times','mis','log'])if(!Array.isArray(S[k]))S[k]=[];
   for(const k of['days','cs','kinds','pb','sk','hd','hlock','errs','self'])if(!S[k]||typeof S[k]!=='object'||Array.isArray(S[k]))S[k]={};
   if(!S.bk||typeof S.bk!=='object')S.bk={last:0,day:''};
+  if(!S.bc||typeof S.bc!=='object')S.bc={n:10,earned:10,spent:0,lost:0,over:0,bought:0};
+  for(const k of['n','earned','spent','lost','over','bought'])if(!(S.bc[k]>=0))S.bc[k]=0;
+  S.bc.n=Math.min(BC_CAP_,Math.round(S.bc.n));S.freeze=Math.min(2,S.freeze);
   for(const m of S.mis){if(!(m.due>0))m.due=Date.now();if(!(m.st>=0))m.st=0;}
   if(S.cat==='rev'&&!S.mis.length)S.cat=S.lastCat;
   if(typeof o.tt!=='number'||!(o.tt>=0))S.tt=Object.values(S.days).reduce((a,e)=>a+dayMs(e),0);
@@ -1205,13 +1365,15 @@ function settle(){
     const k=dkey(d),e=S.days[k]||(S.days[k]={c:0,w:0,f:0,a:0,s:0,n:0,dx:0,m:false});
     if(e.x==null)e.x=S.xp;
     if(!met(e)){
-      if(S.freeze>0){S.freeze--;e.fz=true;res.frozen++;}
+      const p1=new Date(d);p1.setDate(p1.getDate()-1);const p2=new Date(d);p2.setDate(p2.getDate()-2);
+      const iceRun=!!((S.days[dkey(p1)]||{}).fz&&(S.days[dkey(p2)]||{}).fz);
+      if(S.freeze>0&&!iceRun){S.freeze--;e.fz=true;res.frozen++;}
       else{
         const prev=new Date(d);prev.setDate(prev.getDate()-1);
         const run=streakEnding(dkey(prev)),bp=run>0?breakPen(run):0,pen=TAX+bp;
         S.xp-=pen;e.x=S.xp;e.dx=(e.dx||0)-pen;e.pen=pen;
         S.log.push([Math.round(new Date(d.getFullYear(),d.getMonth(),d.getDate(),23,59,59).getTime()/1000),-pen,5,-1,-1,-1,S.xp,Math.round(realLevel())]);
-        res.days++;res.tax+=TAX;res.brk+=bp;res.lost=Math.max(res.lost,run);
+        res.days++;res.tax+=TAX;res.brk+=bp;res.lost=Math.max(res.lost,run);res.coins=(res.coins||0)+coins(-10,'zi ratată');
       }
     }
     d.setDate(d.getDate()+1);
@@ -1239,6 +1401,10 @@ const SFX={
   goal:()=>[784,988,1175,1568].forEach((f,i)=>tone(f,.22,'sine',.09,i*.08)),
   star:i=>tone(880*Math.pow(2,i*4/12),.2,'triangle',.1),
   pb:()=>[1175,1568].forEach((f,i)=>tone(f,.18,'sine',.08,i*.1)),
+  coin:()=>[1568,2093,2637].forEach((f,i)=>tone(f,.13,'sine',.06,i*.06)),
+  ice:()=>[2637,3136,3951,3520].forEach((f,i)=>tone(f,.4,'sine',.035,i*.07)),
+  crack:()=>{for(let i=0;i<7;i++)tone(220+Math.random()*1400,.05,'square',.018,i*.06+Math.random()*.03);},
+  ignite:()=>{tone(90,.7,'sawtooth',.035,0,360);[523,784,1047,1568].forEach((f,i)=>tone(f,.32,'triangle',.07,.28+i*.08));},
 };
 
 /* ---------- confetti ---------- */
@@ -1326,8 +1492,10 @@ function renderAns(){const s=(sign<0?'−':'')+input;ansEl.textContent=s;ansEl.c
 function fb(t,c){fbEl.innerHTML=t;fbEl.className='fb'+(c?' '+c:'');}
 function floatXP(t,cls){if(!t)return;const s=document.createElement('span');s.className='float'+(cls?' '+cls:'');s.textContent=t;card.appendChild(s);setTimeout(()=>s.remove(),1150);}
 
+let holdFrost=false;
 function renderTop(){
   const dd=today(),ds=dayStreak();
+  if(!holdFrost)applyFrozen();renderCoins();
   if(!dd.m&&dd.c>=S.goal)dd.m=true;
   const n=level(S.xp),into=((S.xp%100)+100)%100;
   $('lvN').textContent=f(n);$('lvTitle').innerHTML=`${fmtN(S.xp)} XP <span>· ${ltitle(S.xp)}</span>`;
@@ -1360,7 +1528,7 @@ function syncChips(){
 }
 
 function press(k){
-  if(sheetOpen||modalOpen||!statsView.hidden)return;
+  if(sheetOpen||modalOpen||sceneOpen||!statsView.hidden)return;
   if(k==='ok')return check();
   if(locked||revealed)return;
   SFX.key();
@@ -1404,9 +1572,9 @@ function check(){
     dd.lv=Math.round(realLevel());dd.sk={};for(const c of CATS)if(S.sk[c]&&S.sk[c][2])dd.sk[c]=Math.round(S.sk[c][0]);
     const qd=progressQuests({correct:true,fast:rating==='fulger',cat:cur.c,mode:md,streak});
     for(const q of qd){const r=addXP(q.xp);logEv(4,r,null,null);R0.xp+=r;}
-    const Q=quests();let chest=0;if(!Q.chest&&Q.list.every(q=>q.done)){Q.chest=true;chest=addXP(30);logEv(4,chest,null,null);R0.xp+=chest;}
-    let goalHit=false,shield=false;
-    if(!dd.m&&dd.c>=S.goal){dd.m=true;goalHit=true;const ds=dayStreak();if(ds>S.bestDays)S.bestDays=ds;if(ds>0&&ds%7===0&&S.freeze<2){S.freeze++;shield=true;}}
+    const Q=quests();let chest=0,chestC=0;if(!Q.chest&&Q.list.every(q=>q.done)){Q.chest=true;chest=addXP(30);chestC=coins(4,'cufăr');logEv(4,chest,null,null);R0.xp+=chest;}
+    let goalHit=false,thaw=false,mile=false,gCoins=0;
+    if(!dd.m&&dd.c>=S.goal){thaw=frozenNow();holdFrost=thaw;dd.m=true;goalHit=true;const ds=dayStreak();if(ds>S.bestDays)S.bestDays=ds;gCoins=coins(4,'obiectiv');if(ds>0&&ds%7===0){gCoins+=coins(10,'serie');mile=true;}}
     const lvAfter=level(S.xp),tAfter=tIdx(S.xp);
     commitRec('ok',{t:+t.toFixed(3),dx:real,rating,hint:usedHint,first:firstTry,pred2:+predict(cur).toFixed(3)});
     save();renderTop();checkBrainGrowth();
@@ -1423,13 +1591,15 @@ function check(){
     if(pbNew)toast(`${TROPHY} Record personal la ${CN[cur.c]} · ${sec(t)}`);
     if([5,10,15,20,30,40,50,75,100].includes(streak)){toast(`${FLAME} ${streak} la rând · XP ${fmtMult(mult(streak))}`);burstAt($('extra'),24,8);}
     for(const q of qd)setTimeout(()=>{SFX.quest();toast(`${GIFT} Provocare gata · +${q.xp} XP`);burstAt($('lvBtn'),26,8);},250);
-    if(chest)setTimeout(()=>{SFX.level();toast(`${GIFT} Cufărul zilei · +${chest} XP`);rain();},700);
-    if(goalHit)setTimeout(()=>{SFX.goal();const r=$('ring');r.classList.remove('done');void r.offsetWidth;r.classList.add('done');burstAt(r,36,9);toast(`${FLAME} Obiectivul zilei atins · ${zile(dayStreak())} la rând`);if(shield)toast(`${SHIELD} Ai câștigat un scut: o zi ratată nu-ți rupe seria`);},450);
+    if(chest)setTimeout(()=>{SFX.level();toast(`${GIFT} Cufărul zilei · +${chest} XP${chestC?` · +${chestC} Brain Coins`:''}`);rain();},700);
+    if(goalHit)setTimeout(()=>{const r=$('ring');r.classList.remove('done');void r.offsetWidth;r.classList.add('done');burstAt(r,36,9);},300);
     if(lvAfter!==lvBefore){const b=$('lvN');b.classList.remove('up');void b.offsetWidth;b.classList.add('up');}
     if(lvAfter>lvBefore&&tAfter===tBefore){toast(`${TOPS} Nivelul ${f(lvAfter)}`);burstAt($('lvBtn'),24,8);}
+    if(lvAfter>lvBefore)coins(lvAfter-lvBefore,'nivel');
     if(lvAfter<lvBefore)levelDown(lvAfter,tAfter<tBefore);
     const nl=tAfter>tBefore?tAfter:0;
-    if(timed&&!cur.gold&&Math.random()<.05)showSelf(()=>finishExercise(nl));
+    if(goalHit)advT=setTimeout(()=>playScene({thaw,days:dayStreak(),coins:gCoins,mile}).then(()=>finishExercise(nl)),850);
+    else if(timed&&!cur.gold&&Math.random()<.05)showSelf(()=>finishExercise(nl));
     else advT=setTimeout(()=>finishExercise(nl),rating==='lent'||!timed?950:700);
   } else {
     const err=errType(cur,v);
@@ -1508,7 +1678,7 @@ function finishExercise(newLevel){
   runModals(queue);
 }
 function abandonRound(why){
-  if(rIdx>=3&&rIdx<ROUND&&!R0.dead){const real=addXP(-10*pMult());logEv(7,real,null,null);ev('quit',{idx:rIdx,why,dx:real});toast(`${DOWNI} Rundă neterminată · ${f(real)} XP`);}
+  if(rIdx>=3&&rIdx<ROUND&&!R0.dead){const real=addXP(-10*pMult());logEv(7,real,null,null);coins(-1,'abandon');ev('quit',{idx:rIdx,why,dx:real});toast(`${DOWNI} Rundă neterminată · ${f(real)} XP`);}
   rIdx=0;R0=newRound();S.openRound=null;save();
 }
 let mq=[];
@@ -1526,6 +1696,8 @@ function showRound(){
   const fastShare=ts.length?ts.filter((t,i)=>t<=R0.par[i]).length/Math.max(R0.done,1):0;
   let stars=(acc>=.6?1:0)+(acc>=.9?1:0)+(acc>=.9&&fastShare>=.6?1:0);if(R0.dead)stars=Math.min(stars,1);
   let weak=0;if(R0.a>=3&&acc<.5){weak=addXP(-15*pMult());logEv(7,weak,null,null);R0.xp+=weak;}
+  const rc=stars===3&&!R0.dead?coins(R0.mode===2?3:2,'rundă'):0;
+  let rRec=false;if(!R0.dead&&R0.done>=ROUND&&avg!=null&&acc>=.8&&(!S.rbest||avg<S.rbest.avg)){rRec=!!S.rbest;S.rbest={avg:+avg.toFixed(2),t:Date.now(),f:R0.f};}
   const L=S.lastRound;let cmp='',flat=false;
   if(L&&avg!=null&&L.avg!=null&&Math.abs(L.avg-avg)>=.1)cmp=avg<L.avg?`Cu ${sec(L.avg-avg)} mai rapid decât runda trecută`:(flat=true,`Cu ${sec(avg-L.avg)} mai lent decât runda trecută`);
   else if(L&&L.acc!=null&&acc!==L.acc)cmp=acc>L.acc?'Precizie mai bună decât runda trecută':(flat=true,'Precizia a scăzut față de runda trecută');
@@ -1538,7 +1710,7 @@ function showRound(){
   const titles=['Continuă să exersezi','Bine','Foarte bine','Perfect'];
   openModal(`<div class="stars" aria-label="${stars} din 3 stele">${[0,1,2].map(i=>STAR.replace('class="i fill"',`class="i fill${i<stars?' on':''}" style="animation-delay:${.15+i*.22}s"`)).join('')}</div><p class="eyebrow">${R0.dead?'Fără vieți':'Rundă terminată'}</p><h2>${R0.dead?'Data viitoare':titles[stars]}</h2>
     <div class="mstats"><div><b>${R0.xp>=0?'+':''}${f(R0.xp)}</b><span>XP</span></div><div><b>${R0.f}/${R0.a}</b><span>din prima</span></div><div><b>${avg==null?'—':sec(avg)}</b><span>viteză</span></div></div>
-    ${weak?`<p class="cmp flat">Rundă sub 50% · ${f(weak)} XP</p>`:cmp?`<p class="cmp${flat?' flat':''}">${cmp}</p>`:''}${hook?`<p>${hook}</p>`:''}
+    ${weak?`<p class="cmp flat">Rundă sub 50% · ${f(weak)} XP</p>`:cmp?`<p class="cmp${flat?' flat':''}">${cmp}</p>`:''}${rRec?`<p class="cmp">${TROPHY} Rundă record: ${sec(avg)} pe exercițiu</p>`:''}${rc?`<p class="coinline">${COIN} +${rc} Brain Coins</p>`:''}${hook?`<p>${hook}</p>`:''}
     <div class="acts"><button class="btn primary" data-act="next">Încă o rundă</button><button class="btn plain" data-act="stats">Vezi evoluția</button></div>`);
   for(let i=0;i<stars;i++)setTimeout(()=>SFX.star(i),150+i*220);
   if(stars===3)setTimeout(rain,400);
@@ -1846,60 +2018,192 @@ function brainStage(){let i=0;for(let j=1;j<BSTAGES.length;j++)if(S.xp>=BSTAGES[
 function checkBrainGrowth(){const st=brainStage();if(S.bst==null){S.bst=st;save();return;}if(st!==S.bst){const up=st>S.bst;S.bst=st;save();if(up)setTimeout(()=>{SFX.quest();toast(`${STAR} Creierul tău a crescut: ${BSTAGES[st][0]}`);},900);}}
 function catTrend(c){const s=S.sk[c];if(!s)return null;const d=new Date();d.setDate(d.getDate()-7);const k=dkey(d);const ks=Object.keys(S.days).filter(x=>x<=k&&S.days[x].sk&&S.days[x].sk[c]!=null).sort();return ks.length?s[0]-S.days[ks[ks.length-1]].sk[c]:null;}
 function brainArt(o){
-  const H=o.H,st=o.st,droop=H<.6?(.6-H)*9:0;
+  const I=!!o.ice,H=I?1:o.H,st=o.st,droop=!I&&H<.6?(.6-H)*9:0;
   const lobeAttr=c=>{const L=o.lobes[c];if(o.sel===c)return'fill="#FFD27A" fill-opacity=".42"';if(!L||!L.k)return'fill="#0B0918" fill-opacity=".4"';const f=L.f==null?1:L.f,wear=1-f;return wear>.05?`fill="#3B2C18" fill-opacity="${(wear*.6).toFixed(2)}"`:`fill="#fff" fill-opacity="${(.02+.12*L.t).toFixed(3)}"`;};
   let lob='',hit='';
-  for(const c of['add','sub','mul','div','neg']){lob+=`<polygon points="${BR.lobes[c]}" ${lobeAttr(c)}/>`;hit+=`<polygon class="hit" data-z="${c}" points="${BR.lobes[c]}"/>`;}
+  for(const c of['add','sub','mul','div','neg']){if(!I)lob+=`<polygon points="${BR.lobes[c]}" ${lobeAttr(c)}/>`;hit+=`<polygon class="hit" data-z="${c}" points="${BR.lobes[c]}"/>`;}
   let spots='';
-  for(const c of CATS){const L=o.lobes[c];if(!L||!L.k||L.f==null||L.f>.7)continue;const q=rng(hash('pata'+c)),[cx,cy]=BR.spot[c],n=Math.ceil((1-L.f)*5);
+  if(!I)for(const c of CATS){const L=o.lobes[c];if(!L||!L.k||L.f==null||L.f>.7)continue;const q=rng(hash('pata'+c)),[cx,cy]=BR.spot[c],n=Math.ceil((1-L.f)*5);
     for(let i=0;i<n;i++)spots+=`<circle cx="${(cx+(q()-.5)*30).toFixed(1)}" cy="${(cy+(q()-.5)*24).toFixed(1)}" r="${(4+q()*7).toFixed(1)}" fill="url(#bgW)" opacity="${(.5+.5*(1-L.f)).toFixed(2)}"/>`;}
-  const groove=(d,w)=>`<path d="${d}" class="gv" stroke-width="${w}"/><path d="${d}" class="gh" transform="translate(-.5 -1)" stroke-width="${(w*.4).toFixed(2)}"/>`;
-  const nd=BPTS.slice(0,o.nN).map((q,i)=>`<circle class="nd" cx="${q[0]}" cy="${q[1]}" r="${(.9+((i*37)%10)/10).toFixed(2)}" style="animation-delay:${((i*.37)%3.2).toFixed(2)}s"/>`).join('');
-  const paths=[...BR.main,...BR.gy],np=H<.45?0:Math.min(paths.length,[1,2,4,6,9,12][st]);
+  const gc=I?'#0E3A5C':'#1B1150';
+  const groove=(d,w)=>`<path d="${d}" class="gv" style="stroke:${gc}" stroke-width="${w}"/><path d="${d}" class="gh" transform="translate(-.5 -1)" stroke-width="${(w*.4).toFixed(2)}"/>`;
+  const nd=BPTS.slice(0,o.nN).map((q,i)=>`<circle class="nd${I?' still':''}" cx="${q[0]}" cy="${q[1]}" r="${(.9+((i*37)%10)/10).toFixed(2)}" style="animation-delay:${((i*.37)%3.2).toFixed(2)}s"/>`).join('');
+  const paths=[...BR.main,...BR.gy],np=I||H<.45?0:Math.min(paths.length,[1,2,4,6,9,12][st]);
   let pulses='';for(let i=0;i<np;i++)pulses+=`<circle class="pl" r="1.7"><animateMotion dur="${(2.6+(i%4)*.7).toFixed(1)}s" begin="-${(i*.9).toFixed(1)}s" repeatCount="indefinite" path="${paths[(i*5)%paths.length]}"/></circle>`;
-  const cbA=lobeAttr('rad');
-  return `<defs>
-<linearGradient id="bgF" x1=".15" y1=".05" x2=".85" y2="1"><stop offset="0" stop-color="#B49CFF"/><stop offset=".45" stop-color="#7D5CF5"/><stop offset="1" stop-color="#3A2AA6"/></linearGradient>
-<linearGradient id="bgC" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#7C62F0"/><stop offset="1" stop-color="#2E2183"/></linearGradient>
-<linearGradient id="bgS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A37B8"/><stop offset="1" stop-color="#22195E" stop-opacity=".6"/></linearGradient>
-<radialGradient id="bgL" cx=".3" cy=".22" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-<radialGradient id="bgA" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8A63FF" stop-opacity=".55"/><stop offset=".6" stop-color="#4F7BFF" stop-opacity=".12"/><stop offset="1" stop-color="#4F7BFF" stop-opacity="0"/></radialGradient>
+  /* ice: frost ferns over the folds, a slow glint sweeping across */
+  let ice='';
+  if(I){const r=rng(7);let d='';const br=(x,y,a,len,dep)=>{const x2=x+Math.cos(a)*len,y2=y+Math.sin(a)*len;d+=`M${x.toFixed(1)} ${y.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}`;if(dep>=2)return;for(let k=1;k<=2;k++){const t=k/3,px=x+(x2-x)*t,py=y+(y2-y)*t;br(px,py,a+1.05,len*.32,dep+1);br(px,py,a-1.05,len*.32,dep+1);}};
+    for(const[x,y]of[[60,40],[150,40],[90,95],[185,85],[45,85],[125,60]])for(let i=0;i<4;i++)br(x,y,r()*6.28,12+r()*14,0);
+    ice=`<path d="${d}" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width=".55" stroke-linecap="round"/><rect class="glint" x="-60" y="0" width="60" height="180" fill="url(#bgG)"/>`;}
+  const F=I?['#F4FCFF','#A8E6FF','#3D8FD1']:['#B49CFF','#7D5CF5','#3A2AA6'],C=I?['#C9F1FF','#2E6FA8']:['#7C62F0','#2E2183'],Sg=I?['#8ACDF0','#1E4E7C']:['#4A37B8','#22195E'],A=I?['#7FDBFF','#9FB8FF']:['#8A63FF','#4F7BFF'],E=I?'#F0FBFF':'#D9CCFF';
+  const cbA=I?'fill="none"':lobeAttr('rad');
+  const out=`<defs>
+<linearGradient id="bgF" x1=".15" y1=".05" x2=".85" y2="1"><stop offset="0" stop-color="${F[0]}"/><stop offset=".45" stop-color="${F[1]}"/><stop offset="1" stop-color="${F[2]}"/></linearGradient>
+<linearGradient id="bgC" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="${C[0]}"/><stop offset="1" stop-color="${C[1]}"/></linearGradient>
+<linearGradient id="bgS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${Sg[0]}"/><stop offset="1" stop-color="${Sg[1]}" stop-opacity=".6"/></linearGradient>
+<radialGradient id="bgL" cx=".3" cy=".22" r=".7"><stop offset="0" stop-color="#fff" stop-opacity="${I?.6:.42}"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<radialGradient id="bgA" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="${A[0]}" stop-opacity=".55"/><stop offset=".6" stop-color="${A[1]}" stop-opacity=".12"/><stop offset="1" stop-color="${A[1]}" stop-opacity="0"/></radialGradient>
 <radialGradient id="bgW" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2A1E10" stop-opacity=".85"/><stop offset="1" stop-color="#2A1E10" stop-opacity="0"/></radialGradient>
+<linearGradient id="bgG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <filter id="bgBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
 <clipPath id="bgClip"><path d="${BR.cere}"/></clipPath><clipPath id="bgClipC"><path d="${BR.cb}"/></clipPath>
 </defs>
 <ellipse class="aura" cx="120" cy="84" rx="${(92+22*H).toFixed(1)}" ry="${(70+16*H).toFixed(1)}" fill="url(#bgA)" opacity="${(.2+.8*H*Math.min(1,.4+st*.15)).toFixed(2)}"/>
-<g transform="rotate(${droop.toFixed(1)} 130 156)"><g transform="translate(120 86) scale(${o.size.toFixed(3)}) translate(-120 -86)"><g class="bin${o.intro?' intro':''}"><g class="breathe${H>.6?'':' slow'}">
+<g transform="rotate(${droop.toFixed(1)} 130 156)"><g transform="translate(120 86) scale(${o.size.toFixed(3)}) translate(-120 -86)"><g class="bin${o.intro?' intro':''}"><g class="${I?'':H>.6?'breathe':'breathe slow'}">
 <path d="${BR.stem}" fill="url(#bgS)"/>
 <path d="${BR.cb}" fill="url(#bgC)"/><g clip-path="url(#bgClipC)">${BR.folia.map(d=>groove(d,1.8)).join('')}<g filter="url(#bgBlur)"><path d="${BR.cb}" ${cbA}/></g></g>
-<path d="${BR.cb}" class="edge"/><path class="hit" data-z="rad" d="${BR.cb}"/>
+<path d="${BR.cb}" class="edge" style="stroke:${E}"/><path class="hit" data-z="rad" d="${BR.cb}"/>
 <path d="${BR.cere}" fill="url(#bgF)"/>
-<g clip-path="url(#bgClip)"><g filter="url(#bgBlur)">${lob}</g>${spots}${groove(BR.gy.join(''),2.6)}${groove(BR.main.join(''),3.4)}<path d="${BR.cere}" fill="url(#bgL)"/>${nd}${pulses}${hit}</g>
-<path d="${BR.cere}" class="edge"/>
+<g clip-path="url(#bgClip)"><g filter="url(#bgBlur)">${lob}</g>${spots}${groove(BR.gy.join(''),2.6)}${groove(BR.main.join(''),3.4)}<path d="${BR.cere}" fill="url(#bgL)"/>${ice}${nd}${pulses}${hit}</g>
+<path d="${BR.cere}" class="edge" style="stroke:${E}"/>
 </g></g></g></g>`;
+  return o.pf?out.replace(/bg(?=[A-Z])/g,o.pf):out;
 }
 function renderBrain(){
   const H=brainHealth(),st=brainStage(),xp=S.xp;
   const size=.72+.28*Math.pow(clamp01((xp-300)/2700),.8);
   const lobes={};for(const c of CATS){const s=S.sk[c],k=!!(s&&s[2]>0);lobes[c]={k,t:k?clamp01((s[0]-800)/900):0,f:k?zoneFresh(c):null};}
-  const svg=$('brainSvg');
-  svg.style.filter=`sepia(${((1-H)*.75).toFixed(2)}) saturate(${(.35+.65*H).toFixed(2)}) brightness(${(.72+.28*H).toFixed(2)}) drop-shadow(0 0 ${Math.round(4+14*H)}px rgba(138,99,255,${(.1+.32*H).toFixed(2)}))`;
-  svg.innerHTML=brainArt({H,st,size,lobes,nN:Math.min(BPTS.length,2+Math.floor(S.nrec/8)),sel:brainSel,intro:brainIntro&&!reduce});
+  const svg=$('brainSvg'),fr=frozenNow();
+  svg.style.filter=fr?'drop-shadow(0 0 18px rgba(100,210,255,.5))':`sepia(${((1-H)*.75).toFixed(2)}) saturate(${(.35+.65*H).toFixed(2)}) brightness(${(.72+.28*H).toFixed(2)}) drop-shadow(0 0 ${Math.round(4+14*H)}px rgba(138,99,255,${(.1+.32*H).toFixed(2)}))`;
+  svg.innerHTML=brainArt({H,st,size,lobes,nN:Math.min(BPTS.length,2+Math.floor(S.nrec/8)),sel:brainSel,intro:brainIntro&&!reduce,ice:fr});
   brainIntro=false;
   const sc=brainSel;
   if(sc){const s=S.sk[sc],tr=catTrend(sc),d=zoneDays(sc);
     $('brainCap').innerHTML=s&&s[2]?`<b>Zona ${CN[sc]}</b> · nivel ${fmtN(s[0])} ±${Math.round(uNow(s)*200)}${tr!=null&&Math.abs(tr)>=1?` · <span class="${tr>0?'up':'down'}">${tr>0?'+':'−'}${fmtN(Math.abs(tr))} în 7 zile</span>`:''}<br>${d<1?'Exersată azi':d<2?'Exersată ieri':`<span class="${d>=4?'down':''}">Neexersată de ${zile(Math.floor(d))}${d>=4?', se ofilește':''}</span>`}`:`<b>Zona ${CN[sc]}</b> · încă adormită<br>Rezolvă un exercițiu de ${CN[sc].toLowerCase()} ca s-o trezești`;
     $('brainBar').hidden=true;return;}
-  const name=H<.4?'Se ofilește':H<.6?'Obosit':BSTAGES[st][0];
+  const name=fr?'Înghețat':H<.4?'Se ofilește':H<.6?'Obosit':BSTAGES[st][0];
   let worst=null,wd=0;for(const c of CATS){const d=zoneDays(c);if(d!=null&&d>wd){wd=d;worst=c;}}
   const drop=S.xp-xpAgo(7),nx=BSTAGES[st+1];
-  const tip=worst&&wd>=4?`<span class="down">Zona ${CN[worst]} se ofilește: ${zile(Math.floor(wd))} fără exersare</span>`:drop<=-20?`<span class="down">XP-ul a scăzut cu ${fmtN(-drop)} în 7 zile</span>`:nx?`Încă ${fmtN(nx[1]-xp)} XP până la „${nx[0]}”`:'Formă maximă. Ține-l în mișcare.';
+  const tip=fr?'<span class="ice">Un scut de gheață ține seria. Atinge obiectivul azi ca să-l dezgheți.</span>':worst&&wd>=4?`<span class="down">Zona ${CN[worst]} se ofilește: ${zile(Math.floor(wd))} fără exersare</span>`:drop<=-20?`<span class="down">XP-ul a scăzut cu ${fmtN(-drop)} în 7 zile</span>`:nx?`Încă ${fmtN(nx[1]-xp)} XP până la „${nx[0]}”`:'Formă maximă. Ține-l în mișcare.';
   $('brainCap').innerHTML=`<b>${name}</b> · ${fmtN(xp)} XP · sănătate ${Math.round(H*100)}%<br>${tip}`;
   const lo=Math.max(0,BSTAGES[st][1]),hi=nx?nx[1]:lo+1,p=nx?clamp01((xp-lo)/(hi-lo)):1;
   $('brainBar').hidden=false;
   $('brainBar').innerHTML=`<span>${BSTAGES[st][0]}</span><div class="bar"><i style="width:${(p*100).toFixed(1)}%"></i></div><span>${nx?nx[0]:'max'}</span>`;
 }
 $('brainSvg').addEventListener('click',e=>{const z=e.target.closest('[data-z]');brainSel=z?(brainSel===z.dataset.z?null:z.dataset.z):null;renderBrain();});
+
+
+/* ---------- Brain Coins: earned by effort, lost by skipped days, spent on ice shields ---------- */
+const BC_CAP=60,BC_PRICE=25,FRZ_MAX=2;
+const COIN='<svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.6" fill="url(#cgO)"/><circle cx="12" cy="12" r="8.1" fill="url(#cgI)"/><circle cx="12" cy="12" r="8.1" fill="none" stroke="#FFF6CF" stroke-opacity=".55" stroke-width=".8"/><path d="M9 15.4c-1.5-.2-2.4-1.3-2.2-2.6.1-.8.7-1.4 1.4-1.6-.2-1.1.5-2.2 1.6-2.3.6-.9 1.8-1 2.6-.4.8-.5 2-.3 2.5.6 1.1.2 1.8 1.3 1.5 2.4.7.4 1.1 1.2.9 2-.3 1.2-1.5 1.9-2.7 1.7-.5.7-1.7.9-2.5.4-.8.4-2 .4-3.1-.2z" fill="#B36F00" fill-opacity=".5"/><path d="M12 9v5.6M9.8 11.2c.9.6 1.6.6 2.2 0M12.2 12.6c.7.6 1.5.6 2.1 0" stroke="#FFF1B8" stroke-opacity=".7" stroke-width=".7" fill="none" stroke-linecap="round"/></svg>';
+const SNOW='<svg class="i" viewBox="0 0 24 24"><path d="M12 2.5v19M3.8 7.25l16.4 9.5M3.8 16.75l16.4-9.5M12 2.5 9.6 4.9M12 2.5l2.4 2.4M12 21.5l-2.4-2.4M12 21.5l2.4-2.4M3.8 7.25l3.3.9M3.8 7.25l.9 3.3M20.2 16.75l-3.3-.9M20.2 16.75l-.9-3.3M3.8 16.75l.9-3.3M3.8 16.75l3.3-.9M20.2 7.25l-.9 3.3M20.2 7.25l-3.3.9"/></svg>';
+const ICE_COLS=['#FFFFFF','#E6F7FF','#BFEFFF','#7FDBFF','#64D2FF','#9FB8FF'];
+const FIRE_COLS=['#FFE48A','#FFD60A','#FF9F0A','#FF6B3D','#FFFFFF'];
+const BIGFLAME='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="url(#flO)" d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/><path fill="url(#flI)" transform="translate(12 21.4) scale(.56) translate(-12 -21.5)" d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg>';
+function coins(n,why){
+  const b=S.bc;let d=Math.round(n);
+  if(d>0){const g=Math.max(0,Math.min(d,BC_CAP-b.n));b.over+=d-g;b.earned+=g;b.n+=g;d=g;}
+  else if(d<0){const l=Math.min(-d,b.n);b.n-=l;b.lost+=l;d=-l;}
+  if(d){ev('coins',{d,why,n:b.n});renderCoins();}
+  return d;
+}
+function renderCoins(){const el=$('coinTxt');if(el)countTo(el,S.bc.n,v=>f(Math.round(v)));const p=$('coinPill');if(p){p.classList.toggle('full',S.bc.n>=BC_CAP);p.setAttribute('aria-label',`${S.bc.n} Brain Coins din ${BC_CAP}`);}}
+function renderWallet(){
+  const b=S.bc;
+  countTo($('bcN'),b.n,v=>f(Math.round(v)));
+  $('bcSub').textContent=b.n>=BC_CAP?`Portofel plin (${BC_CAP}). Cheltuie ca să nu pierzi monede.`:`din ${BC_CAP} · încă ${BC_CAP-b.n} până la plin`;
+  $('bcBar').style.width=(b.n/BC_CAP*100).toFixed(1)+'%';
+  $('bcStats').innerHTML=`<div><b>${fmtN(b.earned)}</b><span>câștigate</span></div><div><b>${fmtN(b.spent)}</b><span>cheltuite</span></div><div><b>${fmtN(b.lost)}</b><span>pierdute</span></div>`;
+  $('frzDots').innerHTML=[0,1].map(i=>`<i class="${i<S.freeze?'on':''}"></i>`).join('');
+  $('frzSub').textContent=S.freeze>=FRZ_MAX?'Ai 2 din 2. Se folosesc singure când ratezi o zi.':S.freeze?`Ai 1 din 2. Îngheață seria o zi ratată.`:'Îngheață seria o zi ratată. Maximum 2 zile la rând.';
+  const bb=$('buyFrz');bb.classList.toggle('off',S.freeze>=FRZ_MAX||b.n<BC_PRICE);bb.setAttribute('aria-label',`Cumpără un scut de gheață cu ${BC_PRICE} Brain Coins`);
+}
+function nope(el,msg){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');SFX.bad();toast(msg);}
+function buyFreeze(){
+  const btn=$('buyFrz');
+  if(S.freeze>=FRZ_MAX){nope(btn,`${SNOW} Ai deja 2 scuturi, maximul`);return;}
+  if(S.bc.n<BC_PRICE){nope(btn,`${COIN} Îți mai trebuie ${BC_PRICE-S.bc.n} Brain Coins`);return;}
+  S.bc.n-=BC_PRICE;S.bc.spent+=BC_PRICE;S.freeze++;S.bc.bought=(S.bc.bought||0)+1;save();
+  ev('buy',{item:'freeze',have:S.freeze,bc:S.bc.n});
+  renderCoins();countTo($('bcN'),S.bc.n,v=>f(Math.round(v)));$('bcBar').style.width=(S.bc.n/BC_CAP*100).toFixed(1)+'%';
+  btn.disabled=true;
+  buyAnim($('bcIc'),$('frzIc'),()=>{btn.disabled=false;renderWallet();renderQ();toast(`${SNOW} Scut de gheață cumpărat · ai ${S.freeze} din 2`);});
+}
+function buyAnim(fromEl,toEl,done){
+  const a=fromEl.getBoundingClientRect(),z=toEl.getBoundingClientRect(),n=reduce?0:9;
+  SFX.coin();
+  for(let i=0;i<n;i++){
+    const c=document.createElement('div');c.className='fly';c.innerHTML=COIN;document.body.appendChild(c);
+    const x0=a.left+a.width/2-11+(Math.random()-.5)*14,y0=a.top+a.height/2-11,x1=z.left+z.width/2-11,y1=z.top+z.height/2-11;
+    const mx=(x0+x1)/2+(Math.random()-.5)*90,my=Math.min(y0,y1)-50-Math.random()*60;
+    const an=c.animate([{transform:`translate(${x0}px,${y0}px) scale(.5) rotate(0)`,opacity:0},{transform:`translate(${(x0+mx)/2}px,${(y0+my)/2}px) scale(1.15) rotate(90deg)`,opacity:1,offset:.3},{transform:`translate(${mx}px,${my}px) scale(1) rotate(200deg)`,opacity:1,offset:.6},{transform:`translate(${x1}px,${y1}px) scale(.35) rotate(320deg)`,opacity:.9}],{duration:760,delay:i*55,easing:'cubic-bezier(.45,0,.25,1)',fill:'forwards'});
+    an.onfinish=()=>{c.remove();tone(1760+i*110,.07,'sine',.035);};
+  }
+  setTimeout(()=>{toEl.classList.remove('got');void toEl.offsetWidth;toEl.classList.add('got');burstAt(toEl,40,9,ICE_COLS);SFX.ice();if(done)done();},n?760+n*55:0);
+}
+
+/* ---------- frozen streak: the app and the brain look frozen until today's goal thaws them ---------- */
+function frozenNow(){const y=sod();y.setDate(y.getDate()-1);const e=S.days[dkey(y)];return !!(e&&e.fz)&&!met(S.days[dkey(new Date())]);}
+function frostSVG(seed,cls){
+  const r=rng(seed);let d='';
+  const br=(x,y,a,len,depth)=>{const x2=x+Math.cos(a)*len,y2=y+Math.sin(a)*len;d+=`M${x.toFixed(1)} ${y.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}`;if(depth>=2||len<6)return;
+    const k=2+Math.floor(r()*2);for(let i=1;i<=k;i++){const t=i/(k+1),px=x+(x2-x)*t,py=y+(y2-y)*t,l=len*(.2+.18*r())*(1-t*.4);br(px,py,a+1.05,l,depth+1);br(px,py,a-1.05,l,depth+1);}};
+  for(let i=0;i<6;i++)br(0,0,.08+i/5*1.4+r()*.08,70+r()*90,0);
+  return`<svg class="${cls||''}" viewBox="0 0 200 200" aria-hidden="true"><path d="${d}" fill="none" stroke="#9FE3FF" stroke-width="2.4" stroke-linecap="round" opacity=".14"/><path d="${d}" fill="none" stroke="#EAF8FF" stroke-width=".7" stroke-linecap="round" opacity=".85"/></svg>`;
+}
+let frostBuilt=false;
+function applyFrozen(){
+  const fr=frozenNow();
+  document.body.classList.toggle('frozen',fr);
+  if(fr&&!frostBuilt){frostBuilt=true;
+    let h=['tl','tr','bl','br'].map((c,i)=>frostSVG(11+i*7,c)).join('');
+    for(let i=0;i<16;i++){const s=(1.5+Math.random()*2.5).toFixed(1);h+=`<i class="flake" style="left:${(Math.random()*100).toFixed(1)}%;--s:${s}px;--d:${(7+Math.random()*7).toFixed(1)}s;--dl:-${(Math.random()*12).toFixed(1)}s;--dx:${((Math.random()-.5)*60).toFixed(0)}px"></i>`;}
+    $('frost').innerHTML=h;}
+  return fr;
+}
+
+/* ---------- the streak cutscene: thaw (if frozen) and light the flame and the brain ---------- */
+let sceneOpen=false;
+function brainLobes(){const lobes={};for(const c of CATS){const s=S.sk[c],k=!!(s&&s[2]>0);lobes[c]={k,t:k?clamp01((s[0]-800)/900):0,f:k?zoneFresh(c):null};}return lobes;}
+function crackPaths(W,H){const r=rng(Date.now()%99991),cx=W/2,cy=H*.4,u=Math.max(W,H)/100;let h='';for(let i=0;i<9;i++){let a=i/9*Math.PI*2+r()*.5,x=cx,y=cy,d=`M${cx.toFixed(1)} ${cy.toFixed(1)}`;for(let j=0;j<7;j++){a+=(r()-.5)*.9;const l=(3+r()*6)*u;x+=Math.cos(a)*l;y+=Math.sin(a)*l;d+=`L${x.toFixed(1)} ${y.toFixed(1)}`;if(j===3&&r()<.6){const b=a+(r()<.5?.9:-.9);d+=`M${x.toFixed(1)} ${y.toFixed(1)}L${(x+Math.cos(b)*l*1.2).toFixed(1)} ${(y+Math.sin(b)*l*1.2).toFixed(1)}M${x.toFixed(1)} ${y.toFixed(1)}`;}}h+=`<path class="ck" pathLength="1" style="animation-delay:${(.25+i*.05).toFixed(2)}s" d="${d}"/>`;}return h;}
+function playScene(o){
+  return new Promise(res=>{
+    const sc=$('scene');sceneOpen=true;pause();
+    sc.className='scene'+(o.thaw?' thaw':'');
+    const st=brainStage(),lob=brainLobes(),nN=Math.min(BPTS.length,2+Math.floor(S.nrec/8));
+    $('scLit').innerHTML=brainArt({H:1,st,size:.92,lobes:lob,nN,pf:'sl'});
+    $('scIce').innerHTML=o.thaw?brainArt({H:1,st,size:.92,lobes:lob,nN,pf:'si',ice:true}):'';
+    $('scSheet').innerHTML=o.thaw?['tl','tr','bl','br'].map((c,i)=>frostSVG(31+i*5,c)).join('')+`<svg class="cks" viewBox="0 0 ${innerWidth} ${innerHeight}" aria-hidden="true">${crackPaths(innerWidth,innerHeight)}</svg>`+Array.from({length:12},(_,i)=>`<i class="drop" style="left:${(4+Math.random()*92).toFixed(1)}%;top:${(Math.random()*60).toFixed(1)}%;animation-delay:${(1+Math.random()*.5).toFixed(2)}s"></i>`).join(''):'';
+    const N=$('scN');N._v=Math.max(0,o.days-1);N.textContent=f(N._v);
+    $('scNl').textContent=o.days===1?'zi la rând':'zile la rând';
+    $('scEy').textContent=o.thaw?'Seria s-a dezghețat':'Obiectivul zilei e atins';
+    $('scMsg').textContent=o.thaw?'Creierul s-a trezit din nou':o.days===1?'Seria a pornit. Revino mâine!':o.mile?`${zile(o.days)} fără pauză!`:'Seria arde mai departe';
+    $('scCoin').innerHTML=o.coins?`${COIN}<b>+${o.coins}</b><span>Brain Coins${o.mile?' · bonus de serie':''}</span>`:'';
+    sc.hidden=false;
+    const T=o.thaw?1500:0,tm=[],at=(ms,fn)=>tm.push(setTimeout(fn,reduce?0:ms));
+    if(o.thaw){at(200,()=>SFX.crack());at(1000,()=>{SFX.ice();document.body.classList.remove('frozen');});}
+    at(T+120,()=>SFX.ignite());
+    at(T+620,()=>burstAt($('scFl'),46,10,FIRE_COLS));
+    at(T+850,()=>{countTo(N,o.days,v=>f(Math.round(v)));SFX.goal();});
+    at(T+1350,()=>{if(o.coins){SFX.coin();burstAt($('scCoin'),18,6,['#FFE48A','#FFD60A','#FFC21A']);}});
+    let closed=false;
+    const close=()=>{if(closed)return;closed=true;tm.forEach(clearTimeout);document.body.classList.remove('frozen');sc.classList.add('out');
+      setTimeout(()=>{sc.hidden=true;sc.className='scene';$('scLit').innerHTML='';$('scIce').innerHTML='';$('scSheet').innerHTML='';sceneOpen=false;applyFrozen();renderTop();resume();res();},330);};
+    $('scGo').onclick=e=>{e.stopPropagation();close();};
+    sc.onclick=()=>{if(sc.classList.contains('skip'))return;sc.classList.add('skip');tm.forEach(clearTimeout);document.body.classList.remove('frozen');N.textContent=f(o.days);N._v=o.days;};
+    tm.push(setTimeout(close,reduce?2600:T+6500));
+    setTimeout(()=>$('scGo').focus({preventScroll:true,focusVisible:false}),60);
+    ev('scene',{thaw:!!o.thaw,days:o.days,coins:o.coins});
+  });
+}
+
+/* ---------- records to beat ---------- */
+const CLOCK='<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg>';
+function renderRecords(){
+  const L=[],ds=dayStreak();
+  const pbs=Object.entries(S.pb);
+  if(pbs.length){const[k,v]=pbs.reduce((a,b)=>b[1]<a[1]?b:a);L.push([BOLT,'Cel mai rapid răspuns',sec(v),`${CN[k.slice(0,-1)]||''} · ${DIFFS[+k.slice(-1)]||''}`]);}
+  if(S.rbest)L.push([CLOCK,'Cea mai rapidă rundă',sec(S.rbest.avg),`în medie pe exercițiu · ${S.rbest.f}/10 din prima · ${dmon(S.rbest.t)}`]);
+  L.push([FLAME,'Cea mai lungă serie',zile(S.bestDays),S.bestDays&&ds>=S.bestDays?'Ești pe record chiar acum':`Acum ai ${zile(ds)}`]);
+  L.push([CHECK,'Cele mai multe la rând',f(S.best),streak?`Acum ai ${streak}`:'Fără greșeală, una după alta']);
+  let bc=null,bx=null,bt=null;
+  for(const[k,e]of Object.entries(S.days)){if(!e)continue;if(e.c>0&&(!bc||e.c>bc[1]))bc=[k,e.c];if(e.dx>0&&(!bx||e.dx>bx[1]))bx=[k,e.dx];const t=dayMs(e);if(t>0&&(!bt||t>bt[1]))bt=[k,t];}
+  const dl=k=>dmon(new Date(k+'T12:00:00').getTime());
+  if(bc)L.push([TROPHY,'Cea mai bună zi',`${f(bc[1])} corecte`,dl(bc[0])]);
+  if(bx)L.push([TOPS,'Cel mai mult XP într-o zi',`+${fmtN(bx[1])}`,dl(bx[0])]);
+  if(bt)L.push([CLOCK,'Cel mai mult timp într-o zi',fmtDur(bt[1]),dl(bt[0])]);
+  $('recList').innerHTML=L.map(([ic,t,v,s])=>`<div class="li"><span class="ico rec">${ic}</span><div class="main"><span class="t1">${t}</span><span class="t2">${s}</span></div><span class="val">${v}</span></div>`).join('');
+}
 
 /* quests + level + streak calendar */
 function renderQ(){
@@ -1913,7 +2217,8 @@ function renderQ(){
     +`<div class="li"><span class="ico chest">${GIFT}</span><div class="main"><span class="t1">Cufărul zilei</span><span class="t2">${Q.chest?'Deschis azi':`${dn} din 3 provocări gata`}</span></div><span class="rw">${Q.chest?'Gata':'+30 XP'}</span></div>`;
   const ds=dayStreak();if(ds>S.bestDays)S.bestDays=ds;const dd=today();
   $('sDays').textContent=zile(ds);$('sBestDays').textContent=zile(S.bestDays);
-  $('sDaysSub').textContent=met(dd)?'Obiectivul de azi e atins':S.freeze?`Încă ${S.goal-dd.c} corecte azi, altfel se folosește un scut`:ds?`Încă ${S.goal-dd.c} corecte azi sau pierzi ${TAX+breakPen(ds)} XP`:`Încă ${S.goal-dd.c} corecte azi sau pierzi ${TAX} XP`;
+  const fz=frozenNow();$('sFlame').innerHTML=fz?SNOW:FLAME;renderWallet();
+  $('sDaysSub').textContent=met(dd)?'Obiectivul de azi e atins':fz?`Înghețată de un scut · încă ${corecte(S.goal-dd.c)} ca s-o dezgheți`:S.freeze?`Încă ${corecte(S.goal-dd.c)} azi, altfel se folosește un scut`:ds?`Încă ${corecte(S.goal-dd.c)} azi sau pierzi ${TAX+breakPen(ds)} XP`:`Încă ${corecte(S.goal-dd.c)} azi sau pierzi ${TAX} XP`;
   renderCal();
 }
 let calOff=0,selKey=null;
@@ -1949,7 +2254,7 @@ function renderDet(){
   $('tRight').textContent=fmtN(S.right);
   const a=pct(S.first,S.wrong);$('tAcc').textContent=a===null?'—':a+'%';
   $('tSpeed').textContent=S.times.length?sec(S.times.reduce((x,y)=>x+y,0)/S.times.length):'—';
-  $('tBest').textContent=S.best;
+  $('tBest').textContent=S.best;renderRecords();
   $('tTime').innerHTML=fmtDur(S.tt||0,true);$('tToday').innerHTML=fmtDur(dayMs(S.days[dkey(new Date())]),true);
   const rows=CATS.map(c=>{const arr=S.cs[c]||[[0,0,0,0],[0,0,0,0],[0,0,0,0]];const t=arr.reduce((o,r)=>{o.c+=r[0];o.w+=r[1];o.s+=r[2];o.n+=r[3];return o;},{c:0,w:0,s:0,n:0});const s=S.sk[c];return{k:c,arr,...t,acc:pct(t.c,t.w),r:s&&s[2]?s[0]:null};});
   const elig=rows.filter(r=>r.r!=null&&r.c+r.w>=5);
@@ -1971,7 +2276,7 @@ function renderDet(){
   document.querySelectorAll('#goalSeg button').forEach(b=>b.setAttribute('aria-checked',+b.dataset.g===S.goal));
   $('sndSw').setAttribute('aria-checked',S.snd);
   renderData();
-  $('xpNote').textContent=`Ai două numere. Nivelul real arată cât de bun ești la calcul mental: câte un rating pentru fiecare categorie și truc, care crește doar când rezolvi corect și sub timpul țintă și devine mai nesigur când nu exersezi. XP-ul e scorul de joc, cu toate penalizările. Pornești de la ${START} XP. O greșeală costă 12 XP la Ușor, 8 la Mediu și 5 la Greu, dublu dacă răspunzi în sub o secundă. Un răspuns lent costă 6, 4 sau 2 XP, un exercițiu sărit jumătate din greșeală. Pierderile se înmulțesc cu miza (×1 până la ×2,5), care crește doar cu nivel real mare și serie lungă. O rundă abandonată costă 10 XP, una sub 50% costă 15. La Greu ai 3 vieți, fără indicii, cu timp țintă mai scurt cu 30%. Fiecare zi fără obiectiv costă ${TAX} XP, iar ruperea seriei încă 5 XP pentru fiecare zi, maximum 200. La fiecare 7 zile de serie primești un scut (maximum 2) care salvează automat o zi ratată.`;
+  $('xpNote').textContent=`Ai două numere. Nivelul real arată cât de bun ești la calcul mental: câte un rating pentru fiecare categorie și truc, care crește doar când rezolvi corect și sub timpul țintă și devine mai nesigur când nu exersezi. XP-ul e scorul de joc, cu toate penalizările. Pornești de la ${START} XP. O greșeală costă 12 XP la Ușor, 8 la Mediu și 5 la Greu, dublu dacă răspunzi în sub o secundă. Un răspuns lent costă 6, 4 sau 2 XP, un exercițiu sărit jumătate din greșeală. Pierderile se înmulțesc cu miza (×1 până la ×2,5), care crește doar cu nivel real mare și serie lungă. O rundă abandonată costă 10 XP, una sub 50% costă 15. La Greu ai 3 vieți, fără indicii, cu timp țintă mai scurt cu 30%. Fiecare zi fără obiectiv costă ${TAX} XP, iar ruperea seriei încă 5 XP pentru fiecare zi, maximum 200. Scuturile de gheață se cumpără cu Brain Coins (cel mult 2) și acoperă automat o zi ratată, dar cel mult 2 zile la rând. Fiecare zi ratată fără scut costă și 10 Brain Coins.`;
   $('foot').textContent=`Peste ${(Math.floor(space()/10000)*10000).toLocaleString('ro-RO')} de exerciții diferite. Versiunea ${VERSION}.`;
 }
 function whenTxt(t){const d=Math.round((t-Date.now())/864e5);return d<=0?'azi':d===1?'mâine':`în ${zile(d)}`;}
@@ -2093,6 +2398,8 @@ $('statsBtn').addEventListener('click',()=>openStats('evo'));
 for(const id of['lvBtn','ring','daysPill'])$(id).addEventListener('click',()=>openStats('q'));
 $('backBtn').addEventListener('click',closeStats);
 $('paneSeg').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b){if(b.dataset.p===pane)return;pane=b.dataset.p;evAnim=true;brainIntro=true;showPane();window.scrollTo({top:0});renderPane();ev('screen',{n:'progres:'+pane});}});
+$('coinPill').addEventListener('click',()=>{openStats('q');setTimeout(()=>{const w=$('walletSec');if(w)window.scrollTo({top:w.getBoundingClientRect().top+scrollY-70,behavior:reduce?'auto':'smooth'});},120);});
+$('buyFrz').addEventListener('click',buyFreeze);
 $('mtabs').addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){if(b.dataset.m===evM)return;evM=b.dataset.m;evAnim=true;renderEvo(false);ev('chart',{m:evM,r:evR});}});
 $('ranges').addEventListener('click',e=>{const b=e.target.closest('[data-r]');if(b){if(b.dataset.r===evR)return;evR=b.dataset.r;evAnim=true;renderEvo(false);ev('chart',{m:evM,r:evR});}});
 $('calGrid').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b&&!b.disabled){selKey=b.dataset.k;renderCal();}});
@@ -2119,6 +2426,7 @@ mcard.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)
   nextModal();});
 document.addEventListener('keydown',e=>{
   if(e.metaKey||e.ctrlKey||e.altKey)return;const k=e.key;
+  if(sceneOpen){if(k==='Enter'||k==='Escape'||k===' '){e.preventDefault();$('scGo').click();}return;}
   if(e.target&&e.target.tagName==='INPUT')return;
   if(modalOpen){if(k==='Enter'||k==='Escape'){e.preventDefault();if(pendingImport){if(k==='Escape'){pendingImport=null;closeModal();resume();}else doImport();}else nextModal();}return;}
   if(!bkSheet.hidden){if(k==='Escape'){closeBk();e.preventDefault();}return;}
@@ -2150,9 +2458,9 @@ window.addEventListener('online',()=>autoBackup());
 /* ---------- calendar check while open ---------- */
 function showAbsence(r){
   SFX.down();
-  if(!r.days){openModal(`<div class="mbadge frz">${SHIELD}</div><p class="eyebrow">Calendarul nu uită</p><h2>Scutul ți-a salvat seria</h2><p>${r.frozen===1?'O zi ratată a fost acoperită de un scut.':`${r.frozen} zile ratate au fost acoperite de scuturi.`} Îți mai ${S.freeze===1?'rămâne 1 scut':`rămân ${S.freeze} scuturi`}.</p><div class="acts"><button class="btn primary" data-act="next">Continuă</button></div>`);return;}
+  if(!r.days){openModal(`<div class="mbadge frz">${SHIELD}</div><p class="eyebrow">Calendarul nu uită</p><h2>Seria e înghețată</h2><p>${r.frozen===1?'Un scut de gheață a acoperit ziua ratată.':`${r.frozen} scuturi au acoperit zilele ratate.`} ${S.freeze?`Îți mai ${S.freeze===1?'rămâne 1 scut':`rămân ${S.freeze} scuturi`}.`:'Nu mai ai scuturi.'} Atinge obiectivul azi ca s-o dezgheți.</p><div class="acts"><button class="btn primary" data-act="next">Continuă</button></div>`);return;}
   openModal(`<div class="mbadge bad">${DOWNI}</div><p class="eyebrow">Calendarul nu uită</p><h2>${r.days===1?'Ai ratat o zi':`Ai ratat ${pl(r.days,'zi','zile')}`}</h2><p>${r.lost?`Seria de ${zile(r.lost)} s-a rupt.`:`Fiecare zi fără obiectiv costă ${TAX} XP.`}${r.frozen?` ${r.frozen===1?'O zi a fost salvată':`${r.frozen} zile au fost salvate`} de ${r.frozen===1?'un scut':'scuturi'}.`:''}</p>
-    <div class="mstats"><div><b>−${fmtN(r.tax)}</b><span>taxă zile</span></div><div><b>${r.brk?'−'+fmtN(r.brk):'0'}</b><span>serie ruptă</span></div><div><b>${fmtN(S.xp)}</b><span>XP acum</span></div></div>
+    <div class="mstats"><div><b>−${fmtN(r.tax)}</b><span>taxă zile</span></div><div><b>${r.brk?'−'+fmtN(r.brk):'0'}</b><span>serie ruptă</span></div><div><b>${fmtN(S.xp)}</b><span>XP acum</span></div></div>${r.coins?`<p class="coinline lost">${COIN} ${r.coins} Brain Coins</p>`:''}
     <div class="acts"><button class="btn primary" data-act="next">Recuperează</button></div>`);
 }
 let dayNow=dkey(new Date());
@@ -2177,7 +2485,8 @@ setInterval(checkDay,30000);
   const ds0=dayStreak(),d0=today();
   if(migrated)setTimeout(()=>toast(`${TOPS} XP-ul e acum un rating real. Pornești de la ${START}.`),500);
   if(absence)runModals([()=>showAbsence(absence)]);
-  else if(!met(d0)&&!riskShown){riskShown=true;setTimeout(()=>toast(S.freeze?`${SHIELD} Încă ${S.goal-d0.c} corecte azi, altfel se folosește un scut`:`${FLAME} Încă ${S.goal-d0.c} corecte azi sau pierzi ${TAX+(ds0?breakPen(ds0):0)} XP`),900);}
+  else if(!met(d0)&&!riskShown&&frozenNow()){riskShown=true;setTimeout(()=>toast(`${SNOW} Seria e înghețată. Încă ${corecte(S.goal-d0.c)} ca s-o dezgheți`),900);}
+  else if(!met(d0)&&!riskShown){riskShown=true;setTimeout(()=>toast(S.freeze?`${SHIELD} Încă ${corecte(S.goal-d0.c)} azi, altfel se folosește un scut`:`${FLAME} Încă ${corecte(S.goal-d0.c)} azi sau pierzi ${TAX+(ds0?breakPen(ds0):0)} XP`),900);}
   setTimeout(autoBackup,5000);
 })();
 })();
