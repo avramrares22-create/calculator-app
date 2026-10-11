@@ -1,0 +1,1912 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0A0A0F">
+<meta name="apple-mobile-web-app-title" content="Calcul">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>Calcul Mental</title>
+<style>:root{color-scheme:dark;background:#0A0A0F;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+/* Layout: two iOS-style screens in one phone column (max 440px). Practice: level strip + streak/ring/stats, category chips, difficulty, problem card with target-time bar, quick stats, actions, keypad pinned low. Statistics: Evoluție (stock-style chart) | Provocări | Detalii. Sheets and modals float above. */
+:root{
+  /* One deliberate dark look: near-black with a violet glow, glass cards, tactile keys. */
+  --bg:#0A0A0F; --card:#16161E; --key:#1E1E28; --key-press:#2A2A36; --key-shadow:transparent;
+  --fill:rgba(255,255,255,.08); --fill2:rgba(255,255,255,.05); --line:rgba(255,255,255,.08);
+  --label:#F5F5F7; --label2:rgba(235,235,245,.64); --label3:rgba(235,235,245,.34); --sep:rgba(255,255,255,.08);
+  --accent:#8A63FF; --accent2:#4F7BFF; --accent-text:#B39BFF; --accent-edge:#5534D1; --accent-glow:rgba(138,99,255,.45); --on-accent:#FFFFFF; --knob:#FFFFFF;
+  --ok:#3DDC97; --ok-text:#4BE3A2; --bad:#FF5C72; --bad-text:#FF7D90; --bad-tint:rgba(255,92,114,.14);
+  --hint:#FFB340; --hint-text:#FFC56B; --hint-tint:rgba(255,179,64,.14);
+  --gold:#FFD60A; --gold-text:#FFD60A; --gold-tint:rgba(255,214,10,.14);
+  --frz:#64D2FF; --frz-tint:rgba(100,210,255,.15);
+  --seg-thumb:#2A2A36; --sel-glyph:rgba(255,255,255,.18); --scrim:rgba(0,0,0,.62); --shadow:rgba(0,0,0,.5);
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;
+  --font-num:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --kh:clamp(44px,7vh,60px);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{height:100%;box-sizing:border-box;touch-action:manipulation;-webkit-text-size-adjust:100%}
+body{min-height:100%;background:var(--bg);color:var(--label);font-family:var(--font-ui);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column}
+button{font:inherit;color:inherit;border:0;background:none;padding:0;margin:0;cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none;text-align:inherit}
+button:focus-visible,.chart:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+svg.i{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+svg.i.fill{fill:currentColor;stroke:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+
+.app{width:100%;max-width:440px;margin-inline:auto;margin-block:auto;flex:1 0 auto;max-height:860px;display:flex;flex-direction:column;gap:12px;padding-inline:16px;padding-block:10px 14px}
+
+/* header */
+.hdr{display:flex;align-items:center;gap:8px}
+.lv{flex:1;min-width:0;display:flex;align-items:center;gap:10px;text-align:left;border-radius:12px}
+.lvb{width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:800 19px/1 var(--font-num);flex:none;font-variant-numeric:tabular-nums}
+.lvb.up{animation:pop .6s}
+.lvi{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.lvt{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.lvt span{font-weight:500;color:var(--label2)}
+.lvbar{height:6px;border-radius:3px;background:var(--fill);overflow:hidden}
+.lvbar i{display:block;height:100%;width:0;border-radius:3px;background:var(--accent);transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.days{display:inline-flex;align-items:center;gap:3px;height:32px;padding:0 10px 0 7px;border-radius:16px;background:var(--fill2);color:var(--label2);font:700 15px/1 var(--font-num);font-variant-numeric:tabular-nums;flex:none}
+.days svg{width:17px;height:17px}
+.days.on{background:var(--hint-tint);color:var(--hint-text)}
+.days.risk{animation:risk 1.6s ease-in-out infinite}
+.ring{position:relative;width:42px;height:42px;flex:none;border-radius:21px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .track{stroke:var(--fill);fill:none}
+.ring .prog{stroke:var(--ok);fill:none;stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.2,.8,.2,1)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font:700 11px/1 var(--font-num);font-variant-numeric:tabular-nums;color:var(--label)}
+.ring.done{animation:pop .7s}
+.round{width:38px;height:38px;border-radius:19px;background:var(--fill2);color:var(--accent);display:grid;place-items:center;flex:none}
+
+/* filters */
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 15px 0 8px;border-radius:18px;background:var(--fill2);font-size:15px;font-weight:500;transition:background .2s,color .2s}
+.chip .g{width:22px;height:22px;border-radius:11px;display:grid;place-items:center;background:var(--fill);font:600 15px/1 var(--font-num)}
+.chip .g svg{width:13px;height:13px}
+.chip[aria-selected="true"]{background:var(--label);color:var(--bg)}
+.chip[aria-selected="true"] .g{background:var(--sel-glyph)}
+.chip.rev{color:var(--bad-text);background:var(--bad-tint)}
+.chip.rev .g{background:transparent}
+.chip.rev[aria-selected="true"]{background:var(--bad);color:var(--on-accent)}
+.badge{min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--bad);color:var(--on-accent);font:700 12px/20px var(--font-num);text-align:center}
+.chip.rev[aria-selected="true"] .badge{background:var(--sel-glyph)}
+.seg{position:relative;display:grid;grid-template-columns:repeat(var(--n,3),1fr);background:var(--fill);border-radius:10px;padding:2px;height:34px}
+.seg .thumb{position:absolute;top:2px;bottom:2px;left:2px;width:calc((100% - 4px)/var(--n,3));border-radius:8px;background:var(--seg-thumb);box-shadow:0 3px 8px var(--shadow),0 0 0 .5px var(--sep);transform:translateX(calc(var(--i,1)*100%));transition:transform .3s cubic-bezier(.3,.7,.2,1)}
+.seg button{position:relative;z-index:1;font-size:14px;font-weight:500;border-radius:8px;text-align:center}
+.seg button[aria-checked="true"],.seg button[aria-selected="true"]{font-weight:600}
+
+/* problem card */
+.card{position:relative;background:var(--card);border-radius:24px;padding:14px 18px 12px;display:flex;flex-direction:column;align-items:center;transition:box-shadow .3s}
+.card.hot{box-shadow:0 0 0 2px var(--hint)}
+.card.fire{box-shadow:0 0 0 2px var(--hint),0 0 26px 2px var(--hint-tint);animation:fire 1.8s ease-in-out infinite}
+.card.gold{box-shadow:0 0 0 2px var(--gold),0 0 26px 2px var(--gold-tint)}
+.card.ok{box-shadow:0 0 0 2px var(--ok);animation:none}
+.card.bad{box-shadow:0 0 0 2px var(--bad);animation:none}
+.meta{align-self:stretch;display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:22px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--label2)}
+.meta-r{display:flex;align-items:center;gap:8px}
+.rnd{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.pill{display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 9px 0 6px;border-radius:11px;font:700 13px/1 var(--font-num);letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums}
+.pill svg{width:14px;height:14px}
+.pill small{font-size:11px;opacity:.8;margin-left:2px}
+.combo{background:var(--hint-tint);color:var(--hint-text)}
+.combo.bump{animation:pop .35s}
+.goldp{background:var(--gold-tint);color:var(--gold-text);padding:0 9px}
+.expr{font-family:var(--font-num);font-weight:600;font-size:clamp(40px,13vw,56px);line-height:1.2;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap;margin-top:8px;max-width:100%}
+.expr.long{font-size:clamp(30px,9.4vw,44px)}
+.expr sup,.ex sup{font-size:.52em;line-height:0;position:relative;top:-.05em;margin-left:.03em}
+.rad .rn{border-top:.065em solid currentColor;padding:.04em .05em 0 .03em}
+.answer{display:flex;align-items:baseline;gap:12px;font-family:var(--font-num);font-size:clamp(34px,10vw,44px);font-weight:600;line-height:1.25;min-height:1.25em}
+.answer .eq{color:var(--label3)}
+.ans{color:var(--accent);font-variant-numeric:tabular-nums}
+.ans.empty{color:var(--label3)}
+.answer.live .ans::after{content:"";display:inline-block;width:3px;height:.82em;margin-left:4px;border-radius:2px;background:var(--accent);vertical-align:-.06em;animation:blink 1.05s steps(1) infinite}
+.ans.ok{color:var(--ok-text)} .ans.bad{color:var(--bad-text)} .ans.rev{color:var(--hint-text)}
+.par{align-self:stretch;height:3px;border-radius:2px;background:var(--fill);margin-top:10px;overflow:hidden}
+.par i{display:block;height:100%;border-radius:2px;background:var(--accent);transform-origin:left center}
+.card.gold .par i{background:var(--gold)}
+.card.ok .par i{background:var(--ok)}
+.fb{min-height:20px;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px;font-size:14px;font-weight:500;color:var(--label2);text-align:center;font-variant-numeric:tabular-nums}
+.fb svg{width:16px;height:16px;stroke-width:2.6}
+.fb b{font-family:var(--font-num);font-weight:700}
+.fb.ok{color:var(--ok-text)} .fb.bad{color:var(--bad-text)} .fb.rev{color:var(--hint-text)} .fb.gold{color:var(--gold-text)}
+.float{position:absolute;left:50%;top:46%;font:800 26px/1 var(--font-num);color:var(--ok-text);pointer-events:none;white-space:nowrap;animation:floatUp 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.float.neg{color:var(--bad-text)}
+.float.gold{color:var(--gold-text)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{display:flex;flex-direction:column;align-items:center;gap:1px;border-left:.5px solid var(--sep)}
+.stat:first-child{border-left:0}
+.stat b{font:600 18px/1.25 var(--font-num);font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;font-weight:500;color:var(--label2);letter-spacing:.03em;text-transform:uppercase}
+
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-size:16px;font-weight:600;text-align:center;transition:transform .08s,opacity .15s}
+.btn:active{transform:scale(.97);opacity:.8}
+.btn.hint{background:var(--hint-tint);color:var(--hint-text)}
+.btn.skip{background:var(--fill2);color:var(--accent)}
+.btn.primary{height:50px;border-radius:14px;background:var(--accent);color:var(--on-accent);font-size:17px}
+.btn.primary small{font:500 14px var(--font-num);opacity:.75}
+.btn.plain{color:var(--accent);font-weight:500}
+
+.pad{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:var(--kh);gap:8px;margin-top:auto}
+.key{display:flex;align-items:center;justify-content:center;background:var(--key);border-radius:14px;font:500 27px/1 var(--font-num);box-shadow:0 1px 0 var(--key-shadow);transition:transform .07s,background .12s}
+.key:active{transform:scale(.94);background:var(--key-press)}
+.key.alt{background:var(--fill);font-size:24px}
+.key.alt:active{background:var(--key-press)}
+.key.zero{grid-column:span 3}
+.key.ok{grid-row:span 2;flex-direction:column;gap:6px;background:var(--accent);color:var(--on-accent);font:600 15px/1 var(--font-ui)}
+.key.ok:active{background:var(--accent);opacity:.82}
+.key.ok svg{width:26px;height:26px;stroke-width:2.4}
+
+/* statistics screen */
+.view{width:100%;max-width:440px;margin-inline:auto;margin-bottom:auto;display:flex;flex-direction:column;gap:10px;padding-inline:16px;padding-block:0 32px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;height:46px;display:flex;align-items:center;margin-inline:-16px;padding-inline:8px;background:var(--bg)}
+.back{display:inline-flex;align-items:center;gap:2px;height:44px;padding-right:10px;color:var(--accent);font-size:17px}
+.back svg{width:22px;height:22px;stroke-width:2.4}
+h1.title{margin:0;font-size:34px;line-height:40px;font-weight:700;letter-spacing:.01em}
+.pane{display:flex;flex-direction:column;gap:10px}
+.sec{margin:14px 16px 0;font-size:13px;font-weight:500;color:var(--label2);text-transform:uppercase;letter-spacing:.03em}
+.note{margin:0 16px;font-size:13px;color:var(--label2);line-height:1.45}
+.group{background:var(--card);border-radius:16px;overflow:hidden}
+.li{display:flex;align-items:center;gap:12px;width:100%;padding:12px 16px;position:relative;text-align:left}
+.li+.li::before{content:"";position:absolute;top:0;left:16px;right:0;height:.5px;background:var(--sep)}
+button.li:active{background:var(--fill2)}
+.li .main{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.t1{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:500}
+.t2{font-size:13px;line-height:1.35;color:var(--label2)}
+.val{font:600 17px var(--font-num);font-variant-numeric:tabular-nums;flex:none}
+.chev{width:16px;height:16px;color:var(--label3);stroke-width:2.6;flex:none}
+.bar{height:6px;border-radius:3px;background:var(--fill);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;border-radius:3px;background:var(--accent)}
+.bar.done i{background:var(--ok)}
+.tag{display:inline-flex;align-items:center;gap:3px;height:20px;padding:0 7px;border-radius:6px;background:var(--hint-tint);color:var(--hint-text);font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.tag svg{width:11px;height:11px;stroke-width:3}
+.empty{padding:14px 16px;font-size:15px;color:var(--label2)}
+.ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;background:var(--fill2);color:var(--accent)}
+.ico svg{width:19px;height:19px}
+.ico.done{background:var(--ok);color:var(--on-accent)}
+.ico.chest{background:var(--gold-tint);color:var(--gold-text)}
+.rw{font:700 14px var(--font-num);color:var(--label2);flex:none;font-variant-numeric:tabular-nums}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:var(--card);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.tile b{font:700 26px/1.15 var(--font-num);font-variant-numeric:tabular-nums}
+.tile span{font-size:13px;color:var(--label2)}
+.box{padding:16px}
+.sh{display:flex;align-items:center;gap:12px}
+.flame{width:46px;height:46px;border-radius:23px;background:var(--hint-tint);color:var(--hint);display:grid;place-items:center;flex:none}
+.flame svg{width:26px;height:26px}
+.sh .main{flex:1;min-width:0}
+.sh b{font:700 24px/1.15 var(--font-num)}
+.rec{text-align:right;font-size:12px;color:var(--label2)}
+.rec b{display:block;font:600 18px/1.2 var(--font-num);color:var(--label)}
+.lvbig{width:56px;height:56px;border-radius:17px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:800 26px/1 var(--font-num);flex:none}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:14px}
+.day{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 0;border-radius:12px;text-align:center}
+.day svg{width:34px;height:34px;transform:rotate(-90deg)}
+.day .tr{stroke:var(--fill);fill:none}
+.day .pg{stroke:var(--ok);fill:none;stroke-linecap:round}
+.day span{font:600 12px/1 var(--font-num);color:var(--label2)}
+.day.today span{color:var(--accent)}
+.day[aria-pressed="true"]{background:var(--fill2)}
+.wd{margin:6px 0 0;min-height:20px;font-size:14px;color:var(--label2);text-align:center}
+.ex{font:600 19px/1.3 var(--font-num);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mine{color:var(--bad-text);text-decoration:line-through}
+.right{color:var(--ok-text);font-weight:600}
+.danger{color:var(--bad-text);font-weight:500;justify-content:center}
+.sw{position:relative;width:51px;height:31px;border-radius:16px;background:var(--fill);transition:background .2s;flex:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:var(--knob);box-shadow:0 2px 4px rgba(0,0,0,.2);transition:transform .2s}
+.sw[aria-checked="true"]{background:var(--ok)}
+.sw[aria-checked="true"]::after{transform:translateX(20px)}
+
+/* evolution */
+.tabs{display:flex;gap:20px;margin-top:6px}
+.tab{height:30px;font-size:17px;font-weight:600;color:var(--label3)}
+.tab[aria-selected="true"]{color:var(--label)}
+.big{font:700 42px/1.1 var(--font-num);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.big small{font-size:20px;font-weight:600;color:var(--label2);margin-left:5px}
+.delta{display:flex;align-items:center;gap:5px;min-height:22px;font:600 15px var(--font-num);font-variant-numeric:tabular-nums;color:var(--label2)}
+.delta.up{color:var(--ok-text)} .delta.down{color:var(--bad-text)}
+.delta svg{width:11px;height:11px}
+.delta .when{font-family:var(--font-ui);font-weight:500;color:var(--label2)}
+.chart{position:relative;margin-top:6px;touch-action:pan-y;-webkit-user-select:none;user-select:none;border-radius:8px}
+.chart svg{display:block;width:100%;height:210px;overflow:visible}
+.chart .grid{stroke:var(--sep);stroke-width:1}
+.chart .gl{fill:var(--label3);font:500 11px var(--font-num)}
+.chart .base{stroke:var(--label3);stroke-width:1;stroke-dasharray:2 4;fill:none}
+.chart .ln{fill:none;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.chart .ar{stroke:none;opacity:.13}
+.chart .dot{stroke:var(--bg);stroke-width:2.5}
+.chart .xh{stroke:var(--label2);stroke-width:1}
+.chart.up .ln{stroke:var(--ok)} .chart.up .ar,.chart.up .dot{fill:var(--ok)}
+.chart.down .ln{stroke:var(--bad)} .chart.down .ar,.chart.down .dot{fill:var(--bad)}
+.chart-empty{position:absolute;inset:0;display:grid;place-items:center;padding:0 24px;font-size:15px;color:var(--label2);text-align:center}
+.ranges{display:flex;gap:4px;margin-top:4px}
+.rg{flex:1;height:30px;border-radius:8px;font:600 13px var(--font-num);color:var(--label2);text-align:center}
+.rg[aria-pressed="true"]{background:var(--fill);color:var(--label)}
+.sum{margin:8px 0 0;font-size:14px;color:var(--label2);text-align:center}
+
+/* sheet, modal, toast */
+.sheet-wrap{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.scrim{position:absolute;inset:0;background:var(--scrim);opacity:0;transition:opacity .28s}
+.sheet{position:relative;width:100%;max-width:440px;max-height:80vh;overflow-y:auto;background:var(--card);border-radius:26px 26px 0 0;padding:8px 20px calc(18px + env(safe-area-inset-bottom,0px));transform:translateY(100%);transition:transform .34s cubic-bezier(.2,.8,.2,1)}
+.sheet-wrap.open .scrim{opacity:1}
+.sheet-wrap.open .sheet{transform:none}
+.grabber{width:36px;height:5px;border-radius:3px;background:var(--label3);margin:0 auto 14px}
+.eyebrow{margin:0;font-size:13px;font-weight:600;color:var(--label2);letter-spacing:.02em}
+.sheet .eyebrow{color:var(--hint-text)}
+.sheet h2{margin:4px 0 14px;font-size:22px;line-height:28px;font-weight:700;text-wrap:balance}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:s}
+.steps li{display:flex;gap:12px;align-items:flex-start;background:var(--fill2);border-radius:14px;padding:12px 14px;font-size:17px;line-height:1.45;font-variant-numeric:tabular-nums;animation:rise .3s cubic-bezier(.2,.8,.2,1)}
+.steps li::before{counter-increment:s;content:counter(s);flex:none;width:24px;height:24px;margin-top:1px;border-radius:12px;background:var(--hint);color:var(--on-accent);font:700 13px/24px var(--font-num);text-align:center}
+.steps b{font-family:var(--font-num);font-weight:700;color:var(--hint-text);white-space:nowrap}
+.sheet-actions{display:grid;gap:6px;margin-top:16px}
+.modal{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:24px;background:var(--scrim)}
+.mcard{width:100%;max-width:330px;background:var(--card);border-radius:28px;padding:26px 22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;animation:popIn .5s cubic-bezier(.2,1.3,.4,1)}
+.mcard h2{margin:0;font-size:26px;line-height:32px;font-weight:700;text-wrap:balance}
+.mcard p{margin:0;font-size:15px;line-height:1.4;color:var(--label2);text-wrap:balance}
+.mcard .acts{align-self:stretch;display:grid;gap:4px;margin-top:14px}
+.mbadge.bad{background:var(--bad)}
+.mbadge svg{width:46px;height:46px;stroke-width:2.6}
+.cal{margin-top:14px}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.cal-h b{font-size:17px;font-weight:600}
+.cal-nav{width:36px;height:36px;border-radius:18px;display:grid;place-items:center;color:var(--accent)}
+.cal-nav:disabled{color:var(--label3);cursor:default}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-dow span{padding:4px 0;font-size:11px;font-weight:600;color:var(--label3)}
+.cd{width:100%;max-width:42px;aspect-ratio:1;justify-self:center;border-radius:50%;display:grid;place-items:center;font:600 15px/1 var(--font-num);font-variant-numeric:tabular-nums;color:var(--label)}
+.cd.met{background:var(--ok);color:var(--on-accent)}
+.cd.miss{background:var(--bad-tint);color:var(--bad-text)}
+.cd.today{box-shadow:inset 0 0 0 2px var(--accent)}
+.cd.fut,.cd.pre{color:var(--label3)}
+.cd[aria-pressed="true"]{outline:2px solid var(--label2);outline-offset:1px}
+.cal-key{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-top:6px;font-size:12px;color:var(--label2)}
+.cal-key span{display:inline-flex;align-items:center;gap:6px}
+.k{width:10px;height:10px;border-radius:50%}
+.k.met{background:var(--ok)}
+.k.miss{background:var(--bad)}
+.mbadge{width:92px;height:92px;border-radius:28px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:800 46px/1 var(--font-num);margin-bottom:8px;animation:spinIn .8s cubic-bezier(.2,1.3,.4,1)}
+.stars{display:flex;gap:6px;margin:2px 0 6px}
+.stars svg{width:46px;height:46px;color:var(--fill);transition:color .2s}
+.stars svg.on{color:var(--gold);animation:starIn .5s cubic-bezier(.2,1.4,.4,1) both}
+.mstats{align-self:stretch;display:grid;grid-template-columns:repeat(3,1fr);margin:10px 0 2px;padding:12px 0;border-radius:16px;background:var(--fill2)}
+.mstats div{display:flex;flex-direction:column;gap:2px;border-left:.5px solid var(--sep)}
+.mstats div:first-child{border-left:0}
+.mstats b{font:700 20px/1.2 var(--font-num);font-variant-numeric:tabular-nums}
+.mstats span{font-size:11px;font-weight:500;color:var(--label2);text-transform:uppercase;letter-spacing:.03em}
+.mcard .cmp{margin-top:6px;font-size:14px;font-weight:600;color:var(--ok-text)}
+.mcard .cmp.flat{color:var(--label2)}
+.toast{position:fixed;left:50%;top:calc(12px + env(safe-area-inset-top,0px));z-index:45;max-width:calc(100% - 32px);display:flex;align-items:center;gap:7px;transform:translate(-50%,-180%);background:var(--label);color:var(--bg);padding:11px 18px;border-radius:22px;font-size:15px;font-weight:600;transition:transform .45s cubic-bezier(.2,1.2,.4,1)}
+.toast svg{width:18px;height:18px;flex:none;color:var(--hint)}
+.toast.show{transform:translate(-50%,0)}
+
+.expr.rise{animation:rise .32s cubic-bezier(.2,.8,.2,1)}
+.card.shake .answer{animation:shake .4s}
+.card.ok .ans{animation:pop .34s}
+.stat b.bump{animation:pop .4s}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-9px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(4px)}}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.16)}100%{transform:scale(1)}}
+@keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+@keyframes floatUp{0%{opacity:0;transform:translate(-50%,12px) scale(.7)}18%{opacity:1;transform:translate(-50%,0) scale(1.12)}100%{opacity:0;transform:translate(-50%,-70px) scale(1)}}
+@keyframes fire{50%{box-shadow:0 0 0 2px var(--hint),0 0 38px 6px var(--hint-tint)}}
+@keyframes risk{50%{opacity:.45}}
+@keyframes popIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:none}}
+@keyframes spinIn{from{transform:rotate(-120deg) scale(.2)}to{transform:none}}
+@keyframes starIn{from{transform:scale(0) rotate(-40deg)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (max-height:700px){.app{gap:10px}.expr{margin-top:4px}}
+
+/* v5 additions */
+.lives{display:inline-flex;gap:1px;color:var(--bad)}
+.lives svg{width:14px;height:14px}
+.lives .lost{color:var(--fill)}
+.lives .pop svg{animation:pop .5s}
+.btn.hint.off{background:var(--fill2);color:var(--label3)}
+.selfq{align-self:stretch;margin-top:8px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--label2);animation:rise .3s cubic-bezier(.2,.8,.2,1)}
+.selfb{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.selfb button{height:30px;padding:0 12px;border-radius:15px;background:var(--fill);font-size:14px;font-weight:600;color:var(--label)}
+.selfb button:active{background:var(--accent);color:var(--on-accent)}
+.cd.frz{background:var(--frz-tint);color:var(--frz)}
+.k.frz{background:var(--frz)}
+.mbadge.frz{background:var(--frz)}
+.brain{padding:12px 16px 14px}
+.brain svg{display:block;width:100%;max-width:300px;height:auto;margin:0 auto;cursor:pointer;-webkit-user-select:none;user-select:none}
+.brain .bbase{fill:var(--fill2)}
+.brain .zone{fill:var(--accent);transition:fill-opacity .6s ease,fill .3s}
+.brain .zone.unk{fill:var(--fill)}
+.brain .zone.sel{fill:var(--hint)}
+.brain .zl{font:700 15px var(--font-num);fill:var(--on-accent);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.brain .zl.unk{fill:var(--label3)}
+.brain .gy{fill:none;stroke:var(--card);stroke-width:2.2;stroke-linecap:round}
+.brain .fis{stroke:var(--card);stroke-width:3}
+.brain .nd{fill:var(--knob);opacity:.8;pointer-events:none;animation:tw 3.2s ease-in-out infinite}
+.brain .cb{fill:var(--fill)}
+.brain .cbg{fill:none;stroke:var(--card);stroke-width:1.6;stroke-linecap:round}
+.brain .stem{fill:var(--fill)}
+.bcap{margin:8px 0 0;min-height:20px;font-size:14px;color:var(--label2);text-align:center;font-variant-numeric:tabular-nums}
+.bcap b{color:var(--label);font-weight:600}
+.bcap .up{color:var(--ok-text);font-weight:600}
+.bcap .down{color:var(--bad-text);font-weight:600}
+.lvbig svg{width:28px;height:28px}
+.lvbig.rl{background:var(--ok)}
+.howto{margin:0 0 14px;padding-left:20px;font-size:15px;line-height:1.45;color:var(--label2)}
+.howto li{margin-bottom:4px}
+.howto b{color:var(--label);font-weight:600}
+.fld{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.fld span{font-size:13px;font-weight:600;color:var(--label2);padding-left:4px}
+.fld input{width:100%;height:46px;border:0;border-radius:12px;background:var(--fill2);color:var(--label);padding:0 14px;font:400 16px var(--font-ui);-webkit-appearance:none;appearance:none}
+.fld input:focus{outline:2px solid var(--accent);outline-offset:0}
+.bk-st{margin:2px 4px 0;min-height:20px;font-size:14px;line-height:1.4;color:var(--label2)}
+.bk-st.ok{color:var(--ok-text)} .bk-st.bad{color:var(--bad-text)}
+.danger-t{color:var(--bad-text)!important}
+@keyframes tw{50%{opacity:.2}}
+
+/* v5.1 polish */
+body{background:radial-gradient(130% 55% at 50% -12%,rgba(124,92,255,.24),rgba(124,92,255,0) 62%),radial-gradient(90% 40% at 105% 0%,rgba(79,123,255,.14),rgba(79,123,255,0) 60%),var(--bg)}
+.lvb{border-radius:13px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 6px 18px -6px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.28)}
+.lvt{font-weight:700}
+.lvbar{height:7px;background:rgba(255,255,255,.07)}
+.lvbar i{background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 12px var(--accent-glow)}
+.days{background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.days.on{background:var(--hint-tint);border-color:rgba(255,179,64,.3);box-shadow:0 0 18px -6px rgba(255,179,64,.55)}
+.ring .track{stroke:rgba(255,255,255,.08)}
+.ring .prog{stroke:url(#ringGrad);filter:drop-shadow(0 0 4px rgba(61,220,151,.55))}
+.round{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--label)}
+.chip{background:rgba(255,255,255,.04);border:1px solid var(--line);font-weight:600;color:var(--label2)}
+.chip .g{background:rgba(255,255,255,.07);color:var(--label)}
+.chip[aria-selected="true"]{background:rgba(138,99,255,.16);color:var(--label);border-color:rgba(138,99,255,.7);box-shadow:0 0 20px -6px var(--accent-glow)}
+.chip[aria-selected="true"] .g{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.chip.rev{background:var(--bad-tint);border-color:rgba(255,92,114,.3);color:var(--bad-text)}
+.chip.rev[aria-selected="true"]{background:rgba(255,92,114,.22);border-color:var(--bad);color:var(--label)}
+.seg{height:36px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.seg .thumb{border-radius:9px;background:linear-gradient(180deg,#30303F,#25252F);box-shadow:0 4px 12px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.09)}
+.seg button{font-weight:600;color:var(--label2)}
+.seg button[aria-checked="true"],.seg button[aria-selected="true"]{color:var(--label)}
+
+.card{border-radius:28px;background:linear-gradient(180deg,#1C1C27 0%,#14141C 100%);border:1px solid var(--line);box-shadow:0 26px 50px -26px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.05)}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(85% 70% at 50% 0%,rgba(138,99,255,.16),rgba(138,99,255,0) 70%)}
+.card>:not(.float){position:relative;z-index:1}
+.card.hot{box-shadow:0 0 0 1.5px var(--hint),0 0 32px -8px rgba(255,179,64,.55)}
+.card.fire{box-shadow:0 0 0 1.5px var(--hint),0 0 42px -4px rgba(255,179,64,.55)}
+.card.gold{box-shadow:0 0 0 1.5px var(--gold),0 0 44px -4px rgba(255,214,10,.45)}
+.card.ok{box-shadow:0 0 0 1.5px var(--ok),0 0 40px -6px rgba(61,220,151,.5)}
+.card.bad{box-shadow:0 0 0 1.5px var(--bad),0 0 40px -6px rgba(255,92,114,.5)}
+@keyframes fire{50%{box-shadow:0 0 0 1.5px var(--hint),0 0 60px 0 rgba(255,179,64,.6)}}
+.meta{color:var(--label3)}
+.expr{font-weight:700;letter-spacing:-.02em}
+.answer{font-weight:700}
+.ans{color:var(--accent-text)}
+.answer.live .ans::after{background:var(--accent-text);box-shadow:0 0 10px var(--accent-glow)}
+.par{height:4px;background:rgba(255,255,255,.07)}
+.par i{background:linear-gradient(90deg,var(--accent2),var(--accent));box-shadow:0 0 10px var(--accent-glow)}
+.pill.combo{box-shadow:0 0 14px -4px rgba(255,179,64,.65)}
+.float{text-shadow:0 0 18px currentColor}
+.lives{filter:drop-shadow(0 0 4px rgba(255,92,114,.55))}
+.stat b{font-size:19px;font-weight:700}
+.stat span{color:var(--label3)}
+
+.btn{height:46px;border-radius:14px}
+.btn.hint{background:rgba(255,179,64,.11);border:1px solid rgba(255,179,64,.24);box-shadow:0 3px 0 rgba(255,179,64,.16)}
+.btn.skip{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--label);box-shadow:0 3px 0 #08080C}
+.btn.hint.off{background:rgba(255,255,255,.03);border-color:var(--line);box-shadow:none;color:var(--label3)}
+.btn:active{transform:translateY(2px);box-shadow:none;opacity:1}
+.btn.primary{border:0;background:linear-gradient(180deg,#9A7BFF,var(--accent));box-shadow:0 4px 0 var(--accent-edge),0 16px 30px -12px var(--accent-glow)}
+.btn.primary:active{transform:translateY(3px);box-shadow:0 1px 0 var(--accent-edge)}
+.btn.plain{color:var(--accent-text)}
+.back{color:var(--accent-text)}
+
+.key{border-radius:16px;font-weight:600;color:var(--label);background:linear-gradient(180deg,#23232E,#1B1B24);border:1px solid rgba(255,255,255,.05);box-shadow:0 3px 0 #0B0B10,inset 0 1px 0 rgba(255,255,255,.06)}
+.key:active{transform:translateY(2px);background:#2B2B37;box-shadow:0 1px 0 #0B0B10}
+.key.alt{background:linear-gradient(180deg,#1A1A22,#15151C);color:var(--label2)}
+.key.alt:active{background:#24242E}
+.key.ok{border:0;color:#fff;background:linear-gradient(180deg,#9A7BFF,var(--accent) 55%,#7652F2);box-shadow:0 4px 0 var(--accent-edge),0 18px 32px -12px var(--accent-glow)}
+.key.ok:active{transform:translateY(3px);opacity:1;background:linear-gradient(180deg,#8E6CFF,#7652F2);box-shadow:0 1px 0 var(--accent-edge)}
+
+h1.title{font-weight:800;letter-spacing:-.01em}
+.view{padding-bottom:130px}
+.sec{font-size:12px;font-weight:600;letter-spacing:.07em;color:var(--label3)}
+.note{color:var(--label3)}
+.group,.tile{border-radius:20px;background:linear-gradient(180deg,#1A1A23,#14141C);border:1px solid var(--line)}
+.tile b{font-size:28px;font-weight:800;letter-spacing:-.01em}
+.li+.li::before{background:var(--line)}
+.bar{height:7px;background:rgba(255,255,255,.07)}
+.bar i{background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.bar.done i{background:var(--ok);box-shadow:0 0 10px rgba(61,220,151,.5)}
+.ico{border-radius:11px;background:rgba(255,255,255,.06);color:var(--accent-text)}
+.ico.done{background:var(--ok);color:#04140C}
+.lvbig{border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 24px -10px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.28)}
+.lvbig.rl{background:linear-gradient(135deg,#3DDC97,#1FA4C8);box-shadow:0 10px 24px -10px rgba(61,220,151,.5),inset 0 1px 0 rgba(255,255,255,.28)}
+.flame{background:radial-gradient(circle at 50% 40%,rgba(255,179,64,.38),rgba(255,179,64,.08));box-shadow:0 0 26px -6px rgba(255,179,64,.65)}
+.mstats{background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.cd.met{background:var(--ok);color:#04140C;box-shadow:0 0 12px -2px rgba(61,220,151,.6)}
+.cd.today{box-shadow:inset 0 0 0 2px var(--accent)}
+.cd.met.today{box-shadow:inset 0 0 0 2px #04140C,0 0 12px -2px rgba(61,220,151,.6)}
+.big{font-weight:800;letter-spacing:-.02em}
+.tab{color:var(--label3);border-radius:0}
+.tab[aria-selected="true"]{color:var(--label);box-shadow:inset 0 -2px 0 var(--accent)}
+.rg[aria-pressed="true"]{background:rgba(138,99,255,.18);color:var(--label);box-shadow:inset 0 0 0 1px rgba(138,99,255,.55)}
+.chart svg{color:var(--ok)}
+.chart.down svg{color:var(--bad)}
+.chart.up .ln,.chart.down .ln{stroke:url(#lgrad);stroke-width:2.6;filter:drop-shadow(0 0 6px currentColor)}
+.chart.up .ar,.chart.down .ar{fill:url(#agrad);opacity:1}
+.chart.up .dot,.chart.down .dot{fill:currentColor;stroke:var(--bg);stroke-width:3;filter:drop-shadow(0 0 6px currentColor)}
+.chart .grid{stroke:rgba(255,255,255,.06);stroke-dasharray:2 5}
+.chart .xh{stroke:rgba(255,255,255,.35);stroke-dasharray:3 3}
+.brain svg{filter:drop-shadow(0 0 22px rgba(138,99,255,.35))}
+.brain .zone.sel{fill:var(--hint)}
+
+#paneSeg{position:fixed;z-index:15;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(360px,calc(100% - 40px));height:64px;padding:5px;border-radius:32px;background:rgba(28,28,38,.84);-webkit-backdrop-filter:blur(22px) saturate(1.4);backdrop-filter:blur(22px) saturate(1.4);border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 40px -12px rgba(0,0,0,.85)}
+#paneSeg .thumb{top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:27px;background:rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+#paneSeg button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:27px;font-size:11px;font-weight:600;color:var(--label2)}
+#paneSeg button svg{width:22px;height:22px}
+#paneSeg button[aria-selected="true"]{color:var(--label)}
+#paneSeg button[aria-selected="true"] svg{color:var(--accent-text);filter:drop-shadow(0 0 6px var(--accent-glow))}
+
+.sheet{background:#17171F;border:1px solid var(--line);border-bottom:0}
+.steps li{background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.mcard{border-radius:30px;background:linear-gradient(180deg,#1D1D28,#15151D);border:1px solid var(--line);box-shadow:0 30px 80px -20px rgba(0,0,0,.9),0 0 70px -24px var(--accent-glow)}
+.mbadge{background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 14px 34px -10px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.3)}
+.mbadge.bad{background:linear-gradient(135deg,#FF6B80,#C2324A);box-shadow:0 14px 34px -10px rgba(255,92,114,.55),inset 0 1px 0 rgba(255,255,255,.3)}
+.mbadge.frz{background:linear-gradient(135deg,#7FDBFF,#2F8FD8)}
+.stars svg.on{filter:drop-shadow(0 0 10px rgba(255,214,10,.6))}
+.mcard .cmp{color:var(--ok-text)}
+.toast{color:var(--label);background:rgba(34,34,46,.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);box-shadow:0 14px 34px -10px rgba(0,0,0,.85)}
+.fld input{background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.selfb button{background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.selfb button:active{background:var(--accent);border-color:var(--accent)}
+.sw{background:rgba(255,255,255,.12)}
+</style>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main class="app" id="app">
+  <header class="hdr">
+    <h1 class="sr">Calcul mental</h1>
+    <button class="lv" id="lvBtn" aria-label="Nivel și provocări">
+      <span class="lvb" id="lvN">1</span>
+      <span class="lvi"><span class="lvt" id="lvTitle">Nivel 1 · Începător</span><span class="lvbar"><i id="lvFill"></i></span></span>
+    </button>
+    <button class="days" id="daysPill" aria-label="Zile la rând"><svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg><span id="daysTxt">0</span></button>
+    <button class="ring" id="ring" aria-label="Obiectivul zilei">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3DDC97"/><stop offset="1" stop-color="#22C8E8"/></linearGradient></defs><circle class="track" cx="24" cy="24" r="20" stroke-width="5.5"/><circle class="prog" id="ringProg" cx="24" cy="24" r="20" stroke-width="5.5" stroke-dasharray="125.66" stroke-dashoffset="125.66"/></svg>
+      <span id="ringTxt">0</span>
+    </button>
+    <button class="round" id="statsBtn" aria-label="Evoluție și statistici"><svg class="i" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></button>
+  </header>
+
+  <nav class="chips" id="cats" role="tablist" aria-label="Tipul de exerciții">
+    <button class="chip" role="tab" data-cat="mix" aria-selected="true"><span class="g"><svg class="i" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span>Mix</button>
+    <button class="chip rev" role="tab" data-cat="rev" aria-selected="false" id="revChip" hidden><span class="g"><svg class="i" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"/></svg></span>Greșeli<span class="badge" id="misN">0</span></button>
+    <button class="chip" role="tab" data-cat="add" aria-selected="false"><span class="g">+</span>Adunare</button>
+    <button class="chip" role="tab" data-cat="sub" aria-selected="false"><span class="g">−</span>Scădere</button>
+    <button class="chip" role="tab" data-cat="mul" aria-selected="false"><span class="g">×</span>Înmulțire</button>
+    <button class="chip" role="tab" data-cat="div" aria-selected="false"><span class="g">÷</span>Împărțire</button>
+    <button class="chip" role="tab" data-cat="neg" aria-selected="false"><span class="g">±</span>Negative</button>
+    <button class="chip" role="tab" data-cat="rad" aria-selected="false"><span class="g">√</span>Radicali</button>
+  </nav>
+
+  <div class="seg" id="diff" role="radiogroup" aria-label="Dificultate">
+    <span class="thumb" aria-hidden="true"></span>
+    <button role="radio" data-d="0" aria-checked="false">Ușor</button>
+    <button role="radio" data-d="1" aria-checked="true">Mediu</button>
+    <button role="radio" data-d="2" aria-checked="false">Greu</button>
+  </div>
+
+  <section class="card" id="card" aria-label="Exercițiul curent">
+    <div class="meta"><span id="meta">Înmulțire · Mediu</span><span class="meta-r"><span class="lives" id="lives" hidden></span><span id="extra"></span><span class="rnd" id="rnd">1/10</span></span></div>
+    <div class="expr" id="expr">16 · 46</div>
+    <div class="answer live" id="answer"><span class="eq">=</span><span class="ans empty" id="ans">?</span></div>
+    <div class="par" id="par" aria-hidden="true"><i id="parBar"></i></div>
+    <div class="fb" id="fb" aria-live="polite"></div>
+    <div class="selfq" id="selfq" hidden><span>Cum ai calculat?</span><div class="selfb"><button data-s="stiut">Știam</button><button data-s="truc">Truc</button><button data-s="numarat">Am numărat</button><button data-s="ghicit">Am ghicit</button></div></div>
+  </section>
+
+  <div class="stats" aria-label="Statistici rapide">
+    <div class="stat"><b id="stXp">0</b><span>XP azi</span></div>
+    <div class="stat"><b id="stStreak">0</b><span>La rând</span></div>
+    <div class="stat"><b id="stLv">—</b><span>Nivel real</span></div>
+    <div class="stat"><b id="stAcc">—</b><span>Precizie</span></div>
+  </div>
+
+  <div class="actions">
+    <button class="btn hint" id="hintBtn"><svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2v.2h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>Indiciu</button>
+    <button class="btn skip" id="skipBtn">Sari peste</button>
+  </div>
+
+  <div class="pad" id="pad" aria-label="Tastatură">
+    <button class="key" data-k="7">7</button><button class="key" data-k="8">8</button><button class="key" data-k="9">9</button>
+    <button class="key alt" data-k="back" aria-label="Șterge"><svg class="i" viewBox="0 0 24 24" style="width:26px;height:26px"><path d="M21 5H9l-7 7 7 7h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1z"/><path d="M17 9l-6 6M11 9l6 6"/></svg></button>
+    <button class="key" data-k="4">4</button><button class="key" data-k="5">5</button><button class="key" data-k="6">6</button>
+    <button class="key alt" data-k="sign" aria-label="Schimbă semnul">±</button>
+    <button class="key" data-k="1">1</button><button class="key" data-k="2">2</button><button class="key" data-k="3">3</button>
+    <button class="key ok" data-k="ok" id="okKey"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Verifică</button>
+    <button class="key zero" data-k="0">0</button>
+  </div>
+</main>
+
+<section class="view" id="statsView" hidden aria-label="Statistici">
+  <div class="nav"><button class="back" id="backBtn"><svg class="i" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>Antrenament</button></div>
+  <h1 class="title">Progres</h1>
+  <div class="seg" id="paneSeg" role="tablist" aria-label="Secțiuni" style="--n:3">
+    <span class="thumb" aria-hidden="true"></span>
+    <button role="tab" data-p="evo" aria-selected="true"><svg class="i" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>Evoluție</button>
+    <button role="tab" data-p="q" aria-selected="false"><svg class="i" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg>Provocări</button>
+    <button role="tab" data-p="det" aria-selected="false"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.2-4 4.3-6 8-6s6.8 2 8 6"/></svg>Detalii</button>
+  </div>
+
+  <div class="pane" id="pane-evo">
+    <div class="tabs" id="mtabs" role="tablist" aria-label="Indicator">
+      <button class="tab" role="tab" data-m="lv" aria-selected="true">Nivel</button>
+      <button class="tab" role="tab" data-m="xp" aria-selected="false">XP</button>
+      <button class="tab" role="tab" data-m="acc" aria-selected="false">Precizie</button>
+      <button class="tab" role="tab" data-m="spd" aria-selected="false">Viteză</button>
+    </div>
+    <div class="big" id="evBig">0</div>
+    <div class="delta" id="evDelta"></div>
+    <div class="chart up" id="chart" tabindex="0" role="img" aria-label="Graficul evoluției"><svg id="chartSvg" viewBox="0 0 340 210"></svg><div class="chart-empty" id="chartEmpty" hidden>Rezolvă câteva exerciții și graficul apare aici.</div></div>
+    <div class="ranges" id="ranges">
+      <button class="rg" data-r="d" aria-pressed="true">Azi</button>
+      <button class="rg" data-r="w" aria-pressed="false">7 zile</button>
+      <button class="rg" data-r="m" aria-pressed="false">30 zile</button>
+      <button class="rg" data-r="q" aria-pressed="false">3 luni</button>
+      <button class="rg" data-r="a" aria-pressed="false">Tot</button>
+    </div>
+    <p class="sum" id="evSum"></p>
+    <h3 class="sec">Creierul tău</h3>
+    <div class="group brain"><svg id="brainSvg" viewBox="0 0 200 150" role="img" aria-label="Creierul tău: o zonă pentru fiecare categorie, mai aprinsă la nivel mai mare"></svg><p class="bcap" id="brainCap"></p></div>
+    <p class="note">Fiecare zonă e o categorie. Cu cât nivelul real e mai mare, cu atât zona e mai aprinsă, iar punctele cresc cu fiecare exercițiu. Atinge o zonă ca să vezi nivelul ei.</p>
+  </div>
+
+  <div class="pane" id="pane-q" hidden>
+    <div class="group box"><div class="sh"><div class="lvbig" id="qLv">8</div><div class="main"><b id="qLvT">800 XP</b><div class="t2" id="qLvS"></div><div class="bar"><i id="qLvBar"></i></div></div></div><div class="mstats" id="qMeta"></div></div>
+    <h3 class="sec">Provocările zilei</h3>
+    <div class="group" id="qList"></div>
+    <p class="note">Provocări noi în fiecare zi. Termină-le pe toate trei ca să deschizi cufărul.</p>
+    <h3 class="sec">Seria și calendarul</h3>
+    <div class="group box">
+      <div class="sh">
+        <div class="flame"><svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg></div>
+        <div class="main"><b id="sDays">0 zile</b><div class="t2" id="sDaysSub"></div></div>
+        <div class="rec">Record<b id="sBestDays">0</b></div>
+      </div>
+      <div class="cal">
+        <div class="cal-h"><button class="cal-nav" id="calPrev" aria-label="Luna trecută"><svg class="i" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><b id="calTitle">Luna</b><button class="cal-nav" id="calNext" aria-label="Luna următoare"><svg class="i" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+        <div class="cal-g cal-dow" aria-hidden="true"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="cal-g" id="calGrid"></div>
+        <p class="wd" id="calDetail"></p>
+        <div class="cal-key"><span><i class="k met"></i>obiectiv atins</span><span><i class="k miss"></i>zi ratată, cu penalizare</span><span><i class="k frz"></i>salvată de scut</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pane" id="pane-det" hidden>
+    <div class="group box"><div class="sh"><div class="lvbig rl"><svg class="i" viewBox="0 0 24 24"><path d="M4 20h4v-6H4zM10 20h4V9h-4zM16 20h4V4h-4z"/></svg></div><div class="main"><b id="rlVal">1.000</b><div class="t2" id="rlSub">Nivel real</div></div></div><p class="t2" style="margin:14px 0 0">Șansa să rezolvi corect și sub timpul țintă</p><div class="mstats" id="rlChance"></div></div>
+    <div class="tiles">
+      <div class="tile"><b id="tRight">0</b><span>exerciții rezolvate</span></div>
+      <div class="tile"><b id="tAcc">—</b><span>precizie din prima</span></div>
+      <div class="tile"><b id="tSpeed">—</b><span>viteză medie</span></div>
+      <div class="tile"><b id="tBest">0</b><span>record la rând</span></div>
+    </div>
+    <h3 class="sec">Pe categorii</h3>
+    <div class="group" id="catList"></div>
+    <h3 class="sec">Unde greșești cel mai des</h3>
+    <div class="group" id="kindList"></div>
+    <h3 class="sec">De ce greșești</h3>
+    <div class="group" id="errList"></div>
+    <h3 class="sec">Greșeli de reparat</h3>
+    <div class="group" id="misList"></div>
+    <button class="btn primary" id="revBtn">Repetă greșelile</button>
+    <h3 class="sec">Setări</h3>
+    <div class="group">
+      <div class="li" style="flex-direction:column;align-items:stretch;gap:10px"><div class="main"><span class="t1">Obiectiv zilnic</span><span class="t2">Răspunsuri corecte pe zi ca să păstrezi seria de zile</span></div>
+        <div class="seg" id="goalSeg" role="radiogroup" aria-label="Obiectiv zilnic" style="--n:4">
+          <span class="thumb" aria-hidden="true"></span>
+          <button role="radio" data-g="10" aria-checked="false">10</button>
+          <button role="radio" data-g="20" aria-checked="true">20</button>
+          <button role="radio" data-g="30" aria-checked="false">30</button>
+          <button role="radio" data-g="50" aria-checked="false">50</button>
+        </div>
+      </div>
+      <button class="li" id="sndRow"><div class="main"><span class="t1">Sunete</span><span class="t2">Efecte sonore la răspunsuri</span></div><span class="sw" id="sndSw" role="switch" aria-checked="true" aria-label="Sunete"></span></button>
+      <button class="li danger" id="resetBtn">Șterge tot progresul</button>
+    </div>
+    <h3 class="sec">Date și backup</h3>
+    <div class="group">
+      <button class="li" id="bkRow"><span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.5-9 6 6 0 0 1 11.6 1.5A3.8 3.8 0 0 1 17.5 18z"/></svg></span><div class="main"><span class="t1">Backup în cloud</span><span class="t2" id="bkRowSub">Neconectat</span></div><svg class="i chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button class="li" id="fileRow"><span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span><div class="main"><span class="t1">Salvează în Fișiere</span><span class="t2">O copie completă, de pus în iCloud Drive</span></div></button>
+      <button class="li" id="impRow"><span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 21V9M7 14l5-5 5 5M5 3h14"/></svg></span><div class="main"><span class="t1">Importă din fișier</span><span class="t2">Înlocuiește datele cu un backup</span></div></button>
+      <div class="li"><span class="ico"><svg class="i" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span><div class="main"><span class="t1">Date colectate</span><span class="t2" id="dataSub"></span></div></div>
+    </div>
+    <input type="file" id="impFile" accept=".json,.gz,application/json,application/gzip" hidden>
+    <h3 class="sec">Cum câștigi XP</h3>
+    <p class="note" id="xpNote"></p>
+    <p class="note" id="foot"></p>
+  </div>
+</section>
+
+<div class="sheet-wrap" id="sheet" hidden>
+  <div class="scrim" id="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="hTitle">
+    <div class="grabber"></div>
+    <p class="eyebrow">Indiciu · <span id="hExpr"></span></p>
+    <h2 id="hTitle">Trucul</h2>
+    <ol class="steps" id="hSteps"></ol>
+    <div class="sheet-actions">
+      <button class="btn primary" id="hNext">Pasul următor</button>
+      <button class="btn plain" id="hClose">Închide</button>
+    </div>
+  </div>
+</div>
+
+<div class="sheet-wrap" id="bkSheet" hidden>
+  <div class="scrim" id="bkScrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+    <div class="grabber"></div>
+    <p class="eyebrow" style="color:var(--accent)">Backup în cloud, gratuit</p>
+    <h2 id="bkTitle">Conectează GitHub</h2>
+    <ol class="howto">
+      <li>Fă-ți un cont gratuit pe <b>github.com</b>.</li>
+      <li>Creează un repository <b>privat</b>, de exemplu <b>calcul-mental-date</b>.</li>
+      <li>Settings → Developer settings → Fine-grained tokens: creează un token doar pentru acel repository, cu permisiunea <b>Contents: Read and write</b>.</li>
+      <li>Scrie mai jos numele și lipește tokenul. Tokenul rămâne doar pe acest dispozitiv.</li>
+    </ol>
+    <label class="fld"><span>Repository</span><input id="bkRepo" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="utilizator/calcul-mental-date"></label>
+    <label class="fld"><span>Token</span><input id="bkToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…"></label>
+    <p class="bk-st" id="bkStatus" aria-live="polite"></p>
+    <div class="sheet-actions">
+      <button class="btn primary" id="bkGo">Conectează și fă backup</button>
+      <button class="btn plain" id="bkRestore">Restaurează din cloud</button>
+      <button class="btn plain danger-t" id="bkOff" hidden>Deconectează</button>
+      <button class="btn plain" id="bkClose">Închide</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden><div class="mcard" id="mcard" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/*GEN-START*/
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const P=a=>a[Math.floor(Math.random()*a.length)];
+const M='−',X='·',D=':';
+const f=n=>n<0?M+(-n):String(n);
+const B=v=>`<b>${typeof v==='number'?f(v):v}</b>`;
+const par=n=>n<0?`(${f(n)})`:f(n);
+const tens=n=>n-n%10;
+
+function mulBasic(n,m){
+  switch(m){
+    case 10:return{t:'Ori 10: pui un zero la coadă',s:[`${n} cu un 0 la coadă = ${B(n*10)}`]};
+    case 2:return{t:'Ori 2: dublezi',s:[`${n} + ${n} = ${B(2*n)}`]};
+    case 5:return{t:'Ori 5: jumătate din ori 10',s:[`${n} ${X} 10 = ${B(10*n)}`,`Jumătate din ${10*n} = ${B(5*n)}`]};
+    case 9:return{t:'Ori 9: ori 10, minus o dată',s:[`${n} ${X} 10 = ${B(10*n)}`,`${10*n} ${M} ${n} = ${B(9*n)}`]};
+    case 4:return{t:'Ori 4: dublezi de două ori',s:[`${n} dublat = ${B(2*n)}`,`${2*n} dublat = ${B(4*n)}`]};
+    case 8:return{t:'Ori 8: dublezi de trei ori',s:[`${n} dublat = ${B(2*n)}`,`${2*n} dublat = ${B(4*n)}`,`${4*n} dublat = ${B(8*n)}`]};
+    case 3:return{t:'Ori 3: dublu, plus încă o dată',s:[`${n} dublat = ${B(2*n)}`,`${2*n} + ${n} = ${B(3*n)}`]};
+    case 6:return{t:'Ori 6: ori 5, plus încă o dată',s:[`${n} ${X} 5 = ${B(5*n)} (jumătate din ${10*n})`,`${5*n} + ${n} = ${B(6*n)}`]};
+    default:return{t:'Ori 7: ori 5 plus ori 2',s:[`${n} ${X} 5 = ${B(5*n)} (jumătate din ${10*n})`,`${n} ${X} 2 = ${B(2*n)}`,`${5*n} + ${2*n} = ${B(7*n)}`]};
+  }
+}
+const PRI=[10,2,5,9,4,3,8,6,7];
+
+function genAdd(d){
+  let a,b;
+  if(d===0){a=R(11,59);b=R(3,9);}
+  else if(d===1){a=R(12,89);b=R(12,89);}
+  else{a=R(101,599);b=R(101,399);}
+  const s=a+b;let h;
+  if(d===0){
+    const u=a%10,t=a-u;
+    if(u+b>=10){const need=10-u,r=a+need,rest=b-need;
+      h={t:'Ajungi întâi la un număr rotund',s:[`Lui ${B(a)} îi trebuie ${B(need)} ca să ajungă la ${B(r)}.`,`Rupe ${B(b)} în ${need} + ${rest}.`,`${a} + ${need} = ${B(r)}`,`${r} + ${rest} = ${B(s)}`]};}
+    else h={t:'Aduni doar unitățile',s:[`${B(a)} = ${t} + ${u}`,`Unitățile: ${u} + ${b} = ${B(u+b)}`,`${t} + ${u+b} = ${B(s)}`]};
+  } else if(b%10>=7){
+    const up=b+10-b%10,k=up-b;
+    h={t:'Rotunjești, apoi corectezi',s:[`${B(b)} e aproape de ${B(up)}: îi lipsesc ${k}.`,`${a} + ${up} = ${B(a+up)}`,`Ai adunat ${k} în plus, deci scazi: ${a+up} ${M} ${k} = ${B(s)}`]};
+  } else if(d===1){
+    const at=tens(a),bt=tens(b),au=a%10,bu=b%10;
+    h={t:'Zeci cu zeci, unități cu unități',s:[`Zecile: ${at} + ${bt} = ${B(at+bt)}`,`Unitățile: ${au} + ${bu} = ${B(au+bu)}`,`${at+bt} + ${au+bu} = ${B(s)}`]};
+  } else {
+    const ah=a-a%100,bh=b-b%100,at=a%100-a%10,bt=b%100-b%10,au=a%10,bu=b%10;
+    h={t:'Sute, zeci, unități, pe rând',s:[`Sutele: ${ah} + ${bh} = ${B(ah+bh)}`,`Zecile: ${at} + ${bt} = ${B(at+bt)}`,`Unitățile: ${au} + ${bu} = ${B(au+bu)}`,`${ah+bh} + ${at+bt} + ${au+bu} = ${B(s)}`]};
+  }
+  return{q:`${a} + ${b}`,a:s,h};
+}
+
+function genSub(d){
+  let a,b;
+  if(d===0){do{a=R(21,69);}while(a%10===0);b=R(3,9);}
+  else if(d===1){a=R(41,99);b=R(12,a-8);}
+  else{a=R(201,899);b=R(101,Math.min(499,a-30));}
+  const s=a-b;let h;
+  if(d===0){
+    const u=a%10;
+    if(u>=b)h={t:'Scazi doar din unități',s:[`${B(a)} = ${a-u} + ${u}`,`${u} ${M} ${b} = ${B(u-b)}`,`${a-u} + ${u-b} = ${B(s)}`]};
+    else{const rest=b-u;h={t:'Cobori întâi la un număr rotund',s:[`Rupe ${B(b)} în ${u} + ${rest}.`,`${a} ${M} ${u} = ${B(a-u)}`,`${a-u} ${M} ${rest} = ${B(s)}`]};}
+  } else if(b%10>=6){
+    const up=b+10-b%10,k=up-b;
+    h={t:'Scazi mai mult, apoi dai înapoi',s:[`${B(b)} e aproape de ${B(up)}.`,`${a} ${M} ${up} = ${B(a-up)}`,`Ai scăzut ${k} în plus, deci adaugi: ${a-up} + ${k} = ${B(s)}`]};
+  } else {
+    const parts=[[b-b%100,'sutele'],[b%100-b%10,'zecile'],[b%10,'unitățile']].filter(p=>p[0]>0);
+    let cur=a;const st=[`Rupe ${B(b)} în ${parts.map(p=>p[0]).join(' + ')}.`];
+    for(const[p,l]of parts){st.push(`Scazi ${l}: ${cur} ${M} ${p} = ${B(cur-p)}`);cur-=p;}
+    h={t:'Scazi pe bucăți',s:st};
+  }
+  return{q:`${a} ${M} ${b}`,a:s,h};
+}
+
+function genMul(d){
+  let x,y,h;
+  if(d===0){
+    x=R(2,10);y=R(2,10);
+    const m=PRI.find(p=>p===x||p===y),n=m===x?y:x;
+    h=mulBasic(n,m);
+  } else if(d===1){
+    const r=Math.random();
+    if(r<.15){
+      const n=R(12,98),d1=Math.floor(n/10),d2=n%10,s=d1+d2;x=n;y=11;
+      h=s<10?{t:'Ori 11: suma cifrelor la mijloc',s:[`Desparte cifrele lui ${B(n)}: ${d1} _ ${d2}`,`Pui la mijloc suma lor: ${d1} + ${d2} = ${B(s)}`,`${d1} ${s} ${d2} → ${B(n*11)}`]}
+       :{t:'Ori 11: suma cifrelor la mijloc',s:[`Desparte cifrele lui ${B(n)}: ${d1} _ ${d2}`,`Suma lor: ${d1} + ${d2} = ${B(s)}, are două cifre.`,`Pui ${s%10} la mijloc, iar 1 îl adaugi la ${d1}: ${B(d1+1)}`,`${d1+1} ${s%10} ${d2} → ${B(n*11)}`]};
+    } else if(r<.3){
+      const n=R(12,98);x=n;y=5;
+      h={t:'Ori 5: jumătate din ori 10',s:[`${n} ${X} 10 = ${B(n*10)}`,`Jumătate din ${n*10} = ${B(n*5)}`]};
+    } else if(r<.4){
+      const k=R(3,12),n=4*k;x=n;y=25;
+      h={t:'Ori 25: un sfert din ori 100',s:[`25 e un sfert din 100.`,`${n} : 4 = ${B(k)}`,`${k} ${X} 100 = ${B(n*25)}`]};
+    } else {
+      let n;do{n=R(12,59);}while(n%10===0);
+      const m=R(3,9),nt=tens(n),nu=n%10;x=n;y=m;
+      h={t:'Rupi în zeci și unități',s:[`Rupe ${B(n)} în ${nt} + ${nu}.`,`${nt} ${X} ${m} = ${B(nt*m)}`,`${nu} ${X} ${m} = ${B(nu*m)}`,`${nt*m} + ${nu*m} = ${B(n*m)}`]};
+    }
+    if(Math.random()<.5)[x,y]=[y,x];
+  } else {
+    const r=Math.random();
+    if(r<.12){
+      const t=R(1,7),u=R(1,9),a=10*t+u,b=10*t+10-u,L=t*(t+1),Rt=u*(10-u);x=a;y=b;
+      h={t:'Aceleași zeci, unitățile fac 10',s:[`Zecile sunt la fel (${t}), iar ${u} + ${10-u} = 10.`,`Zecile: ${t} ${X} ${t+1} = ${B(L)}`,`Unitățile: ${u} ${X} ${10-u} = ${B(String(Rt).padStart(2,'0'))} (mereu pe două cifre)`,`Le lipești: ${B(a*b)}`]};
+    } else if(r<.34){
+      const k=R(2,5),e=P([1,-1]),a=10*k+e;let b;do{b=R(12,39);}while(b%10===0);
+      const rd=10*k,base=rd*b;x=a;y=b;
+      h={t:'Aproape de un număr rotund',s:[`${B(a)} e lângă ${B(rd)} (${e>0?'cu 1 mai mult':'cu 1 mai puțin'}).`,`${rd} ${X} ${b}: ${k} ${X} ${b} = ${k*b}, pui un 0 → ${B(base)}`,e>0?`Mai adaugi un ${b}: ${base} + ${b} = ${B(a*b)}`:`Scazi un ${b}: ${base} ${M} ${b} = ${B(a*b)}`]};
+    } else if(r<.46){
+      const a=P([15,25,35,45]),hb=R(6,24),b=2*hb,a2=2*a;x=a;y=b;
+      h={t:'Înjumătățești unul, dublezi pe celălalt',s:[`Înjumătățești ${B(b)} → ${B(hb)}. Dublezi ${B(a)} → ${B(a2)}.`,`Rezultatul nu se schimbă: ${b} ${X} ${a} = ${hb} ${X} ${a2}`,`${hb} ${X} ${a2/10} = ${hb*a2/10}, pui un 0 → ${B(a*b)}`]};
+    } else {
+      let a,b;do{a=R(12,29);}while(a%10===0);do{b=R(13,59);}while(b%10===0);
+      const at=tens(a),au=a%10,bt=tens(b),bu=b%10,p1=at*b,p2=au*b;x=a;y=b;
+      h={t:'Rupi un factor în bucăți',s:[`Rupe ${B(a)} în ${at} + ${au}.`,at===10?`10 ${X} ${b} = ${B(p1)}`:`${at} ${X} ${b}: ${at/10} ${X} ${b} = ${at/10*b}, pui un 0 → ${B(p1)}`,`${au} ${X} ${b} = ${au} ${X} ${bt} + ${au} ${X} ${bu} = ${au*bt} + ${au*bu} = ${B(p2)}`,`${p1} + ${p2} = ${B(a*b)}`]};
+    }
+    if(Math.random()<.5)[x,y]=[y,x];
+  }
+  return{q:`${x} ${X} ${y}`,a:x*y,h};
+}
+
+function genDiv(d){
+  let dv,q,h;
+  if(d===0){
+    dv=R(2,10);q=R(2,10);const n=dv*q;
+    if(dv===10)h={t:'Împarți la 10: tai zeroul',s:[`${n} fără zeroul de la coadă = ${B(q)}`]};
+    else if(dv===2)h={t:'Împarți la 2: jumătate',s:[`Jumătate din ${n} = ${B(q)}`]};
+    else h={t:'Împărțirea e înmulțirea pe dos',s:[`Întreabă-te: ${dv} ${X} ? = ${B(n)}`,...(q!==5?[`Un reper: ${dv} ${X} 5 = ${5*dv}. ${n} e ${n>5*dv?'mai mare':'mai mic'}.`]:[]),`${dv} ${X} ${q} = ${n} ✓`,`Deci ${n} : ${dv} = ${B(q)}`]};
+  } else if(d===1){
+    dv=R(3,9);do{q=R(11,30);}while(q%10===0);const n=dv*q;
+    if(dv===5)h={t:'Împarți la 5: ori 2, apoi la 10',s:[`${n} ${X} 2 = ${B(2*n)}`,`${2*n} : 10 = ${B(q)}`]};
+    else if(dv===4)h={t:'Împarți la 4: jumătate din jumătate',s:[`Jumătate din ${n} = ${B(n/2)}`,`Jumătate din ${n/2} = ${B(q)}`]};
+    else if(dv===8)h={t:'Împarți la 8: înjumătățești de 3 ori',s:[`Jumătate din ${n} = ${B(n/2)}`,`Jumătate din ${n/2} = ${B(n/4)}`,`Jumătate din ${n/4} = ${B(q)}`]};
+    else{const qt=tens(q),qu=q%10;h={t:'Rupi în bucăți ușoare',s:[`Rupe ${B(n)} în ${dv*qt} + ${dv*qu}. Ambele se împart la ${dv}.`,`${dv*qt} : ${dv} = ${B(qt)}`,`${dv*qu} : ${dv} = ${B(qu)}`,`${qt} + ${qu} = ${B(q)}`]};}
+  } else {
+    dv=R(11,25);do{q=R(11,29);}while(q%10===0);
+    const n=dv*q,qt=tens(q),qu=q%10,big=dv*qt;
+    h={t:'Scoți întâi zecile',s:[qt===10?`${dv} ${X} 10 = ${B(big)}. Încape în ${n}.`:`${dv} ${X} ${qt}: ${dv} ${X} ${qt/10} = ${dv*qt/10}, pui un 0 → ${B(big)}. Încape în ${n}.`,`Rămân: ${n} ${M} ${big} = ${B(n-big)}`,`${n-big} : ${dv} = ${B(qu)}, pentru că ${dv} ${X} ${qu} = ${n-big}`,`${qt} + ${qu} = ${B(q)}`]};
+  }
+  return{q:`${dv*q} ${D} ${dv}`,a:q,h};
+}
+
+function signedAdd(x,y){
+  const r=x+y;
+  if(x>=0&&y>=0)return[`${x} + ${y} = ${B(r)}`];
+  if(x<0&&y<0)return[`Două datorii: ${f(x)} și ${f(y)}.`,`Le aduni: ${-x} + ${-y} = ${B(-r)}`,`Tot datorie rămâne, deci pui minus: ${B(r)}`];
+  const ax=Math.abs(x),ay=Math.abs(y),big=Math.max(ax,ay),sm=Math.min(ax,ay),pos=x>0?x:y,ng=x<0?-x:-y;
+  return[x<0?`Datorezi ${ng} și primești ${pos}.`:`Ai ${pos} și plătești ${ng}.`,`Semne diferite, deci scazi: ${big} ${M} ${sm} = ${B(big-sm)}`,r===0?`Se anulează: ${B(0)}`:r>0?`Plusul e mai mare, deci rezultatul e pozitiv: ${B(r)}`:`Datoria e mai mare, deci rezultatul e negativ: ${B(r)}`];
+}
+function negTitle(x,y){if(x<0&&y<0)return'Datoriile se adună';if(x>=0&&y>=0)return'Adunare simplă';return'Semne diferite: scazi';}
+
+function genNeg(d){
+  const op=P(d===0?['+','−']:['+','+','−','−','·',':']);
+  let q,a,h;
+  if(op==='+'||op==='−'){
+    const[lo,hi]=d===0?[1,20]:d===1?[2,50]:[11,99];
+    let ax=R(lo,hi),ay=R(lo,hi);
+    const[sx,sy]=P(op==='+'?[[-1,1],[1,-1],[-1,-1]]:[[1,1],[-1,1],[1,-1],[-1,-1]]);
+    if(op==='−'&&sx>0&&sy>0){if(ay<ax)[ax,ay]=[ay,ax];if(ay===ax)ay=ax+R(1,9);}
+    const x=sx*ax,y=sy*ay;
+    if(op==='+'){q=`${f(x)} + ${par(y)}`;a=x+y;h={t:negTitle(x,y),s:signedAdd(x,y)};}
+    else{q=`${f(x)} ${M} ${par(y)}`;a=x-y;
+      h=y<0?{t:'Minus cu minus devine plus',s:[`${M} (${f(y)}) devine + ${-y}, deci ai ${f(x)} + ${-y}.`,...signedAdd(x,-y)]}:{t:negTitle(x,-y),s:signedAdd(x,-y)};}
+  } else {
+    let ax,ay;
+    if(op==='·'){ax=d===1?R(2,9):R(11,25);ay=R(2,9);}
+    else{ay=R(2,9);ax=ay*(d===1?R(2,9):R(11,20));}
+    const[sx,sy]=P([[-1,1],[1,-1],[-1,-1]]);
+    const x=sx*ax,y=sy*ay,r=op==='·'?x*y:x/y,m=Math.abs(r),same=sx===sy;
+    q=`${par(x)} ${op==='·'?X:D} ${par(y)}`;a=r;
+    const first=op===':'?`Întâi fără semne: ${ax} : ${ay} = ${B(m)}`:(ax>10&&ax%10!==0)?`Întâi fără semne: ${ax} ${X} ${ay} = ${tens(ax)} ${X} ${ay} + ${ax%10} ${X} ${ay} = ${B(m)}`:`Întâi fără semne: ${ax} ${X} ${ay} = ${B(m)}`;
+    h={t:'Regula semnelor',s:[first,same?`Semne la fel (${M} cu ${M}), deci rezultatul e pozitiv.`:`Semne diferite (+ cu ${M}), deci rezultatul e negativ.`,`Rezultat: ${B(r)}`]};
+  }
+  return{q,a,h};
+}
+
+const ENDS={1:'1 sau 9',4:'2 sau 8',5:'5',6:'4 sau 6',9:'3 sau 7'};
+function genRad(d){
+  const sq=Math.random()<.35;let n;
+  if(d===0)n=R(2,12);
+  else if(d===1)n=R(11,20);
+  else n=sq?(Math.random()<.3?P([15,25,35,45]):R(13,25)):R(13,30);
+  const N=n*n;let h;
+  if(!sq){
+    if(d===0)h={t:'Ce număr ori el însuși?',s:[`Caută un număr care, înmulțit cu el însuși, dă ${B(N)}.`,`${n-1} ${X} ${n-1} = ${(n-1)*(n-1)}, prea mic.`,`${n} ${X} ${n} = ${N} ✓`,`Deci √${N} = ${B(n)}`]};
+    else if(n%10===0)h={t:'Radical dintr-un număr cu 00',s:[`${N} se termină în 00.`,`√${N/100} = ${n/10}, apoi pui un 0 la coadă.`,`√${N} = ${B(n)}`]};
+    else{const lo=tens(n),hi=lo+10,mid=lo+5,u=N%10;
+      h={t:'Încadrezi între zeci',s:[`Între ce zeci e? ${lo}² = ${lo*lo} și ${hi}² = ${hi*hi}, deci între ${B(lo)} și ${B(hi)}.`,`${N} se termină în ${u}, deci rădăcina se termină în ${B(ENDS[u])}.`,u===5?`Singura variantă: ${B(n)}`:`Verifici mijlocul: ${mid}² = ${mid*mid}. ${N} e ${N<mid*mid?'mai mic':'mai mare'}, deci ${B(n)}.`,`Probă: ${n} ${X} ${n} = ${N} ✓`]};}
+    return{q:`<span class="rad">√<span class="rn">${N}</span></span>`,p:`√${N}`,a:n,h};
+  }
+  const u=n%10,t=Math.floor(n/10);
+  if(n<=10){const m=mulBasic(n,n);h={t:m.t,s:[`${n}² înseamnă ${n} ${X} ${n}.`,...m.s]};}
+  else if(u===5)h={t:'Pătratul unui număr terminat în 5',s:[`Ia cifra zecilor: ${B(t)}`,`${t} ${X} ${t+1} = ${B(t*(t+1))}`,`Lipești 25 la coadă: ${B(N)}`]};
+  else if(u===0)h={t:'Pătratul unui număr rotund',s:[`${n/10} ${X} ${n/10} = ${(n/10)*(n/10)}`,`Pui doi de 0 la coadă: ${B(N)}`]};
+  else if(u===1||u===9){const rd=u===1?n-1:n+1;h={t:'Aproape de un număr rotund',s:[`${n}² = ${n} ${X} ${n}, iar ${n} e lângă ${B(rd)}.`,`${n} ${X} ${rd}: ${n} ${X} ${rd/10} = ${n*rd/10}, pui un 0 → ${B(n*rd)}`,u===1?`Mai adaugi un ${n}: ${n*rd} + ${n} = ${B(N)}`:`Scazi un ${n}: ${n*rd} ${M} ${n} = ${B(N)}`]};}
+  else{const nt=tens(n);h={t:'Rupi în zeci și unități',s:[`${n}² = ${n} ${X} ${n}. Rupe al doilea ${n} în ${nt} + ${u}.`,`${n} ${X} ${nt} = ${B(n*nt)}`,`${n} ${X} ${u} = ${B(n*u)}`,`${n*nt} + ${n*u} = ${B(N)}`]};}
+  return{q:`${n}<sup>2</sup>`,p:`${n}²`,a:N,h};
+}
+
+const GEN={add:genAdd,sub:genSub,mul:genMul,div:genDiv,neg:genNeg,rad:genRad};
+function make(cat,diff){
+  const c=cat==='mix'?P(['add','sub','mul','div','neg','rad']):cat;
+  const ex=GEN[c](diff);ex.c=c;if(!ex.p)ex.p=ex.q;return ex;
+}
+function space(){
+  let t=49*7+78*78+499*299+45*7;
+  for(let a=41;a<=99;a++)t+=a-19;
+  for(let a=201;a<=899;a++)t+=Math.min(499,a-30)-100;
+  t+=81+(87+87+10+44*7)+(63+8*28+4*19+17*43);
+  t+=81+7*18+15*17;
+  t+=7*400+7*2401+6*64+7*7921+3*120+3*80;
+  t+=22+20+35;
+  return t;
+}
+/*GEN-END*/
+(()=>{
+const $=s=>document.getElementById(s);
+const VERSION='5.1';
+const CATS=['add','sub','mul','div','neg','rad'];
+const CN={add:'Adunare',sub:'Scădere',mul:'Înmulțire',div:'Împărțire',neg:'Negative',rad:'Radicali'};
+const DIFFS=['Ușor','Mediu','Greu'];
+const GOALS=[10,20,30,50];
+const DR=[900,1300,1700];
+const START=800,TAX=15,KBASE=40,SK0=1000;
+const WRONG=[12,8,5],SLOW=[6,4,2];
+const PAR={add:[3,5,9],sub:[3,6,10],mul:[3,7,14],div:[3,7,14],neg:[4,6,10],rad:[3,6,10]};
+const ROUND=10,LIVES=3;
+const SRI=[10/1440,1,3,7,21];
+const KEY='calcul-mental-v1',BK_KEY='calcul-mental-bk';
+const TITLES=[[-1e9,'Începător'],[700,'Ucenic'],[900,'Socotitor'],[1100,'Calculator'],[1300,'Rapid'],[1500,'Fulger'],[1700,'Maestru'],[1900,'Geniu'],[2100,'Legendă']];
+const ERRN={semn:'Semn greșit',unu:'Greșit cu 1',transport:'Transport uitat',imprumut:'Împrumut uitat',zeci:'Greșit cu 10 sau 100',inversate:'Cifre inversate',vecin:'Fapt vecin (ex. 7·7 în loc de 7·8)',confundat:'Alt fapt din tabla înmulțirii',lungime:'O cifră în plus sau în minus',calcul:'Alt calcul greșit'};
+const breakPen=n=>Math.min(200,5*n);
+const FLAME='<svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.5c.7 3.1-.9 4.9-2.6 6.7C7.8 10.9 6 12.8 6 15.7 6 19 8.7 21.5 12 21.5s6-2.5 6-5.9c0-2.2-.9-3.8-2.1-5.2-.3 1.5-1.1 2.5-2.1 3 .5-3.7-.4-8-1.8-10.9z"/></svg>';
+const BOLT='<svg class="i fill" viewBox="0 0 24 24"><path d="M13.5 2 4 13.5h6.5L9.5 22 20 9.5h-6.6z"/></svg>';
+const CHECK='<svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+const CHEV='<svg class="i chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
+const GIFT='<svg class="i" viewBox="0 0 24 24"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8C10 4 6.5 4.5 7 7c.3 1.2 2.7 1 5 1zm0 0c2-4 5.5-3.5 5-1-.3 1.2-2.7 1-5 1z"/></svg>';
+const STAR='<svg class="i fill" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg>';
+const TROPHY='<svg class="i" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4.5v1.5A3.5 3.5 0 0 0 8 11M16 6h3.5v1.5A3.5 3.5 0 0 1 16 11M12 13v4M8.5 20h7M9.5 17h5"/></svg>';
+const TARGET='<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg>';
+const TOPS='<svg class="i" viewBox="0 0 24 24"><path d="M4 20h4v-6H4zM10 20h4V9h-4zM16 20h4V4h-4z"/></svg>';
+const DOWNI='<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>';
+const HEART='<svg class="i fill" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.4-9.3-9.2C1.5 8 3.6 4.5 7.1 4.5c2 0 3.4 1 4.9 2.8 1.5-1.8 2.9-2.8 4.9-2.8 3.5 0 5.6 3.5 4.4 6.8-1.8 4.8-9.3 9.2-9.3 9.2z"/></svg>';
+const LOCK='<svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+const SHIELD='<svg class="i" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/></svg>';
+const BULB='<svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2v.2h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>';
+const QICON={n:CHECK,cat:TARGET,combo:FLAME,fast:BOLT,hard:TOPS};
+const pad=n=>String(n).padStart(2,'0');
+const dkey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const ydKey=()=>{const d=new Date();d.setDate(d.getDate()-1);return dkey(d);};
+const sec=v=>v.toFixed(1).replace('.',',')+' s';
+const pct=(c,w)=>c+w?Math.round(c/(c+w)*100):null;
+const fmtN=n=>{const r=Math.round(n);return(r<0?'−':'')+Math.abs(r).toLocaleString('ro-RO');};
+const pl=(n,one,many)=>n===1?`1 ${one}`:`${fmtN(n)}${n>=20&&(n%100===0||n%100>=20)?' de':''} ${many}`;
+const zile=n=>pl(n,'zi','zile');
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmtX=m=>'×'+m.toFixed(1).replace('.',',');
+
+/* ---------- state ---------- */
+const fresh=()=>({v:5,cat:'mix',lastCat:'mix',diff:1,goal:20,snd:true,best:0,right:0,first:0,wrong:0,seen:0,times:[],days:{},bestDays:0,cs:{},kinds:{},mis:[],xp:START,log:[],q:null,pb:{},lastRound:null,settled:ydKey(),rated:0,
+  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0});
+let S=fresh(),migrated=false;
+function applyState(o){
+  S=fresh();migrated=false;o=o||{};
+  if(o.v===4||o.v===5)Object.assign(S,o);
+  else if(o.v===2||o.v===3){Object.assign(S,o);S.xp=START;S.settled=ydKey();S.rated=0;migrated=true;
+    for(const e of S.log||[]){e[1]=0;e[6]=START;}
+    for(const e of Object.values(S.days||{})){e.x=START;e.dx=0;}
+    if(S.q&&S.q.list)for(const q of S.q.list)q.xp=q.t==='n'?10:q.t==='fast'||q.t==='hard'?20:15;}
+  else if(Object.keys(o).length){
+    for(const k of['cat','diff','best','seen','times','right'])if(k in o)S[k]=o[k];
+    S.wrong=+o.wrong||0;S.first=Math.max(0,(+o.right||0)-S.wrong);
+  }
+  S.v=5;
+  if(![...CATS,'mix','rev'].includes(S.cat))S.cat='mix';
+  if(![...CATS,'mix'].includes(S.lastCat))S.lastCat='mix';
+  if(![0,1,2].includes(S.diff))S.diff=1;
+  if(!GOALS.includes(S.goal))S.goal=20;
+  if(typeof S.snd!=='boolean')S.snd=true;
+  if(typeof S.xp!=='number'||!isFinite(S.xp))S.xp=START;
+  if(typeof S.settled!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(S.settled))S.settled=ydKey();
+  for(const k of['rated','freeze','nrec','nkeys','nev','lastRec','seen','right','first','wrong','best','bestDays'])if(!(S[k]>=0))S[k]=0;
+  for(const k of['times','mis','log'])if(!Array.isArray(S[k]))S[k]=[];
+  for(const k of['days','cs','kinds','pb','sk','hd','hlock','errs','self'])if(!S[k]||typeof S[k]!=='object'||Array.isArray(S[k]))S[k]={};
+  if(!S.bk||typeof S.bk!=='object')S.bk={last:0,day:''};
+  for(const m of S.mis){if(!(m.due>0))m.due=Date.now();if(!(m.st>=0))m.st=0;}
+  if(S.cat==='rev'&&!S.mis.length)S.cat=S.lastCat;
+}
+let saveT=0;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}clearTimeout(saveT);saveT=setTimeout(()=>DB.put('kv',JSON.stringify(S),'state'),500);}
+
+/* ---------- device storage: IndexedDB with in-memory fallback ---------- */
+const DB={db:null,mem:{ex:[],ev:[],kv:{}},
+  open(){return new Promise(res=>{try{const r=indexedDB.open('calcul-mental',1);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('ex'))d.createObjectStore('ex',{keyPath:'id'});if(!d.objectStoreNames.contains('ev'))d.createObjectStore('ev',{autoIncrement:true});if(!d.objectStoreNames.contains('kv'))d.createObjectStore('kv');};r.onsuccess=()=>{DB.db=r.result;res(true);};r.onerror=()=>res(false);r.onblocked=()=>res(false);setTimeout(()=>res(!!DB.db),3000);}catch(e){res(false);}});},
+  put(store,val,key){
+    if(!this.db){if(store==='kv')this.mem.kv[key]=val;else{const a=this.mem[store];if(store==='ex'){const i=a.findIndex(x=>x.id===val.id);if(i>=0)a[i]=val;else a.push(val);}else a.push(val);}return Promise.resolve();}
+    return new Promise(res=>{try{const tx=this.db.transaction(store,'readwrite');const os=tx.objectStore(store);key===undefined?os.put(val):os.put(val,key);tx.oncomplete=()=>res();tx.onerror=()=>res();tx.onabort=()=>res();}catch(e){res();}});
+  },
+  all(store){if(!this.db)return Promise.resolve(store==='kv'?[]:this.mem[store].slice());return new Promise(res=>{try{const r=this.db.transaction(store).objectStore(store).getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>res([]);}catch(e){res([]);}});},
+  getKV(key){if(!this.db)return Promise.resolve(this.mem.kv[key]);return new Promise(res=>{try{const r=this.db.transaction('kv').objectStore('kv').get(key);r.onsuccess=()=>res(r.result);r.onerror=()=>res(undefined);}catch(e){res(undefined);}});},
+  clear(store){if(!this.db){this.mem[store]=store==='kv'?{}:[];return Promise.resolve();}return new Promise(res=>{try{const tx=this.db.transaction(store,'readwrite');tx.objectStore(store).clear();tx.oncomplete=()=>res();tx.onerror=()=>res();}catch(e){res();}});},
+  bulk(store,arr){if(!this.db){this.mem[store]=arr.slice();return Promise.resolve();}return new Promise(res=>{try{const tx=this.db.transaction(store,'readwrite');const os=tx.objectStore(store);for(const v of arr)os.put(v);tx.oncomplete=()=>res();tx.onerror=()=>res();}catch(e){res();}});}
+};
+let sess={id:'s0',t0:Date.now(),last:Date.now()};
+function ev(type,data){S.nev++;DB.put('ev',Object.assign({t:Date.now(),s:sess.id,type},data||{}));}
+function device(){const ua=navigator.userAgent;return{plat:/iPhone/.test(ua)?'iPhone':/iPad/.test(ua)||(/Macintosh/.test(ua)&&'ontouchend'in document)?'iPad':/Android/.test(ua)?'Android':/Mac/.test(ua)?'Mac':/Win/.test(ua)?'Windows':/Linux/.test(ua)?'Linux':'altul',
+  w:screen.width,h:screen.height,dpr:window.devicePixelRatio||1,vw:innerWidth,vh:innerHeight,standalone:!!(navigator.standalone||matchMedia('(display-mode: standalone)').matches),dark:matchMedia('(prefers-color-scheme: dark)').matches,
+  lang:navigator.language,tz:(()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone;}catch(e){return'';}})(),online:navigator.onLine,host:location.hostname,snd:S.snd,v:VERSION,idb:!!DB.db};}
+
+/* ---------- days, streaks ---------- */
+const met=e=>!!(e&&(e.m||e.fz));
+function today(){const k=dkey(new Date());const e=S.days[k]||(S.days[k]={});for(const f of['c','w','f','a','s','n','dx'])e[f]=e[f]||0;if(e.m==null)e.m=false;if(e.x==null)e.x=S.xp;return e;}
+function dayStreak(){const d=new Date();let n=0;if(!met(S.days[dkey(d)]))d.setDate(d.getDate()-1);while(met(S.days[dkey(d)])){n++;d.setDate(d.getDate()-1);}return n;}
+function streakEnding(k){const d=new Date(k+'T00:00:00');let n=0;while(met(S.days[dkey(d)])){n++;d.setDate(d.getDate()-1);}return n;}
+function cs(c,d){if(!S.cs[c])S.cs[c]=[[0,0,0,0],[0,0,0,0],[0,0,0,0]];return S.cs[c][d];}
+function kind(ex){return S.kinds[ex.h.t]||(S.kinds[ex.h.t]={c:0,w:0,cat:ex.c});}
+
+/* ---------- XP titles ---------- */
+const level=r=>Math.floor(r/100);
+function tIdx(r){let i=0;TITLES.forEach(([k],j)=>{if(r>=k)i=j;});return i;}
+const ltitle=r=>TITLES[tIdx(r)][1];
+function nextTitle(r){const t=TITLES[tIdx(r)+1];return t?`Următorul titlu: ${t[1]}, la ${fmtN(t[0])} XP`:'Ai cel mai înalt titlu.';}
+const expect2=(r,D)=>1/(1+Math.pow(10,(D-r)/400));
+const perf=(t,par)=>t<=par?1-.15*Math.max(0,(t-.5*par)/(.5*par)):Math.max(.3,.85-.35*(t-par)/par);
+const kf=()=>S.rated<30?60:KBASE;
+const mult=s=>1+Math.min(Math.max(s-1,0),10)*.025;
+const fmtMult=m=>'×'+m.toFixed(2).replace(/0$/,'').replace(/\.$/,'').replace('.',',');
+
+/* ---------- real level: one rating per skill, uncertainty grows with time away ---------- */
+const skill=k=>S.sk[k]||(S.sk[k]=[SK0,1,0,0,0]);
+const uNow=s=>s[3]?Math.min(1,s[1]+(Date.now()-s[3])/864e5/60):s[1];
+const skeys=ex=>[ex.c,...(ex.tags||[])];
+function predict(ex){const D=DR[ex.d],Ec=expect2(skill(ex.c)[0],D);if(!ex.tags||!ex.tags.length)return Ec;let Et=1;for(const k of ex.tags)Et=Math.min(Et,expect2(skill(k)[0],D));return .5*Ec+.5*Et;}
+function uncert(ex){let u=0;for(const k of skeys(ex))u=Math.max(u,uNow(skill(k)));return u;}
+function weakOf(ex){let w=0;for(const k of ex.tags||[]){const s=skill(k);w=Math.max(w,s[4]/(s[2]+2));}return w;}
+function updateSkills(ex,sc,wrong){const D=DR[ex.d];for(const k of skeys(ex)){const s=skill(k),u=uNow(s),K=16+48*u;s[0]=Math.round((s[0]+K*(sc-expect2(s[0],D)))*10)/10;s[1]=Math.round(Math.max(.12,u*.88)*1000)/1000;s[2]++;s[3]=Date.now();if(wrong)s[4]++;}}
+function realLevel(){let num=0,den=0;for(const c of CATS){const s=S.sk[c];if(!s||!s[2])continue;const w=1.05-uNow(s);num+=s[0]*w;den+=w;}return den?num/den:SK0;}
+function realU(){let u=0,n=0;for(const c of CATS){const s=S.sk[c];if(s&&s[2]){u+=uNow(s);n++;}}return n?u/n:1;}
+function pMult(){const lf=Math.min(1,Math.max(0,(realLevel()-600)/1200)),sf=Math.min(1,dayStreak()/30);return 1+1.5*Math.sqrt(lf*sf);}
+
+/* ---------- exercise labels ---------- */
+function parse(p){if(p[0]==='√')return{rt:+p.slice(1)};if(p.endsWith('²'))return{sq:+p.slice(0,-1)};const m=p.match(/^\(?(−?\d+)\)? ([+−·:]) \(?(−?\d+)\)?$/);if(!m)return{};const n=s=>+s.replace('−','-');return{x:n(m[1]),op:m[2],y:n(m[3])};}
+function carries(a,b){let c=0,k=0;while(a>0||b>0){k=(a%10+b%10+k)>=10?1:0;c+=k;a=Math.floor(a/10);b=Math.floor(b/10);}return c;}
+function borrows(a,b){let c=0,k=0;while(a>0||b>0){k=(a%10-b%10-k)<0?1:0;c+=k;a=Math.floor(a/10);b=Math.floor(b/10);}return c;}
+function tagsOf(ex){
+  const t=['t:'+ex.h.t],P=parse(ex.p);
+  if(ex.c==='add'&&P.x!=null)t.push('add.c'+Math.min(3,carries(P.x,P.y)));
+  else if(ex.c==='sub'&&P.x!=null)t.push('sub.b'+Math.min(3,borrows(P.x,P.y)));
+  else if(ex.c==='mul'&&P.x!=null){const fs=new Set();for(const da of String(P.x))for(const db of String(P.y)){const a=+da,b=+db;if(a>=2&&b>=2)fs.add(`f.${Math.min(a,b)}x${Math.max(a,b)}`);}[...fs].slice(0,3).forEach(k=>t.push(k));}
+  else if(ex.c==='div'&&P.x!=null){const q=P.x/P.y;if(q<=10&&P.y<=10&&q>=2&&P.y>=2)t.push(`f.${Math.min(P.y,q)}x${Math.max(P.y,q)}`);else t.push('div.d'+Math.min(P.y,25));}
+  else if(ex.c==='neg'&&P.x!=null)t.push(`neg.${{'+':'add','−':'sub','·':'mul',':':'div'}[P.op]}.${P.x<0?'n':'p'}${P.y<0?'n':'p'}`);
+  else if(ex.c==='rad')t.push(P.rt!=null?'rad.rt':'rad.sq');
+  return t;
+}
+const TABLE=new Set();for(let i=2;i<=10;i++)for(let j=2;j<=10;j++)TABLE.add(i*j);
+function errType(ex,v){
+  const a=ex.a,d=v-a;
+  if(a!==0&&v===-a)return'semn';
+  if(Math.abs(d)===1)return'unu';
+  if([10,100,1000].includes(Math.abs(d))){if(ex.c==='add'&&d<0)return'transport';if(ex.c==='sub'&&d>0)return'imprumut';return'zeci';}
+  const sa=String(Math.abs(a)),sv=String(Math.abs(v));
+  if(sa.length===sv.length&&sa!==sv&&[...sa].sort().join('')===[...sv].sort().join(''))return'inversate';
+  if(ex.c==='mul'){const P=parse(ex.p);if(P.x!=null){const x=Math.abs(P.x),y=Math.abs(P.y);if(v===(x+1)*y||v===(x-1)*y||v===x*(y+1)||v===x*(y-1))return'vecin';if(x<=10&&y<=10&&TABLE.has(v))return'confundat';}}
+  if(sa.length!==sv.length)return'lungime';
+  return'calcul';
+}
+
+/* ---------- the brain: pick the next exercise ---------- */
+const recent=[];let lastCat='',lastTrick='';
+function fromMis(m){const ex={p:m.p,q:m.q,a:m.a,h:m.h,c:m.c,d:m.d,rev:true};ex.tags=m.tags||tagsOf(ex);return ex;}
+function pickExercise(){
+  const cats=S.cat==='mix'?CATS:[S.cat],now=Date.now();
+  if(S.diff!==0){const due=S.mis.filter(m=>m.due<=now&&cats.includes(m.c)&&!recent.slice(-3).includes(m.p)).sort((a,b)=>a.due-b.due);if(due.length&&Math.random()<.3)return fromMis(due[0]);}
+  const diffs=S.diff===0?[0]:S.diff===1?[0,1,1,2]:[1,2,2];
+  let best=null,bs=-1e9;
+  for(let i=0;i<22;i++){
+    const c=cats[Math.floor(Math.random()*cats.length)],d=diffs[Math.floor(Math.random()*diffs.length)];
+    const ex=GEN[c](d);ex.c=c;ex.d=d;if(!ex.p)ex.p=ex.q;
+    if(recent.includes(ex.p))continue;
+    ex.tags=tagsOf(ex);const p=predict(ex),u=uncert(ex);
+    let sc;
+    if(S.diff===0)sc=p+Math.random()*.2;
+    else if(S.diff===1)sc=-Math.abs(p-.8)+.3*u+Math.random()*.06;
+    else sc=(1-p)+.6*weakOf(ex)+.15*u+Math.random()*.06-(p<.06?.7:0);
+    if(cats.length>1&&c===lastCat)sc-=.25;
+    if(ex.h.t===lastTrick)sc-=.35;
+    if(sc>bs){bs=sc;best=ex;}
+  }
+  if(!best){const c=cats[0];best=GEN[c](diffs[0]);best.c=c;best.d=diffs[0];if(!best.p)best.p=best.q;best.tags=tagsOf(best);}
+  return best;
+}
+/* spaced review of mistakes: 10 min, 1, 3, 7, 21 days */
+function addMistake(ex,y){
+  const i=S.mis.findIndex(m=>m.p===ex.p);
+  const r=i>=0?S.mis.splice(i,1)[0]:{p:ex.p,q:ex.q,a:ex.a,h:ex.h,c:ex.c,d:ex.d,tags:ex.tags};
+  r.y=y;r.at=dkey(new Date());r.st=0;r.due=Date.now()+SRI[0]*864e5;S.mis.push(r);
+  while(S.mis.length>60)S.mis.shift();
+}
+function srAdvance(ex,clean){
+  const i=S.mis.findIndex(m=>m.p===ex.p);if(i<0)return;const m=S.mis[i];
+  if(clean){m.st++;if(m.st>=SRI.length){S.mis.splice(i,1);return;}m.due=Date.now()+SRI[m.st]*864e5;}
+  else{m.st=0;m.due=Date.now()+SRI[0]*864e5;}
+}
+
+/* ---------- daily quests ---------- */
+function rng(seed){let a=seed>>>0;return()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+function quests(){
+  const k=dkey(new Date());if(S.q&&S.q.day===k)return S.q;
+  const r=rng(hash(k)),pick=a=>a[Math.floor(r()*a.length)],types=['n','cat','combo','fast','hard'];
+  for(let i=types.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[types[i],types[j]]=[types[j],types[i]];}
+  const list=types.slice(0,3).map(t=>t==='n'?{t,n:pick([15,20,25]),xp:10,p:0}:t==='cat'?{t,cat:pick(CATS),n:8,xp:15,p:0}:t==='combo'?{t,n:pick([6,8,10]),xp:15,p:0}:{t,n:5,xp:20,p:0});
+  S.q={day:k,list,chest:false};return S.q;
+}
+function qText(q){switch(q.t){case'n':return`Rezolvă corect ${q.n} exerciții`;case'cat':return`Rezolvă ${q.n} exerciții la ${CN[q.cat]}`;case'combo':return`Fă ${q.n} corecte la rând`;case'fast':return`Dă ${q.n} răspunsuri Fulger`;default:return`Rezolvă ${q.n} exerciții la nivelul Greu`;}}
+function progressQuests(x){
+  const done=[];
+  for(const q of quests().list){
+    if(q.done)continue;
+    if(q.t==='n'&&x.correct)q.p++;
+    else if(q.t==='cat'&&x.correct&&x.cat===q.cat)q.p++;
+    else if(q.t==='combo')q.p=Math.max(q.p,x.streak);
+    else if(q.t==='fast'&&x.fast)q.p++;
+    else if(q.t==='hard'&&x.correct&&x.mode===2)q.p++;
+    q.p=Math.min(q.p,q.n);
+    if(q.p>=q.n){q.done=true;done.push(q);}
+  }
+  return done;
+}
+
+/* ---------- XP + compact log ---------- */
+function addXP(dx){dx=Math.round(dx);S.xp+=dx;const dd=today();dd.x=S.xp;dd.dx+=dx;return dx;}
+function logEv(e,dx,t,ex){S.log.push([Math.round(Date.now()/1000),dx,e,t==null?-1:Math.round(t*10),ex?CATS.indexOf(ex.c):-1,ex?ex.d:-1,S.xp,Math.round(realLevel())]);if(S.log.length>4000)S.log.splice(0,S.log.length-4000);}
+
+/* ---------- calendar settlement: every finished day, even with the app closed ---------- */
+function settle(){
+  const yk=ydKey();if(S.settled>=yk)return null;
+  const d=new Date(S.settled+'T00:00:00');d.setDate(d.getDate()+1);
+  const res={days:0,tax:0,brk:0,lost:0,frozen:0};
+  while(dkey(d)<=yk){
+    const k=dkey(d),e=S.days[k]||(S.days[k]={c:0,w:0,f:0,a:0,s:0,n:0,dx:0,m:false});
+    if(e.x==null)e.x=S.xp;
+    if(!met(e)){
+      if(S.freeze>0){S.freeze--;e.fz=true;res.frozen++;}
+      else{
+        const prev=new Date(d);prev.setDate(prev.getDate()-1);
+        const run=streakEnding(dkey(prev)),bp=run>0?breakPen(run):0,pen=TAX+bp;
+        S.xp-=pen;e.x=S.xp;e.dx=(e.dx||0)-pen;e.pen=pen;
+        S.log.push([Math.round(new Date(d.getFullYear(),d.getMonth(),d.getDate(),23,59,59).getTime()/1000),-pen,5,-1,-1,-1,S.xp,Math.round(realLevel())]);
+        res.days++;res.tax+=TAX;res.brk+=bp;res.lost=Math.max(res.lost,run);
+      }
+    }
+    d.setDate(d.getDate()+1);
+  }
+  S.settled=yk;
+  if(S.log.length>4000)S.log.splice(0,S.log.length-4000);
+  save();ev('settle',res);
+  return res.days||res.frozen?res:null;
+}
+
+/* ---------- sound ---------- */
+let AC=null;
+function audio(){if(!S.snd)return null;try{if(!AC){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;AC=new C();}if(AC.state==='suspended')AC.resume();}catch(e){return null;}return AC;}
+function tone(f,dur,type,vol,when,to){const a=audio();if(!a)return;const t=a.currentTime+(when||0);const o=a.createOscillator(),g=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+dur);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol||.1,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+dur+.03);}
+const SFX={
+  key:()=>tone(1500,.03,'sine',.022),
+  ok:s=>{const f=523.25*Math.pow(2,Math.min(s,14)/12);tone(f,.13,'triangle',.12);tone(f*1.5,.22,'triangle',.1,.07);},
+  fast:()=>tone(2093,.12,'sine',.05,.16),
+  gold:()=>[1047,1319,1568,2093].forEach((f,i)=>tone(f,.16,'sine',.07,.12+i*.05)),
+  bad:()=>{tone(220,.16,'square',.04,0,160);tone(165,.22,'square',.035,.09,110);},
+  heart:()=>{tone(330,.12,'triangle',.08,0,250);tone(196,.3,'triangle',.07,.12,130);},
+  quest:()=>[659,784,988].forEach((f,i)=>tone(f,.18,'triangle',.1,i*.09)),
+  level:()=>[523,659,784,1047,1319,1568].forEach((f,i)=>tone(f,.28,'triangle',.11,i*.09)),
+  down:()=>[523,440,349].forEach((f,i)=>tone(f,.22,'triangle',.09,i*.12)),
+  goal:()=>[784,988,1175,1568].forEach((f,i)=>tone(f,.22,'sine',.09,i*.08)),
+  star:i=>tone(880*Math.pow(2,i*4/12),.2,'triangle',.1),
+  pb:()=>[1175,1568].forEach((f,i)=>tone(f,.18,'sine',.08,i*.1)),
+};
+
+/* ---------- confetti ---------- */
+const fx=$('fx'),g2=fx.getContext('2d');let parts=[],fxRaf=0;
+const COLS=['#0A84FF','#30D158','#FF9F0A','#FF375F','#BF5AF2','#FFD60A','#64D2FF'];
+function sizeFx(){const d=window.devicePixelRatio||1;fx.width=innerWidth*d;fx.height=innerHeight*d;}
+function burst(x,y,n,power,cols){
+  if(reduce)return;if(fx.width!==Math.round(innerWidth*(window.devicePixelRatio||1)))sizeFx();
+  const P0=power||8,C=cols||COLS;
+  for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,v=P0*(.35+Math.random()*.85);parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-P0*.55,w:5+Math.random()*5,h:3+Math.random()*4,r:Math.random()*6,vr:(Math.random()-.5)*.45,c:C[i%C.length],life:0,max:55+Math.random()*45});}
+  if(!fxRaf)fxRaf=requestAnimationFrame(fxLoop);
+}
+function fxLoop(){
+  const d=window.devicePixelRatio||1;g2.setTransform(d,0,0,d,0,0);g2.clearRect(0,0,innerWidth,innerHeight);
+  parts=parts.filter(p=>p.life<p.max);
+  for(const p of parts){p.life++;p.vx*=.985;p.vy=p.vy*.985+.32;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;g2.save();g2.globalAlpha=Math.max(0,1-p.life/p.max);g2.translate(p.x,p.y);g2.rotate(p.r);g2.fillStyle=p.c;g2.fillRect(-p.w/2,-p.h/2,p.w,p.h);g2.restore();}
+  fxRaf=parts.length?requestAnimationFrame(fxLoop):0;if(!fxRaf)g2.clearRect(0,0,innerWidth,innerHeight);
+}
+function burstAt(el,n,p,cols){const r=el.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,n,p,cols);}
+function rain(){for(let i=0;i<6;i++)setTimeout(()=>burst(innerWidth*(.1+Math.random()*.8),innerHeight*.28,32,11),i*110);}
+
+/* ---------- toasts, numbers ---------- */
+const tq=[];let tBusy=false;
+function toast(h){tq.push(h);if(!tBusy)nextToast();}
+function nextToast(){const h=tq.shift();const el=$('toast');if(h==null){tBusy=false;return;}tBusy=true;el.innerHTML=h;el.classList.add('show');setTimeout(()=>{el.classList.remove('show');setTimeout(nextToast,380);},2000);}
+function countTo(el,to,fmt){const from=el._v==null?to:el._v;el._v=to;if(reduce||from===to){el.textContent=fmt(to);return;}const t0=performance.now();const step=now=>{const k=Math.min(1,(now-t0)/450),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)requestAnimationFrame(step);};requestAnimationFrame(step);el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');}
+
+/* ---------- practice screen ---------- */
+const app=$('app'),statsView=$('statsView'),card=$('card'),expr=$('expr'),ansEl=$('ans'),answer=$('answer'),fbEl=$('fb'),meta=$('meta'),okKey=$('okKey'),skipBtn=$('skipBtn'),hintBtn=$('hintBtn'),sheet=$('sheet'),hSteps=$('hSteps'),hNext=$('hNext'),parBar=$('parBar'),modal=$('modal'),mcard=$('mcard'),selfq=$('selfq');
+let cur=null,rec=null,input='',sign=1,startT=0,pausedAt=0,bgAt=0,raf=0,usedHint=false,wrongs=0,revealed=false,locked=false,streak=0,prevStreak=0,sheetOpen=false,sheetEx=null,lastFocus=null,modalOpen=false,advT=0,selfT=0,selfOn=false;
+let R0=null,rIdx=0,riskShown=false;
+const OK_HTML=okKey.innerHTML;
+const NEXT_HTML='<svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Următorul';
+const newRound=()=>({xp:0,f:0,a:0,ts:[],par:[],bc:0,done:0,lives:S.diff===2?LIVES:0,mode:S.diff,dead:false});
+
+/* target time; Greu shortens it by 30% */
+const parOf=ex=>PAR[ex.c][ex.d]*(ex.mode===2?.7:1);
+const curPar=()=>parOf(cur);
+const elapsed=()=>((pausedAt||performance.now())-startT)/1000;
+function tick(){if(locked||revealed||pausedAt||!cur){raf=0;return;}const p=Math.max(0,1-elapsed()/curPar());parBar.style.transform=`scaleX(${p})`;raf=p>0?requestAnimationFrame(tick):0;}
+function startTimer(){cancelAnimationFrame(raf);pausedAt=0;startT=performance.now();parBar.style.transform='scaleX(1)';raf=requestAnimationFrame(tick);}
+function pause(){if(!pausedAt){pausedAt=performance.now();bgAt=pausedAt;}}
+function resume(){if(pausedAt){const now=performance.now();if(rec&&!rec.saved)rec.bg+=Math.round(now-bgAt);startT+=now-pausedAt;pausedAt=0;if(!raf&&!locked&&!revealed)raf=requestAnimationFrame(tick);}}
+
+/* one record per exercise, with every keypress */
+function newRec(ex){
+  const now=Date.now(),dt=new Date(now);
+  const r={id:now.toString(36)+Math.random().toString(36).slice(2,7),t0:now,s:sess.id,v:VERSION,cat:S.cat,mode:ex.mode,c:ex.c,d:ex.d,p:ex.p,a:ex.a,tags:ex.tags,trick:ex.h.t,
+    par:+parOf(ex).toFixed(2),gold:!!ex.gold,rev:!!ex.rev,pred:+ex.pred.toFixed(3),lv:Math.round(realLevel()),sk:Math.round(skill(ex.c)[0]),u:+uncert(ex).toFixed(2),xp:S.xp,stake:+pMult().toFixed(2),
+    combo:streak,ds:dayStreak(),round:rIdx,lives:R0.lives,sMin:+((now-sess.t0)/6e4).toFixed(1),gap:S.lastRec?Math.round((now-S.lastRec)/1000):-1,hour:dt.getHours(),min:dt.getMinutes(),wd:dt.getDay(),
+    keys:[],tries:[],hints:[],bg:0,res:null};
+  S.lastRec=now;return r;
+}
+function commitRec(res,extra){if(!rec||rec.saved)return;Object.assign(rec,extra||{},{res,ms:Math.round(elapsed()*1000)});rec.saved=true;S.nrec++;S.nkeys+=rec.keys.length;DB.put('ex',rec);}
+
+function next(){
+  clearTimeout(advT);clearTimeout(selfT);hideSelf();
+  if(rec&&!rec.saved&&(rec.keys.length||elapsed()>2))commitRec('abandon');
+  let ex=null;
+  if(S.cat==='rev'){
+    if(S.mis.length)ex=fromMis(S.mis.slice().sort((a,b)=>a.due-b.due)[0]);
+    else{S.cat=S.lastCat;syncChips();toast(`${CHECK} Ai reparat toate greșelile`);}
+  }
+  if(!ex)ex=pickExercise();
+  ex.mode=S.diff;ex.gold=!ex.rev&&S.seen>4&&Math.random()<.08;ex.pred=predict(ex);
+  recent.push(ex.p);if(recent.length>40)recent.shift();lastCat=ex.c;lastTrick=ex.h.t;
+  cur=ex;input='';sign=1;usedHint=false;wrongs=0;revealed=false;locked=false;
+  S.seen++;rec=newRec(ex);save();
+  expr.innerHTML=ex.q;expr.classList.toggle('long',ex.p.length>9);
+  expr.classList.remove('rise');void expr.offsetWidth;expr.classList.add('rise');
+  meta.textContent=ex.rev?`Repetare · ${CN[ex.c]}`:`${CN[ex.c]} · ${DIFFS[ex.d]}`;
+  card.classList.remove('ok','bad','shake');card.classList.toggle('gold',!!ex.gold);
+  ansEl.className='ans';answer.classList.add('live');
+  fb(ex.gold?`${STAR} Exercițiu de aur: câștig sau pierdere dublă`:'',ex.gold?'gold':'');
+  if(ex.gold)SFX.gold();
+  okKey.innerHTML=OK_HTML;skipBtn.textContent='Sari peste';
+  setHintBtn();renderAns();renderTop();startTimer();
+  if(!statsView.hidden||modalOpen)pause();
+}
+function hintLocked(){if(!cur)return false;if(cur.mode===2)return'Fără indicii la Greu';const l=S.hlock[cur.h.t];return l&&l>Date.now()?'Indiciu blocat 24 h':false;}
+function setHintBtn(){const l=hintLocked();hintBtn.classList.toggle('off',!!l&&!revealed);hintBtn.innerHTML=(l&&!revealed?LOCK:BULB)+(l&&!revealed?l:'Indiciu');}
+function renderAns(){const s=(sign<0?'−':'')+input;ansEl.textContent=s||'?';ansEl.classList.toggle('empty',!s);}
+function fb(t,c){fbEl.innerHTML=t;fbEl.className='fb'+(c?' '+c:'');}
+function floatXP(t,cls){if(!t)return;const s=document.createElement('span');s.className='float'+(cls?' '+cls:'');s.textContent=t;card.appendChild(s);setTimeout(()=>s.remove(),1150);}
+
+function renderTop(){
+  const dd=today(),ds=dayStreak();
+  if(!dd.m&&dd.c>=S.goal)dd.m=true;
+  const n=level(S.xp),into=((S.xp%100)+100)%100;
+  $('lvN').textContent=f(n);$('lvTitle').innerHTML=`${fmtN(S.xp)} XP <span>· ${ltitle(S.xp)}</span>`;
+  $('lvFill').style.width=into.toFixed(1)+'%';
+  $('lvBtn').setAttribute('aria-label',`${fmtN(S.xp)} XP, nivelul ${f(n)}, ${ltitle(S.xp)}. Deschide provocările.`);
+  countTo($('stXp'),dd.dx,v=>(v>0?'+':'')+f(Math.round(v)));
+  $('stStreak').textContent=streak;
+  $('stLv').textContent=fmtN(realLevel());
+  const ac=pct(S.first,S.wrong);$('stAcc').textContent=ac===null?'—':ac+'%';
+  $('ringProg').style.strokeDashoffset=(125.66*(1-Math.min(dd.c/S.goal,1))).toFixed(2);
+  $('ringTxt').textContent=met(dd)?'✓':dd.c;$('ring').setAttribute('aria-label',`Azi: ${dd.c} din ${S.goal} corecte`);
+  $('daysTxt').textContent=ds;$('daysPill').setAttribute('aria-label',`${zile(ds)} la rând`);
+  $('daysPill').classList.toggle('on',ds>0);
+  $('daysPill').classList.toggle('risk',ds>0&&!met(dd)&&new Date().getHours()>=18);
+  const ex=$('extra');
+  if(cur&&cur.gold)ex.innerHTML='<span class="pill goldp">XP ×2</span>';
+  else if(streak>=2)ex.innerHTML=`<span class="pill combo${streak>prevStreak?' bump':''}">${FLAME}${streak}<small>${fmtMult(mult(streak))}</small></span>`;
+  else ex.innerHTML='';
+  prevStreak=streak;
+  const lv=$('lives');
+  if(R0&&R0.mode===2){lv.hidden=false;lv.innerHTML=[0,1,2].map(i=>`<span class="${i<R0.lives?'':'lost'}">${HEART}</span>`).join('');lv.setAttribute('aria-label',`${R0.lives} vieți`);}
+  else lv.hidden=true;
+  $('rnd').textContent=`${Math.min(rIdx+1,ROUND)}/${ROUND}`;
+  card.classList.toggle('hot',streak>=5&&streak<10);card.classList.toggle('fire',streak>=10);
+  syncChips();
+}
+function syncChips(){
+  document.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-selected',b.dataset.cat===S.cat));
+  $('revChip').hidden=!S.mis.length&&S.cat!=='rev';$('misN').textContent=S.mis.length;
+}
+
+function press(k){
+  if(sheetOpen||modalOpen||!statsView.hidden)return;
+  if(k==='ok')return check();
+  if(locked||revealed)return;
+  SFX.key();
+  if(rec&&!rec.saved)rec.keys.push([Math.round(elapsed()*1000),k==='back'?'<':k==='sign'?'±':k]);
+  if(k==='back'){if(input)input=input.slice(0,-1);else sign=1;}
+  else if(k==='sign')sign=-sign;
+  else if(/^\d$/.test(k)){if(input==='0')input=k;else if(input.length<6)input+=k;}
+  if(card.classList.contains('bad')){card.classList.remove('bad');ansEl.classList.remove('bad');fb('','');}
+  renderAns();
+}
+function moveToEnd(ex){const i=S.mis.findIndex(m=>m.p===ex.p);if(i>=0)S.mis.push(S.mis.splice(i,1)[0]);}
+
+function check(){
+  if(locked)return;
+  if(revealed){finishExercise();return;}
+  if(!input){fb('Scrie întâi un răspuns.','');card.classList.remove('shake');void card.offsetWidth;card.classList.add('shake');return;}
+  const v=sign*parseInt(input,10),dd=today(),st=cs(cur.c,cur.d),kd=kind(cur),par=curPar(),md=cur.mode,t=elapsed();
+  if(v===cur.a){
+    locked=true;const firstTry=wrongs===0,timed=firstTry&&!usedHint;
+    cancelAnimationFrame(raf);raf=0;
+    S.right++;dd.c++;streak++;if(streak>S.best)S.best=streak;
+    const rating=timed?(t<=.6*par?'fulger':t<=par?'rapid':'lent'):null;
+    let gain=0;
+    if(firstTry){
+      if(usedHint)gain=0;
+      else if(t<=par)gain=Math.max(1,kf()*(perf(t,par)-cur.pred))*mult(streak);
+      else gain=-SLOW[md]*(1+Math.min(1,(t-par)/par))*pMult();
+      if(cur.gold)gain*=2;S.rated++;
+      updateSkills(cur,usedHint?.25:perf(t,par),false);
+    }
+    gain=Math.round(gain);
+    const tr=cur.h.t;
+    if(usedHint){S.hd[tr]=(S.hd[tr]||0)+1;if(S.hd[tr]>=5){S.hlock[tr]=Date.now()+864e5;S.hd[tr]=0;toast(`${LOCK} Prea multe indicii la „${tr}”. Blocat 24 h.`);}}else if(firstTry)S.hd[tr]=0;
+    let pbNew=false;
+    if(firstTry){S.first++;st[0]++;kd.c++;dd.f++;dd.a++;R0.f++;R0.a++;
+      if(timed){st[2]+=t;st[3]++;dd.s+=t;dd.n++;S.times.push(t);if(S.times.length>30)S.times.shift();R0.ts.push(t);R0.par.push(par);
+        const pk=`${cur.c}${cur.d}`;if(S.pb[pk]!=null&&t<S.pb[pk])pbNew=true;if(S.pb[pk]==null||t<S.pb[pk])S.pb[pk]=+t.toFixed(2);}}
+    if(cur.rev)srAdvance(cur,firstTry&&!usedHint);
+    const lvBefore=level(S.xp),tBefore=tIdx(S.xp);
+    const real=addXP(gain);logEv(firstTry?1:2,real,timed?t:null,cur);R0.xp+=real;R0.bc=Math.max(R0.bc,streak);
+    dd.lv=Math.round(realLevel());dd.sk={};for(const c of CATS)if(S.sk[c]&&S.sk[c][2])dd.sk[c]=Math.round(S.sk[c][0]);
+    const qd=progressQuests({correct:true,fast:rating==='fulger',cat:cur.c,mode:md,streak});
+    for(const q of qd){const r=addXP(q.xp);logEv(4,r,null,null);R0.xp+=r;}
+    const Q=quests();let chest=0;if(!Q.chest&&Q.list.every(q=>q.done)){Q.chest=true;chest=addXP(30);logEv(4,chest,null,null);R0.xp+=chest;}
+    let goalHit=false,shield=false;
+    if(!dd.m&&dd.c>=S.goal){dd.m=true;goalHit=true;const ds=dayStreak();if(ds>S.bestDays)S.bestDays=ds;if(ds>0&&ds%7===0&&S.freeze<2){S.freeze++;shield=true;}}
+    const lvAfter=level(S.xp),tAfter=tIdx(S.xp);
+    commitRec('ok',{t:+t.toFixed(3),dx:real,rating,hint:usedHint,first:firstTry,pred2:+predict(cur).toFixed(3)});
+    save();renderTop();
+
+    card.classList.remove('bad','shake','hot','fire');card.classList.add('ok');ansEl.className='ans ok';answer.classList.remove('live');
+    SFX.ok(streak);
+    const lbl=rating==='fulger'?`${BOLT}Fulger`:rating==='rapid'?`${CHECK}Rapid`:rating==='lent'?`${CHECK}Peste țintă`:`${CHECK}Corect`;
+    const xs=real>0?`+${real}`:real<0?`−${-real}`:'±0';
+    fb(`${lbl}${timed?` · ${sec(t)} din ${sec(par).replace(',0 s',' s')}`:''} · <b>${xs} XP</b>`,real<0?'bad':cur.gold&&firstTry?'gold':'ok');
+    floatXP(firstTry?xs:'',real<0?'neg':cur.gold?'gold':'');
+    if(rating==='fulger'){SFX.fast();burstAt(ansEl,26,9);}
+    else if(cur.gold&&firstTry)burstAt(ansEl,30,9,['#FFD60A','#FFCC00','#FF9F0A','#FFFFFF']);
+    else if(rating==='rapid')burstAt(ansEl,10,5);
+    if(pbNew)toast(`${TROPHY} Record personal la ${CN[cur.c]} · ${sec(t)}`);
+    if([5,10,15,20,30,40,50,75,100].includes(streak)){toast(`${FLAME} ${streak} la rând · XP ${fmtMult(mult(streak))}`);burstAt($('extra'),24,8);}
+    for(const q of qd)setTimeout(()=>{SFX.quest();toast(`${GIFT} Provocare gata · +${q.xp} XP`);burstAt($('lvBtn'),26,8);},250);
+    if(chest)setTimeout(()=>{SFX.level();toast(`${GIFT} Cufărul zilei · +${chest} XP`);rain();},700);
+    if(goalHit)setTimeout(()=>{SFX.goal();const r=$('ring');r.classList.remove('done');void r.offsetWidth;r.classList.add('done');burstAt(r,36,9);toast(`${FLAME} Obiectivul zilei atins · ${zile(dayStreak())} la rând`);if(shield)toast(`${SHIELD} Ai câștigat un scut: o zi ratată nu-ți rupe seria`);},450);
+    if(lvAfter!==lvBefore){const b=$('lvN');b.classList.remove('up');void b.offsetWidth;b.classList.add('up');}
+    if(lvAfter>lvBefore&&tAfter===tBefore){toast(`${TOPS} Nivelul ${f(lvAfter)}`);burstAt($('lvBtn'),24,8);}
+    if(lvAfter<lvBefore)levelDown(lvAfter,tAfter<tBefore);
+    const nl=tAfter>tBefore?tAfter:0;
+    if(timed&&!cur.gold&&Math.random()<.05)showSelf(()=>finishExercise(nl));
+    else advT=setTimeout(()=>finishExercise(nl),rating==='lent'||!timed?950:700);
+  } else {
+    const err=errType(cur,v);
+    if(rec&&!rec.saved)rec.tries.push([Math.round(t*1000),v,err]);
+    S.errs[err]=(S.errs[err]||0)+1;
+    let livesMsg='';
+    if(wrongs===0){
+      const guess=t<1;
+      const lvB=level(S.xp),tB=tIdx(S.xp);
+      const real=addXP(-WRONG[md]*pMult()*(cur.gold?2:1)*(guess?2:1));S.rated++;
+      updateSkills(cur,0,true);
+      logEv(0,real,null,cur);R0.xp+=real;R0.a++;
+      S.wrong++;dd.w++;dd.a++;st[1]++;kd.w++;
+      const lost=streak;streak=0;
+      if(cur.rev)srAdvance(cur,false);else addMistake(cur,v);
+      if(md===2&&R0.lives>0){R0.lives--;livesMsg=R0.lives?` · −1 viață`:' · fără vieți';SFX.heart();if(!R0.lives)R0.dead=true;}
+      dd.lv=Math.round(realLevel());dd.sk={};for(const c of CATS)if(S.sk[c]&&S.sk[c][2])dd.sk[c]=Math.round(S.sk[c][0]);
+      save();renderTop();
+      if(level(S.xp)<lvB)levelDown(level(S.xp),tIdx(S.xp)<tB);
+      floatXP(real?`−${-real}`:'','neg');
+      fb(guess?`Prea rapid, pare ghicit · <b>${f(real)} XP</b>${livesMsg}`:lost>=5?`Combo de ${lost} pierdut · <b>${f(real)} XP</b>${livesMsg}`:`Nu e corect · <b>${f(real)} XP</b>${livesMsg}`,'bad');
+      if(md===2){const l=$('lives').querySelectorAll('span')[R0.lives];if(l){l.classList.add('pop');}}
+    } else fb(md===2?'Tot nu. Poți vedea răspunsul.':'Tot nu. Deschide indiciul.','bad');
+    wrongs++;SFX.bad();
+    card.classList.remove('shake','hot','fire');void card.offsetWidth;card.classList.add('shake','bad');ansEl.classList.add('bad');
+    skipBtn.textContent='Arată răspunsul';
+    if(R0.dead){setTimeout(()=>{if(!revealed)reveal();},600);return;}
+    setTimeout(()=>{if(!locked&&!revealed){input='';sign=1;renderAns();ansEl.classList.add('bad');}},450);
+  }
+}
+function levelDown(n,lostTitle){SFX.down();toast(lostTitle?`${DOWNI} Ai coborât la titlul ${ltitle(S.xp)}`:`${DOWNI} Ai coborât la nivelul ${f(n)}`);}
+function reveal(){
+  revealed=true;cancelAnimationFrame(raf);raf=0;
+  commitRec('rev',{t:+elapsed().toFixed(3)});
+  save();renderTop();
+  card.classList.remove('ok','shake');card.classList.add('bad');
+  ansEl.className='ans rev';ansEl.textContent=f(cur.a);answer.classList.remove('live');
+  fb(R0.dead?'Ai rămas fără vieți. Acesta e răspunsul.':'Acesta e răspunsul. Trucul e mai jos.','rev');
+  okKey.innerHTML=NEXT_HTML;skipBtn.textContent='Următorul';setHintBtn();
+  openSheet(cur,true);
+}
+function skip(){
+  if(locked||modalOpen)return;
+  if(revealed){finishExercise();return;}
+  if(wrongs>0){reveal();return;}
+  if(cur.rev)moveToEnd(cur);
+  const md=cur.mode;
+  const real=addXP(-WRONG[md]*.5*pMult());S.rated++;logEv(6,real,null,cur);R0.xp+=real;
+  commitRec('skip',{dx:real});
+  streak=0;
+  if(md===2&&R0.lives>0){R0.lives--;SFX.heart();if(!R0.lives)R0.dead=true;}
+  save();toast(`${DOWNI} Sărit · ${f(real)} XP${md===2?' · −1 viață':''}`);
+  if(R0.dead){finishExercise();return;}
+  next();
+}
+
+/* "how did you work it out?" one tap, about once every 20 */
+function showSelf(done){
+  selfOn=true;fbEl.hidden=true;$('par').hidden=true;selfq.hidden=false;
+  const fin=k=>{if(!selfOn)return;selfOn=false;clearTimeout(selfT);if(k&&rec){rec.self=k;DB.put('ex',rec);const c=S.self[cur.c]||(S.self[cur.c]={});c[k]=(c[k]||0)+1;save();}hideSelf();done();};
+  selfq.onclick=e=>{const b=e.target.closest('[data-s]');if(b)fin(b.dataset.s);};
+  selfT=setTimeout(()=>fin(null),5000);
+}
+function hideSelf(){selfOn=false;selfq.hidden=true;fbEl.hidden=false;$('par').hidden=false;}
+
+/* rounds of 10 */
+function finishExercise(newLevel){
+  clearTimeout(advT);
+  rIdx++;R0.done++;
+  const roundDone=rIdx>=ROUND||R0.dead;
+  S.openRound=roundDone?null:{idx:rIdx,mode:R0.mode,at:Date.now()};save();
+  const queue=[];
+  if(newLevel)queue.push(()=>showLevel(newLevel));
+  if(roundDone)queue.push(()=>showRound());
+  if(!queue.length){next();return;}
+  runModals(queue);
+}
+function abandonRound(why){
+  if(rIdx>=3&&rIdx<ROUND&&!R0.dead){const real=addXP(-10*pMult());logEv(7,real,null,null);ev('quit',{idx:rIdx,why,dx:real});toast(`${DOWNI} Rundă neterminată · ${f(real)} XP`);}
+  rIdx=0;R0=newRound();S.openRound=null;save();
+}
+let mq=[];
+function runModals(q){mq=q;nextModal();}
+function nextModal(){const fn=mq.shift();if(fn){fn();return;}closeModal();if(rIdx>=ROUND||R0.dead){rIdx=0;R0=newRound();}next();}
+function openModal(html){mcard.innerHTML=html;modal.hidden=false;modalOpen=true;pause();ev('modal',{h:html.replace(/<[^>]+>/g,' ').slice(0,60)});setTimeout(()=>{const b=mcard.querySelector('.btn.primary');if(b)b.focus({preventScroll:true});},60);}
+function closeModal(){modal.hidden=true;modalOpen=false;}
+function showLevel(i){
+  SFX.level();rain();
+  openModal(`<div class="mbadge">${f(level(S.xp))}</div><p class="eyebrow">Titlu nou</p><h2>${TITLES[i][1]}</h2><p>${nextTitle(S.xp)}</p><div class="acts"><button class="btn primary" data-act="next">Continuă</button></div>`);
+}
+const q2=q=>q.t==='combo'?`${q.n-q.p} la rând`:`${q.n-q.p}`;
+function showRound(){
+  const a=R0.a||1,acc=R0.f/a,ts=R0.ts,avg=ts.length?ts.reduce((x,y)=>x+y,0)/ts.length:null;
+  const fastShare=ts.length?ts.filter((t,i)=>t<=R0.par[i]).length/Math.max(R0.done,1):0;
+  let stars=(acc>=.6?1:0)+(acc>=.9?1:0)+(acc>=.9&&fastShare>=.6?1:0);if(R0.dead)stars=Math.min(stars,1);
+  let weak=0;if(R0.a>=3&&acc<.5){weak=addXP(-15*pMult());logEv(7,weak,null,null);R0.xp+=weak;}
+  const L=S.lastRound;let cmp='',flat=false;
+  if(L&&avg!=null&&L.avg!=null&&Math.abs(L.avg-avg)>=.1)cmp=avg<L.avg?`Cu ${sec(L.avg-avg)} mai rapid decât runda trecută`:(flat=true,`Cu ${sec(avg-L.avg)} mai lent decât runda trecută`);
+  else if(L&&L.acc!=null&&acc!==L.acc)cmp=acc>L.acc?'Precizie mai bună decât runda trecută':(flat=true,'Precizia a scăzut față de runda trecută');
+  const n=level(S.xp),toNext=(n+1)*100-S.xp;
+  const near=toNext<=50?`Mai ai ${fmtN(toNext)} XP până la nivelul ${f(n+1)}.`:'';
+  const qOpen=quests().list.find(q=>!q.done&&q.p/q.n>=.5);
+  const hook=near||(qOpen?`Încă ${q2(qOpen)} pentru provocarea „${qText(qOpen)}”.`:'');
+  S.lastRound={avg,acc};S.openRound=null;save();
+  ev('round',{mode:R0.mode,f:R0.f,a:R0.a,xp:R0.xp,avg,stars,dead:R0.dead,bc:R0.bc});
+  const titles=['Continuă să exersezi','Bine','Foarte bine','Perfect'];
+  openModal(`<div class="stars" aria-label="${stars} din 3 stele">${[0,1,2].map(i=>STAR.replace('class="i fill"',`class="i fill${i<stars?' on':''}" style="animation-delay:${.15+i*.22}s"`)).join('')}</div><p class="eyebrow">${R0.dead?'Fără vieți':'Rundă terminată'}</p><h2>${R0.dead?'Data viitoare':titles[stars]}</h2>
+    <div class="mstats"><div><b>${R0.xp>=0?'+':''}${f(R0.xp)}</b><span>XP</span></div><div><b>${R0.f}/${R0.a}</b><span>din prima</span></div><div><b>${avg==null?'—':sec(avg)}</b><span>viteză</span></div></div>
+    ${weak?`<p class="cmp flat">Rundă sub 50% · ${f(weak)} XP</p>`:cmp?`<p class="cmp${flat?' flat':''}">${cmp}</p>`:''}${hook?`<p>${hook}</p>`:''}
+    <div class="acts"><button class="btn primary" data-act="next">Încă o rundă</button><button class="btn plain" data-act="stats">Vezi evoluția</button></div>`);
+  for(let i=0;i<stars;i++)setTimeout(()=>SFX.star(i),150+i*220);
+  if(stars===3)setTimeout(rain,400);
+}
+
+/* hint sheet */
+function openSheet(ex,all){
+  if(ex===cur&&!all&&hintLocked())return;
+  sheetEx=ex;
+  if(ex===cur&&!all){usedHint=true;ex._shown=Math.max(ex._shown||0,1);}
+  const n=all?ex.h.s.length:ex._shown;
+  if(ex===cur&&rec&&!rec.saved)rec.hints.push([n,Math.round(elapsed()*1000)]);
+  $('hExpr').textContent=ex.p;$('hTitle').textContent=ex.h.t;
+  hSteps.innerHTML=ex.h.s.slice(0,n).map(s=>`<li>${s}</li>`).join('');
+  sheet.dataset.shown=n;updNext();
+  lastFocus=document.activeElement;sheet.hidden=false;sheetOpen=true;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>sheet.classList.add('open')));
+  setTimeout(()=>hNext.focus({preventScroll:true}),60);
+}
+function updNext(){const k=+sheet.dataset.shown,n=sheetEx.h.s.length;hNext.innerHTML=k<n?`Pasul următor <small>${k}/${n}</small>`:'Am înțeles';}
+function stepNext(){
+  let k=+sheet.dataset.shown;const n=sheetEx.h.s.length;
+  if(k<n){const li=document.createElement('li');li.innerHTML=sheetEx.h.s[k];hSteps.appendChild(li);k++;sheet.dataset.shown=k;sheetEx._shown=Math.max(sheetEx._shown||0,k);if(sheetEx===cur&&rec&&!rec.saved)rec.hints.push([k,Math.round(elapsed()*1000)]);updNext();li.scrollIntoView({block:'nearest',behavior:'smooth'});}
+  else closeSheet();
+}
+function closeSheet(){
+  if(!sheetOpen)return;sheetOpen=false;sheet.classList.remove('open');
+  setTimeout(()=>{if(!sheetOpen)sheet.hidden=true;},340);
+  if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
+}
+
+function setCat(c){
+  if(c!=='rev')S.lastCat=c;
+  S.cat=c;save();syncChips();ev('cat',{c});
+  const b=document.querySelector(`.chip[data-cat="${c}"]`);if(b&&!b.hidden)b.scrollIntoView({inline:'nearest',block:'nearest',behavior:'smooth'});
+  next();
+}
+function setDiff(d){
+  const prev=S.diff;S.diff=d;
+  if(prev!==d)abandonRound('diff');
+  save();$('diff').style.setProperty('--i',d);ev('diff',{d});
+  document.querySelectorAll('#diff button').forEach(b=>b.setAttribute('aria-checked',+b.dataset.d===d));
+  next();
+}
+
+/* ---------- progress screen ---------- */
+let pane='evo',resetArm=false,resetT;
+function openStats(p){pane=p||pane;pause();showPane();app.hidden=true;statsView.hidden=false;window.scrollTo(0,0);renderPane();ev('screen',{n:'progres:'+pane});$('backBtn').focus({preventScroll:true});}
+function closeStats(){statsView.hidden=true;app.hidden=false;window.scrollTo(0,0);renderTop();ev('screen',{n:'antrenament'});resume();}
+function showPane(){
+  const ps=['evo','q','det'];$('paneSeg').style.setProperty('--i',ps.indexOf(pane));
+  document.querySelectorAll('#paneSeg button').forEach(b=>b.setAttribute('aria-selected',b.dataset.p===pane));
+  for(const p of ps)$('pane-'+p).hidden=p!==pane;
+}
+function renderPane(){if(pane==='evo')renderEvo();else if(pane==='q')renderQ();else renderDet();}
+
+/* evolution: stock-style chart */
+const RGL={d:'azi',w:'în 7 zile',m:'în 30 de zile',q:'în 3 luni',a:'de la început'};
+let evM='lv',evR='d',evPts=[],evGeo=null;
+function sod(){const x=new Date();x.setHours(0,0,0,0);return x;}
+function series(m,r){
+  const L=S.log,pts=[],t0=sod().getTime();
+  if(r==='d'){
+    let idx=L.findIndex(e=>e[0]*1000>=t0);if(idx<0)idx=L.length;
+    const T=L.slice(idx);
+    if(m==='xp'){const start=idx>0?L[idx-1][6]:(T.length?T[0][6]-T[0][1]:S.xp);pts.push({t:t0,v:start});T.forEach(e=>pts.push({t:e[0]*1000,v:e[6]}));if(pts.length<2)pts.push({t:Math.max(Date.now(),t0+1),v:S.xp});}
+    else if(m==='lv'){let start=null;for(let i=idx-1;i>=0;i--)if(L[i][7]!=null){start=L[i][7];break;}const TT=T.filter(e=>e[7]!=null);if(start==null)start=TT.length?TT[0][7]:Math.round(realLevel());pts.push({t:t0,v:start});TT.forEach(e=>pts.push({t:e[0]*1000,v:e[7]}));if(pts.length<2)pts.push({t:Math.max(Date.now(),t0+1),v:Math.round(realLevel())});}
+    else if(m==='acc'){const A=L.filter(e=>e[2]===0||e[2]===1);A.forEach((e,j)=>{if(e[0]*1000<t0)return;const w=A.slice(Math.max(0,j-9),j+1);pts.push({t:e[0]*1000,v:w.filter(x=>x[2]===1).length/w.length*100});});}
+    else{const A=L.filter(e=>e[3]>=0);A.forEach((e,j)=>{if(e[0]*1000<t0)return;const w=A.slice(Math.max(0,j-4),j+1);pts.push({t:e[0]*1000,v:w.reduce((s,x)=>s+x[3],0)/w.length/10});});}
+    return pts;
+  }
+  let from;
+  if(r==='a'){const ks=Object.keys(S.days).filter(k=>{const e=S.days[k];return e&&(e.a||e.c||e.w||e.dx);}).sort();from=ks.length?new Date(ks[0]+'T00:00:00'):sod();}
+  else{from=sod();from.setDate(from.getDate()-({w:7,m:30,q:90}[r]-1));}
+  const fk=dkey(from),field=m==='xp'?'x':'lv';
+  let carry=null;
+  if(m==='xp'||m==='lv'){const prev=Object.keys(S.days).filter(k=>k<fk&&S.days[k][field]!=null).sort().pop();carry=prev?S.days[prev][field]:(m==='xp'?START:null);if(carry!=null)pts.push({t:from.getTime(),v:carry});}
+  const end=Date.now();
+  for(const d=new Date(from);d.getTime()<=end;d.setDate(d.getDate()+1)){
+    const e=S.days[dkey(d)],tEnd=Math.min(d.getTime()+864e5,end);
+    if(m==='xp'||m==='lv'){if(e&&e[field]!=null)carry=e[field];if(carry!=null)pts.push({t:tEnd,v:carry});}
+    else if(m==='acc'){const a=e?(e.a||(e.c||0)+(e.w||0)):0;if(a>0){const ff=e.a?e.f:Math.max(0,(e.c||0)-(e.w||0));pts.push({t:tEnd,v:ff/a*100});}}
+    else if(e&&e.n>0)pts.push({t:tEnd,v:e.s/e.n});
+  }
+  return pts;
+}
+function fmtVal(v){return evM==='xp'?`${fmtN(v)}<small>XP</small>`:evM==='lv'?`${fmtN(v)}<small>nivel real</small>`:evM==='acc'?`${Math.round(v)}<small>%</small>`:`${v.toFixed(1).replace('.',',')}<small>s</small>`;}
+function fmtAxis(v){return evM==='xp'||evM==='lv'?fmtN(v):evM==='acc'?Math.round(v)+'%':v.toFixed(1).replace('.',',')+' s';}
+function fmtWhen(t){return evR==='d'?new Date(t).toLocaleTimeString('ro-RO',{hour:'2-digit',minute:'2-digit'}):new Date(t-1).toLocaleDateString('ro-RO',{day:'numeric',month:'short'});}
+function renderEvo(){
+  document.querySelectorAll('#mtabs .tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.m===evM));
+  document.querySelectorAll('#ranges .rg').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===evR));
+  evPts=series(evM,evR);
+  const n=evPts.length,dv=n?evPts[n-1].v-evPts[0].v:0;
+  $('chart').className='chart '+((evM==='spd'?dv<=0:dv>=0)?'up':'down');
+  draw();head(null);
+  let a=0,ff=0;
+  if(evR==='d'){const e=S.days[dkey(new Date())];if(e){a=e.a||0;ff=e.f||0;}}
+  else{const fromK=evR==='a'?'':(()=>{const x=sod();x.setDate(x.getDate()-({w:7,m:30,q:90}[evR]-1));return dkey(x);})();for(const[k,e]of Object.entries(S.days))if(k>=fromK){a+=e.a||((e.c||0)+(e.w||0));ff+=e.a?e.f:Math.max(0,(e.c||0)-(e.w||0));}}
+  const xs=series('xp',evR),xd=xs.length?xs[xs.length-1].v-xs[0].v:0;
+  $('evSum').textContent=a?`${pl(a,'exercițiu','exerciții')} · ${Math.round(ff/a*100)}% din prima · ${xd>=0?'+':'−'}${fmtN(Math.abs(xd))} XP`:`Niciun exercițiu ${RGL[evR]}.`;
+  renderBrain();
+}
+function head(i){
+  const n=evPts.length;
+  if(!n){$('evBig').innerHTML='—';$('evDelta').innerHTML='';return;}
+  const p=i==null?evPts[n-1]:evPts[i];
+  $('evBig').innerHTML=fmtVal(p.v);
+  const D=$('evDelta');
+  if(i!=null){D.className='delta';D.innerHTML=`<span class="when">${fmtWhen(p.t)}</span>`;return;}
+  if(n<2){D.className='delta';D.innerHTML=`<span class="when">${RGL[evR]}</span>`;return;}
+  const dv=evPts[n-1].v-evPts[0].v,z=Math.abs(dv)<1e-9,good=evM==='spd'?dv<0:dv>0;
+  D.className='delta'+(z?'':good?' up':' down');
+  const arrow=z?'':dv>0?'<svg class="i fill" viewBox="0 0 12 12"><path d="M6 1l5 9H1z"/></svg>':'<svg class="i fill" viewBox="0 0 12 12"><path d="M6 11L1 2h10z"/></svg>';
+  const sg=dv>0?'+':dv<0?'−':'';
+  let txt;
+  if(evM==='xp'||evM==='lv'){txt=`${sg}${fmtN(Math.abs(dv))}${evM==='xp'?' XP':''}`;if(evPts[0].v>0)txt+=` (${sg}${(Math.abs(dv)/evPts[0].v*100).toFixed(1).replace('.',',')}%)`;}
+  else if(evM==='acc')txt=`${sg}${Math.round(Math.abs(dv))} pct.`;
+  else txt=`${sg}${Math.abs(dv).toFixed(1).replace('.',',')} s`;
+  D.innerHTML=`${arrow}<span>${txt}</span><span class="when">${RGL[evR]}</span>`;
+}
+function draw(){
+  const svg=$('chartSvg'),W=Math.max(260,Math.round($('chart').clientWidth||340)),H=210,pt=12,pb=24,pr=46;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  if(evPts.length<2){svg.innerHTML='';$('chartEmpty').hidden=false;evGeo=null;return;}
+  $('chartEmpty').hidden=true;
+  const vs=evPts.map(p=>p.v);let lo=Math.min(...vs),hi=Math.max(...vs);const dmin=lo,dmax=hi;
+  if(hi-lo<1e-9){hi+=evM==='xp'||evM==='lv'?10:1;lo-=evM==='xp'||evM==='lv'?10:1;}
+  const pv=(hi-lo)*.14;lo-=pv;hi+=pv;
+  const t0=evPts[0].t,span=Math.max(1,evPts[evPts.length-1].t-t0);
+  const X=t=>(t-t0)/span*(W-pr),Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb);
+  const line=evPts.map((p,i)=>`${i?'L':'M'}${X(p.t).toFixed(1)},${Y(p.v).toFixed(1)}`).join('');
+  const lp=evPts[evPts.length-1];
+  const gv=dmax-dmin<1e-9?[dmax]:[dmax,(dmax+dmin)/2,dmin];
+  let h='<defs><linearGradient id="lgrad" x1="0" x2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".35"/><stop offset="1" stop-color="currentColor"/></linearGradient><linearGradient id="agrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".32"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>';
+  for(const v of gv){const y=Y(v).toFixed(1);h+=`<line class="grid" x1="0" x2="${W-pr}" y1="${y}" y2="${y}"/><text class="gl" x="${W-pr+6}" y="${y}" dominant-baseline="middle">${fmtAxis(v)}</text>`;}
+  h+=`<line class="base" x1="0" x2="${W-pr}" y1="${Y(evPts[0].v).toFixed(1)}" y2="${Y(evPts[0].v).toFixed(1)}"/>`;
+  h+=`<path class="ar" d="${line}L${X(lp.t).toFixed(1)},${H-pb}L0,${H-pb}Z"/><path class="ln" d="${line}"/>`;
+  h+=`<circle class="dot" cx="${X(lp.t).toFixed(1)}" cy="${Y(lp.v).toFixed(1)}" r="4.5"/>`;
+  h+=`<text class="gl" x="0" y="${H-6}">${fmtWhen(evPts[0].t)}</text><text class="gl" x="${W-pr}" y="${H-6}" text-anchor="end">${evR==='d'?'acum':fmtWhen(lp.t)}</text>`;
+  h+=`<g id="xh" style="opacity:0"><line class="xh" id="xhl" x1="0" x2="0" y1="${pt}" y2="${H-pb}"/><circle class="dot" id="xhd" r="5.5" cx="0" cy="0"/></g>`;
+  svg.innerHTML=h;evGeo={W,X,Y};
+  const nm={lv:'nivel real',xp:'XP',acc:'precizie',spd:'viteză'}[evM];
+  $('chart').setAttribute('aria-label',`Grafic ${nm} ${RGL[evR]}: de la ${fmtAxis(evPts[0].v)} la ${fmtAxis(lp.v)}`);
+}
+let scrubI=null;
+function scrubTo(i){if(!evGeo||!evPts.length)return;scrubI=Math.max(0,Math.min(evPts.length-1,i));const p=evPts[scrubI];const x=evGeo.X(p.t),y=evGeo.Y(p.v);$('xh').style.opacity=1;$('xhl').setAttribute('x1',x);$('xhl').setAttribute('x2',x);$('xhd').setAttribute('cx',x);$('xhd').setAttribute('cy',y);head(scrubI);}
+function scrubAt(e){if(!evGeo)return;const r=$('chartSvg').getBoundingClientRect();const x=(e.clientX-r.left)/r.width*evGeo.W;let bi=0,bd=Infinity;evPts.forEach((p,i)=>{const d=Math.abs(evGeo.X(p.t)-x);if(d<bd){bd=d;bi=i;}});scrubTo(bi);}
+function endScrub(){scrubI=null;const g=$('xh');if(g)g.style.opacity=0;head(null);}
+const chartEl=$('chart');
+chartEl.addEventListener('pointerdown',e=>scrubAt(e));
+chartEl.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'||e.buttons)scrubAt(e);});
+for(const t of['pointerup','pointercancel','pointerleave'])chartEl.addEventListener(t,()=>{if(scrubI!=null)endScrub();});
+chartEl.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();scrubTo(scrubI==null?evPts.length-1:scrubI+(e.key==='ArrowLeft'?-1:1));}else if(e.key==='Escape'&&scrubI!=null){e.stopPropagation();endScrub();}});
+chartEl.addEventListener('blur',()=>{if(scrubI!=null)endScrub();});
+if(window.ResizeObserver)new ResizeObserver(()=>{if(!statsView.hidden&&pane==='evo')draw();}).observe(chartEl);
+
+/* the brain: one zone per category, brighter = higher real level, more dots = more practice */
+const ZONES={add:'100,80 100,-10 -10,-10 -10,30',sub:'100,80 -10,30 -10,112',mul:'100,80 -10,112 -10,170 100,170',div:'100,80 100,-10 210,-10 210,30',neg:'100,80 210,30 210,112',rad:'100,80 210,112 210,170 100,170'};
+let brainSel=null;
+const ZL={add:[60,42,'+'],sub:[44,76,'−'],mul:[74,106,'×'],div:[140,42,'÷'],neg:[156,76,'±'],rad:[126,106,'√']};
+function catTrend(c){const s=S.sk[c];if(!s)return null;const d=new Date();d.setDate(d.getDate()-7);const k=dkey(d);const ks=Object.keys(S.days).filter(x=>x<=k&&S.days[x].sk&&S.days[x].sk[c]!=null).sort();return ks.length?s[0]-S.days[ks[ks.length-1]].sk[c]:null;}
+function renderBrain(){
+  const r=rng(hash('creier')),dots=Math.min(60,Math.floor(S.nrec/15));let dh='';
+  for(let i=0;i<60;i++){const x=34+r()*132,y=18+r()*100;if(i<dots)dh+=`<circle class="nd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(1+r()*1.1).toFixed(2)}" style="animation-delay:${(r()*3).toFixed(2)}s"/>`;else r();}
+  let zh='',zl='';
+  for(const c of CATS){const s=S.sk[c];const known=s&&s[2]>0;const t=known?Math.min(1,Math.max(0,(s[0]-800)/900)):0;
+    zh+=`<polygon class="zone${known?'':' unk'}${brainSel===c?' sel':''}" data-z="${c}" points="${ZONES[c]}" style="fill-opacity:${known?(.18+.82*t).toFixed(2):1}"/>`;zl+=`<text class="zl${known?'':' unk'}" x="${ZL[c][0]}" y="${ZL[c][1]}">${ZL[c][2]}</text>`;}
+  $('brainSvg').innerHTML=`<defs><clipPath id="bclip"><circle cx="64" cy="56" r="34"/><circle cx="58" cy="90" r="30"/><circle cx="92" cy="40" r="28"/><circle cx="108" cy="40" r="28"/><circle cx="136" cy="56" r="34"/><circle cx="142" cy="90" r="30"/><circle cx="84" cy="96" r="24"/><circle cx="116" cy="96" r="24"/></clipPath></defs>
+    <g clip-path="url(#bclip)"><rect class="bbase" x="0" y="0" width="200" height="150"/>${zh}${dh}${zl}
+    <path class="gy" d="M36 52q12-14 26-4M44 78q14-6 22 6M30 98q14 4 22-6M70 30q12-10 22 2M66 64q10 10 24 2M74 104q10-8 20 2M164 52q-12-14-26-4M156 78q-14-6-22 6M170 98q-14 4-22-6M130 30q-12-10-22 2M134 64q-10 10-24 2M126 104q-10-8-20 2"/>
+    <line class="fis" x1="100" y1="10" x2="100" y2="122"/></g>
+    <circle class="cb" cx="122" cy="122" r="12"/><path class="cbg" d="M114 120q8 4 16 0M115 126q7 3 14 0"/><rect class="stem" x="94" y="114" width="12" height="26" rx="6"/>`;
+  const sc=brainSel;
+  if(sc){const s=S.sk[sc],tr=catTrend(sc);$('brainCap').innerHTML=s&&s[2]?`<b>${CN[sc]}</b> · ${fmtN(s[0])} ±${Math.round(uNow(s)*200)}${tr!=null&&Math.abs(tr)>=1?` · <span class="${tr>0?'up':'down'}">${tr>0?'+':'−'}${fmtN(Math.abs(tr))} în 7 zile</span>`:''}`:`<b>${CN[sc]}</b> · încă nicio dată`;}
+  else{const lv=realLevel(),u=realU();$('brainCap').innerHTML=`Nivel real <b>${fmtN(lv)}</b>${u>.6?' · provizoriu':''} · ${pl(S.nrec,'exercițiu','exerciții')} analizate`;}
+}
+$('brainSvg').addEventListener('click',e=>{const z=e.target.closest('[data-z]');brainSel=z?(brainSel===z.dataset.z?null:z.dataset.z):null;renderBrain();});
+
+/* quests + level + streak calendar */
+function renderQ(){
+  const n=level(S.xp),into=((S.xp%100)+100)%100;
+  $('qLv').textContent=f(n);$('qLvT').textContent=`${fmtN(S.xp)} XP · ${ltitle(S.xp)}`;
+  $('qLvS').textContent=`Încă ${fmtN(100-into)} XP până la nivelul ${f(n+1)}`;
+  $('qLvBar').style.width=into.toFixed(1)+'%';
+  $('qMeta').innerHTML=`<div><b>${fmtX(pMult())}</b><span>miza</span></div><div><b>${S.freeze}</b><span>${S.freeze===1?'scut':'scuturi'}</span></div><div><b>${S.best}</b><span>record la rând</span></div>`;
+  const Q=quests(),dn=Q.list.filter(q=>q.done).length;
+  $('qList').innerHTML=Q.list.map((q,i)=>`<button class="li" data-q="${i}"><span class="ico${q.done?' done':''}">${q.done?CHECK:QICON[q.t]}</span><div class="main"><span class="t1">${qText(q)}</span><div class="bar${q.done?' done':''}"><i style="width:${(q.p/q.n*100).toFixed(0)}%"></i></div><span class="t2">${q.p} / ${q.n}</span></div><span class="rw">${q.done?'Gata':'+'+q.xp+' XP'}</span></button>`).join('')
+    +`<div class="li"><span class="ico chest">${GIFT}</span><div class="main"><span class="t1">Cufărul zilei</span><span class="t2">${Q.chest?'Deschis azi':`${dn} din 3 provocări gata`}</span></div><span class="rw">${Q.chest?'Gata':'+30 XP'}</span></div>`;
+  const ds=dayStreak();if(ds>S.bestDays)S.bestDays=ds;const dd=today();
+  $('sDays').textContent=zile(ds);$('sBestDays').textContent=zile(S.bestDays);
+  $('sDaysSub').textContent=met(dd)?'Obiectivul de azi e atins':S.freeze?`Încă ${S.goal-dd.c} corecte azi, altfel se folosește un scut`:ds?`Încă ${S.goal-dd.c} corecte azi sau pierzi ${TAX+breakPen(ds)} XP`:`Încă ${S.goal-dd.c} corecte azi sau pierzi ${TAX} XP`;
+  renderCal();
+}
+let calOff=0,selKey=null;
+function renderCal(){
+  const now=new Date(),base=new Date(now.getFullYear(),now.getMonth()+calOff,1);
+  const y=base.getFullYear(),m=base.getMonth(),nd=new Date(y,m+1,0).getDate(),lead=(base.getDay()+6)%7,tk=dkey(now);
+  $('calTitle').textContent=cap(base.toLocaleDateString('ro-RO',{month:'long',year:'numeric'}));
+  $('calNext').disabled=calOff>=0;
+  const sk=selKey||tk;let h='';
+  for(let i=0;i<lead;i++)h+='<span></span>';
+  for(let d=1;d<=nd;d++){
+    const k=`${y}-${pad(m+1)}-${pad(d)}`,e=S.days[k];let c='cd';
+    if(k===tk)c+=' today';
+    if(k>tk)c+=' fut';else if(e&&e.m)c+=' met';else if(e&&e.fz)c+=' frz';else if(k<tk&&e&&e.pen)c+=' miss';else if(k<tk)c+=' pre';
+    h+=`<button class="${c}" data-k="${k}" aria-pressed="${k===sk}"${k>tk?' disabled':''}>${d}</button>`;
+  }
+  $('calGrid').innerHTML=h;
+  const e=S.days[sk]||{},name=sk===tk?'Azi':cap(new Date(sk+'T00:00:00').toLocaleDateString('ro-RO',{weekday:'long',day:'numeric',month:'long'}));
+  const parts=e.c||e.w?[`${e.c||0} corecte`,`${e.w||0} ${e.w===1?'greșeală':'greșeli'}`]:[sk===tk?'încă nimic':'fără exerciții'];
+  if(e.dx)parts.push(`${e.dx>0?'+':''}${fmtN(e.dx)} XP`);
+  if(e.pen)parts.push(`din care −${e.pen} penalizare`);
+  if(e.fz)parts.push('salvată de un scut');
+  $('calDetail').textContent=`${name}: ${parts.join(' · ')}`;
+}
+
+/* details */
+function renderDet(){
+  const lv=realLevel(),u=realU();
+  $('rlVal').textContent=fmtN(lv);
+  $('rlSub').textContent=u>.6?'Nivel real · provizoriu, mai rezolvă câteva':`Nivel real · ±${Math.round(u*200)}`;
+  $('rlChance').innerHTML=DIFFS.map((d,i)=>`<div><b>${Math.round(expect2(lv,DR[i])*100)}%</b><span>${d}</span></div>`).join('');
+  $('tRight').textContent=fmtN(S.right);
+  const a=pct(S.first,S.wrong);$('tAcc').textContent=a===null?'—':a+'%';
+  $('tSpeed').textContent=S.times.length?sec(S.times.reduce((x,y)=>x+y,0)/S.times.length):'—';
+  $('tBest').textContent=S.best;
+  const rows=CATS.map(c=>{const arr=S.cs[c]||[[0,0,0,0],[0,0,0,0],[0,0,0,0]];const t=arr.reduce((o,r)=>{o.c+=r[0];o.w+=r[1];o.s+=r[2];o.n+=r[3];return o;},{c:0,w:0,s:0,n:0});const s=S.sk[c];return{c,arr,...t,acc:pct(t.c,t.w),r:s&&s[2]?s[0]:null};});
+  const elig=rows.filter(r=>r.r!=null&&r.c+r.w>=5);
+  const weak=elig.length>1?elig.reduce((m,r)=>r.r<m.r?r:m):null;
+  $('catList').innerHTML=rows.map(r=>{
+    const tot=r.c+r.w;
+    const sub=tot?`${r.acc}% din prima · ${r.c+r.w} exerciții${r.n?' · '+sec(r.s/r.n):''}`:'Încă nimic rezolvat';
+    const dl=tot?DIFFS.map((n,i)=>{const v=pct(r.arr[i][0],r.arr[i][1]);return`${n} ${v===null?'—':v+'%'}`;}).join(' · '):'';
+    return`<button class="li" data-go="${r.c}"><div class="main"><span class="t1">${CN[r.c]}${weak&&weak.c===r.c?'<span class="tag"><svg class="i" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg>De lucrat</span>':''}</span><span class="t2">${sub}</span>${dl?`<span class="t2">${dl}</span>`:''}${tot?`<div class="bar" aria-hidden="true"><i style="width:${Math.min(100,Math.max(4,((r.r||SK0)-600)/12)).toFixed(0)}%"></i></div>`:''}</div><span class="val">${r.r!=null?fmtN(r.r):''}</span>${CHEV}</button>`;
+  }).join('');
+  const ks=Object.entries(S.kinds).filter(([,v])=>v.w>0).sort((a,b)=>b[1].w-a[1].w||(b[1].w/(b[1].c+b[1].w))-(a[1].w/(a[1].c+a[1].w))).slice(0,5);
+  $('kindList').innerHTML=ks.length?ks.map(([t,v])=>`<div class="li"><div class="main"><span class="t1">${t}</span><span class="t2">${CN[v.cat]||''} · ${v.w} ${v.w===1?'greșeală':'greșeli'} din ${v.c+v.w}</span></div><span class="val">${Math.round(v.w/(v.c+v.w)*100)}%</span></div>`).join(''):'<div class="empty">Încă nicio greșeală. Când apar, vezi aici la ce trucuri.</div>';
+  const es=Object.entries(S.errs).sort((a,b)=>b[1]-a[1]),et=es.reduce((s,[,n])=>s+n,0);
+  $('errList').innerHTML=es.length?es.slice(0,6).map(([k,n])=>`<div class="li"><div class="main"><span class="t1">${ERRN[k]||k}</span><div class="bar" aria-hidden="true"><i style="width:${(n/es[0][1]*100).toFixed(0)}%"></i></div></div><span class="val">${Math.round(n/et*100)}%</span></div>`).join(''):'<div class="empty">Aici apare de ce greșești: semn, transport, cifre inversate și altele.</div>';
+  const ms=S.mis.slice().sort((a,b)=>a.due-b.due).slice(0,10),now=Date.now();
+  $('misList').innerHTML=ms.length?ms.map(m=>`<button class="li" data-mis="${S.mis.indexOf(m)}"><div class="main"><span class="ex">${m.q}</span><span class="t2">ai scris <span class="mine">${f(m.y)}</span> · corect <span class="right">${f(m.a)}</span> · ${m.due<=now?'de repetat acum':'revine '+whenTxt(m.due)}</span></div>${CHEV}</button>`).join(''):'<div class="empty">Nicio greșeală de reparat.</div>';
+  $('revBtn').hidden=!S.mis.length;$('revBtn').textContent=`Repetă greșelile (${S.mis.length})`;
+  $('goalSeg').style.setProperty('--i',GOALS.indexOf(S.goal));
+  document.querySelectorAll('#goalSeg button').forEach(b=>b.setAttribute('aria-checked',+b.dataset.g===S.goal));
+  $('sndSw').setAttribute('aria-checked',S.snd);
+  renderData();
+  $('xpNote').textContent=`Ai două numere. Nivelul real arată cât de bun ești la calcul mental: câte un rating pentru fiecare categorie și truc, care crește doar când rezolvi corect și sub timpul țintă și devine mai nesigur când nu exersezi. XP-ul e scorul de joc, cu toate penalizările. Pornești de la ${START} XP. O greșeală costă 12 XP la Ușor, 8 la Mediu și 5 la Greu, dublu dacă răspunzi în sub o secundă. Un răspuns lent costă 6, 4 sau 2 XP, un exercițiu sărit jumătate din greșeală. Pierderile se înmulțesc cu miza (×1 până la ×2,5), care crește doar cu nivel real mare și serie lungă. O rundă abandonată costă 10 XP, una sub 50% costă 15. La Greu ai 3 vieți, fără indicii, cu timp țintă mai scurt cu 30%. Fiecare zi fără obiectiv costă ${TAX} XP, iar ruperea seriei încă 5 XP pentru fiecare zi, maximum 200. La fiecare 7 zile de serie primești un scut (maximum 2) care salvează automat o zi ratată.`;
+  $('foot').textContent=`Peste ${(Math.floor(space()/10000)*10000).toLocaleString('ro-RO')} de exerciții diferite. Versiunea ${VERSION}.`;
+}
+function whenTxt(t){const d=Math.round((t-Date.now())/864e5);return d<=0?'azi':d===1?'mâine':`în ${zile(d)}`;}
+function renderData(){
+  $('dataSub').textContent=`${pl(S.nrec,'exercițiu','exerciții')} · ${pl(S.nkeys,'apăsare','apăsări')} · ${pl(S.nev,'eveniment','evenimente')} din ${new Date(S.since+'T00:00:00').toLocaleDateString('ro-RO',{day:'numeric',month:'long',year:'numeric'})}${DB.db?'':' · doar în memorie aici'}`;
+  $('bkRowSub').textContent=BK.repo?(S.bk.last?`${BK.repo} · ultimul backup ${new Date(S.bk.last).toLocaleString('ro-RO',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}`:`${BK.repo} · încă niciun backup`):'Neconectat · gratuit, cu GitHub';
+}
+
+/* ---------- backup: GitHub private repository + files ---------- */
+let BK={repo:'',token:''};try{BK=Object.assign(BK,JSON.parse(localStorage.getItem(BK_KEY)||'{}'));}catch(e){}
+function saveBK(){try{localStorage.setItem(BK_KEY,JSON.stringify(BK));}catch(e){}}
+const BK_PATH='calcul-mental-backup.json.gz',BK_PLAIN='calcul-mental-backup.json';
+async function buildBackup(){const[ex,evs]=await Promise.all([DB.all('ex'),DB.all('ev')]);return{app:'calcul-mental',v:VERSION,at:new Date().toISOString(),state:S,records:ex.map(r=>{const c=Object.assign({},r);delete c.saved;return c;}),events:evs};}
+async function gz(str){try{if(!window.CompressionStream)return null;const s=new Blob([str]).stream().pipeThrough(new CompressionStream('gzip'));return new Uint8Array(await new Response(s).arrayBuffer());}catch(e){return null;}}
+async function gunzip(buf){const s=new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'));return await new Response(s).text();}
+function b64(u8){let s='';for(let i=0;i<u8.length;i+=0x8000)s+=String.fromCharCode.apply(null,u8.subarray(i,i+0x8000));return btoa(s);}
+function gh(path,opt){opt=opt||{};return fetch(`https://api.github.com/repos/${BK.repo}/contents/${path}`,{method:opt.method||'GET',body:opt.body,headers:{Authorization:`Bearer ${BK.token}`,Accept:opt.raw?'application/vnd.github.raw':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}});}
+async function cloudBackup(manual){
+  if(!BK.repo||!BK.token)return{ok:false,msg:'Completează repository-ul și tokenul.'};
+  try{
+    const data=JSON.stringify(await buildBackup()),z=await gz(data),path=z?BK_PATH:BK_PLAIN;
+    const content=z?b64(z):b64(new TextEncoder().encode(data));
+    let sha;const g=await gh(path);
+    if(g.status===200)sha=(await g.json()).sha;
+    else if(g.status===401)return{ok:false,msg:'Tokenul nu e valid sau a expirat.'};
+    else if(g.status===403)return{ok:false,msg:'Tokenul nu are voie să scrie. Dă-i permisiunea Contents: Read and write.'};
+    const r=await gh(path,{method:'PUT',body:JSON.stringify({message:`Backup ${dkey(new Date())}`,content,sha})});
+    if(!r.ok)return{ok:false,msg:r.status===404?'Nu găsesc repository-ul. Scrie-l ca utilizator/nume și verifică tokenul.':r.status===401?'Tokenul nu e valid.':r.status===403?'Tokenul nu are voie să scrie în acest repository.':`GitHub a răspuns cu eroarea ${r.status}.`};
+    S.bk={last:Date.now(),day:dkey(new Date()),size:content.length};save();ev('backup',{ok:1,size:content.length,manual:!!manual});
+    return{ok:true};
+  }catch(e){return{ok:false,msg:'Nu am putut ajunge la GitHub. Pe linkul de pe claude.ai backup-ul nu funcționează; folosește versiunea instalată.'};}
+}
+async function cloudRestore(){
+  try{
+    let r=await gh(BK_PATH,{raw:true}),isgz=true;
+    if(r.status===404){r=await gh(BK_PLAIN,{raw:true});isgz=false;}
+    if(!r.ok)return{ok:false,msg:r.status===404?'Nu există încă niciun backup în acest repository.':`GitHub a răspuns cu eroarea ${r.status}.`};
+    const buf=await r.arrayBuffer();const txt=isgz?await gunzip(buf):new TextDecoder().decode(buf);
+    return{ok:true,data:JSON.parse(txt)};
+  }catch(e){return{ok:false,msg:'Nu am putut citi backup-ul de pe GitHub.'};}
+}
+async function autoBackup(){if(BK.repo&&BK.token&&S.bk.day!==dkey(new Date())&&navigator.onLine!==false){const r=await cloudBackup(false);if(!statsView.hidden&&pane==='det')renderData();if(!r.ok)ev('backup',{ok:0,msg:r.msg});}}
+async function getDownloads(){try{return window.claude&&window.claude.use?await window.claude.use('downloads'):null;}catch(e){return null;}}
+async function saveToFiles(){
+  const dl=await getDownloads();
+  if(dl){
+    try{await dl.save({filename:`calcul-mental-${dkey(new Date())}.json`,data:JSON.stringify(await buildBackup())});ev('export',{via:'claude'});toast(`${CHECK} Backup salvat`);}
+    catch(e){if(e&&e.code==='declined')return;if(e&&e.code==='rate_limited'){toast('Așteaptă puțin și încearcă din nou.');return;}toast('Salvarea nu e disponibilă aici. Folosește versiunea instalată.');}
+    return;
+  }
+  try{
+    const data=JSON.stringify(await buildBackup()),z=await gz(data);
+    const name=`calcul-mental-${dkey(new Date())}.json${z?'.gz':''}`;
+    const file=new File([z||data],name,{type:z?'application/gzip':'application/json'});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'Backup Calcul Mental'});ev('export',{via:'share'});return;}
+    const url=URL.createObjectURL(file);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+    ev('export',{via:'download'});toast('Fișier pregătit. Dacă nu apare, folosește versiunea instalată.');
+  }catch(e){if(e&&e.name==='AbortError')return;toast('Salvarea nu e permisă aici. Folosește versiunea instalată.');}
+}
+let pendingImport=null;
+function askImport(data,src){
+  if(!data||data.app!=='calcul-mental'||!data.state){toast('Fișierul nu e un backup Calcul Mental.');return;}
+  pendingImport=data;
+  openModal(`<div class="mbadge">${CHECK}</div><p class="eyebrow">${src}</p><h2>Înlocuiești datele?</h2><p>Backup din ${new Date(data.at).toLocaleString('ro-RO',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})} · ${pl((data.records||[]).length,'exercițiu','exerciții')} · ${fmtN(data.state.xp||0)} XP. Datele de acum de pe acest dispozitiv se înlocuiesc.</p><div class="acts"><button class="btn primary" data-act="imp">Înlocuiește</button><button class="btn plain" data-act="cancel">Anulează</button></div>`);
+}
+async function doImport(){
+  const d=pendingImport;pendingImport=null;if(!d)return;
+  await DB.clear('ex');await DB.clear('ev');
+  await DB.bulk('ex',d.records||[]);await DB.bulk('ev',d.events||[]);
+  applyState(d.state);save();streak=0;prevStreak=0;rIdx=0;R0=newRound();
+  ev('import',{n:(d.records||[]).length});
+  closeModal();toast(`${CHECK} Datele au fost restaurate`);
+  if(!statsView.hidden)renderPane();renderTop();next();
+}
+const bkSheet=$('bkSheet');
+function openBk(){$('bkRepo').value=BK.repo;$('bkToken').value=BK.token;$('bkStatus').textContent=BK.repo?`Conectat la ${BK.repo}.`:'';$('bkStatus').className='bk-st';$('bkOff').hidden=!BK.repo;bkSheet.hidden=false;requestAnimationFrame(()=>requestAnimationFrame(()=>bkSheet.classList.add('open')));ev('screen',{n:'backup'});}
+function closeBk(){bkSheet.classList.remove('open');setTimeout(()=>{bkSheet.hidden=true;},340);}
+function bkMsg(t,c){const el=$('bkStatus');el.textContent=t;el.className='bk-st'+(c?' '+c:'');}
+$('bkGo').addEventListener('click',async()=>{
+  const repo=$('bkRepo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\.git$/,'').replace(/\/$/,''),token=$('bkToken').value.trim();
+  if(!/^[\w.-]+\/[\w.-]+$/.test(repo)){bkMsg('Scrie repository-ul ca utilizator/nume.','bad');return;}
+  if(token.length<20){bkMsg('Lipește tokenul complet.','bad');return;}
+  BK={repo,token};saveBK();bkMsg('Se face backup…');
+  const r=await cloudBackup(true);
+  if(r.ok){bkMsg('Backup reușit. De acum se face automat în fiecare zi.','ok');$('bkOff').hidden=false;}else bkMsg(r.msg,'bad');
+  renderData();
+});
+$('bkRestore').addEventListener('click',async()=>{
+  const repo=$('bkRepo').value.trim(),token=$('bkToken').value.trim();
+  if(repo&&token){BK={repo:repo.replace(/^https?:\/\/github\.com\//,''),token};saveBK();}
+  if(!BK.repo||!BK.token){bkMsg('Completează repository-ul și tokenul.','bad');return;}
+  bkMsg('Se descarcă backup-ul…');const r=await cloudRestore();
+  if(!r.ok){bkMsg(r.msg,'bad');return;}
+  closeBk();askImport(r.data,'Backup din cloud');
+});
+$('bkOff').addEventListener('click',()=>{BK={repo:'',token:''};saveBK();$('bkRepo').value='';$('bkToken').value='';bkMsg('Deconectat. Backup-urile rămân pe GitHub.','');$('bkOff').hidden=true;renderData();});
+$('bkClose').addEventListener('click',closeBk);
+$('bkScrim').addEventListener('click',closeBk);
+$('bkRow').addEventListener('click',openBk);
+$('fileRow').addEventListener('click',saveToFiles);
+$('impRow').addEventListener('click',()=>$('impFile').click());
+$('impFile').addEventListener('change',async e=>{
+  const file=e.target.files&&e.target.files[0];e.target.value='';if(!file)return;
+  try{const buf=new Uint8Array(await file.arrayBuffer());const txt=buf[0]===0x1f&&buf[1]===0x8b?await gunzip(buf):new TextDecoder().decode(buf);askImport(JSON.parse(txt),'Import din fișier');}
+  catch(err){toast('Nu am putut citi fișierul.');}
+});
+
+/* ---------- events ---------- */
+document.addEventListener('touchstart',()=>{},{passive:true});
+$('pad').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)press(b.dataset.k);});
+$('cats').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(b&&b.dataset.cat!==S.cat)setCat(b.dataset.cat);});
+$('diff').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(b&&+b.dataset.d!==S.diff)setDiff(+b.dataset.d);});
+hintBtn.addEventListener('click',()=>{if(revealed){openSheet(cur,true);return;}const l=hintLocked();if(l){toast(`${LOCK} ${l}`);return;}openSheet(cur,false);});
+skipBtn.addEventListener('click',skip);
+hNext.addEventListener('click',stepNext);
+$('hClose').addEventListener('click',closeSheet);
+$('scrim').addEventListener('click',closeSheet);
+$('statsBtn').addEventListener('click',()=>openStats('evo'));
+for(const id of['lvBtn','ring','daysPill'])$(id).addEventListener('click',()=>openStats('q'));
+$('backBtn').addEventListener('click',closeStats);
+$('paneSeg').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b){pane=b.dataset.p;showPane();renderPane();ev('screen',{n:'progres:'+pane});}});
+$('mtabs').addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){evM=b.dataset.m;renderEvo();ev('chart',{m:evM,r:evR});}});
+$('ranges').addEventListener('click',e=>{const b=e.target.closest('[data-r]');if(b){evR=b.dataset.r;renderEvo();ev('chart',{m:evM,r:evR});}});
+$('calGrid').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b&&!b.disabled){selKey=b.dataset.k;renderCal();}});
+$('calPrev').addEventListener('click',()=>{calOff--;renderCal();});
+$('calNext').addEventListener('click',()=>{if(calOff<0){calOff++;renderCal();}});
+$('qList').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;const q=quests().list[+b.dataset.q];if(!q||q.done)return;closeStats();if(q.t==='cat')setCat(q.cat);else if(q.t==='hard')setDiff(2);});
+$('catList').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b){closeStats();setCat(b.dataset.go);}});
+$('misList').addEventListener('click',e=>{const b=e.target.closest('[data-mis]');if(b){const m=S.mis[+b.dataset.mis];if(m)openSheet(m,true);}});
+$('revBtn').addEventListener('click',()=>{closeStats();setCat('rev');});
+$('goalSeg').addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(!b)return;S.goal=+b.dataset.g;const dd=today();if(!dd.m&&dd.c>=S.goal)dd.m=true;save();ev('goal',{g:S.goal});renderDet();});
+$('sndRow').addEventListener('click',()=>{S.snd=!S.snd;save();ev('sound',{on:S.snd});$('sndSw').setAttribute('aria-checked',S.snd);if(S.snd)SFX.ok(3);});
+$('resetBtn').addEventListener('click',async()=>{
+  const b=$('resetBtn');
+  if(!resetArm){resetArm=true;b.textContent='Apasă din nou ca să ștergi tot';clearTimeout(resetT);resetT=setTimeout(()=>{resetArm=false;b.textContent='Șterge tot progresul';},3500);return;}
+  resetArm=false;b.textContent='Șterge tot progresul';
+  const keep={cat:S.cat==='rev'?S.lastCat:S.cat,lastCat:S.lastCat,diff:S.diff,goal:S.goal,snd:S.snd};
+  await DB.clear('ex');await DB.clear('ev');
+  S=Object.assign(fresh(),keep);streak=0;prevStreak=0;rIdx=0;R0=newRound();save();renderDet();renderTop();toast('Progresul a fost șters');
+});
+mcard.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act;
+  if(a==='imp'){doImport();return;}
+  if(a==='cancel'){pendingImport=null;closeModal();resume();return;}
+  if(a==='stats'){mq=[];closeModal();rIdx=0;R0=newRound();next();openStats('evo');return;}
+  nextModal();});
+document.addEventListener('keydown',e=>{
+  if(e.metaKey||e.ctrlKey||e.altKey)return;const k=e.key;
+  if(e.target&&e.target.tagName==='INPUT')return;
+  if(modalOpen){if(k==='Enter'||k==='Escape'){e.preventDefault();if(pendingImport){if(k==='Escape'){pendingImport=null;closeModal();resume();}else doImport();}else nextModal();}return;}
+  if(!bkSheet.hidden){if(k==='Escape'){closeBk();e.preventDefault();}return;}
+  if(sheetOpen){if(k==='Escape'){closeSheet();e.preventDefault();}else if(k==='Enter'||k===' '){stepNext();e.preventDefault();}return;}
+  if(!statsView.hidden){if(k==='Escape'){closeStats();e.preventDefault();}return;}
+  if(/^\d$/.test(k))press(k);
+  else if(k==='-'||k==='−')press('sign');
+  else if(k==='Backspace')press('back');
+  else if(k==='Enter')press('ok');
+  else if(k==='h'||k==='H'||k==='i'||k==='I'){if(revealed)openSheet(cur,true);else if(!hintLocked())openSheet(cur,false);}
+  else if(k==='ArrowRight')skip();
+  else return;
+  e.preventDefault();
+});
+let hiddenAt=0;
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden){hiddenAt=Date.now();save();pause();ev('hide',{ex:!!(rec&&!rec.saved)});autoBackup();}
+  else{
+    const away=hiddenAt?Date.now()-hiddenAt:0;ev('show',{away:Math.round(away/1000)});
+    if(away>30*6e4){sess={id:Date.now().toString(36),t0:Date.now()};ev('session',device());}
+    if(away>15*6e4&&rIdx>=3&&rIdx<ROUND){abandonRound('away');renderTop();}
+    checkDay();if(statsView.hidden&&!modalOpen&&!sheetOpen)resume();
+  }
+});
+window.addEventListener('pagehide',()=>{save();ev('end',{});});
+window.addEventListener('resize',()=>{if(fx.width)sizeFx();});
+window.addEventListener('online',()=>autoBackup());
+
+/* ---------- calendar check while open ---------- */
+function showAbsence(r){
+  SFX.down();
+  if(!r.days){openModal(`<div class="mbadge frz">${SHIELD}</div><p class="eyebrow">Calendarul nu uită</p><h2>Scutul ți-a salvat seria</h2><p>${r.frozen===1?'O zi ratată a fost acoperită de un scut.':`${r.frozen} zile ratate au fost acoperite de scuturi.`} Îți mai ${S.freeze===1?'rămâne 1 scut':`rămân ${S.freeze} scuturi`}.</p><div class="acts"><button class="btn primary" data-act="next">Continuă</button></div>`);return;}
+  openModal(`<div class="mbadge bad">${DOWNI}</div><p class="eyebrow">Calendarul nu uită</p><h2>${r.days===1?'Ai ratat o zi':`Ai ratat ${pl(r.days,'zi','zile')}`}</h2><p>${r.lost?`Seria de ${zile(r.lost)} s-a rupt.`:`Fiecare zi fără obiectiv costă ${TAX} XP.`}${r.frozen?` ${r.frozen===1?'O zi a fost salvată':`${r.frozen} zile au fost salvate`} de scuturi.`:''}</p>
+    <div class="mstats"><div><b>−${fmtN(r.tax)}</b><span>taxă zile</span></div><div><b>${r.brk?'−'+fmtN(r.brk):'0'}</b><span>serie ruptă</span></div><div><b>${fmtN(S.xp)}</b><span>XP acum</span></div></div>
+    <div class="acts"><button class="btn primary" data-act="next">Recuperează</button></div>`);
+}
+let dayNow=dkey(new Date());
+function checkDay(){const k=dkey(new Date());if(k===dayNow)return;dayNow=k;const r=settle();renderTop();if(!statsView.hidden)renderPane();if(r&&!modalOpen)runModals([()=>showAbsence(r)]);}
+setInterval(checkDay,30000);
+
+/* ---------- start ---------- */
+(async()=>{
+  await DB.open();
+  let raw=null;try{raw=localStorage.getItem(KEY);}catch(e){}
+  if(raw){try{applyState(JSON.parse(raw));}catch(e){applyState({});}}
+  else{const kv=await DB.getKV('state');try{applyState(kv?JSON.parse(kv):{});}catch(e){applyState({});}}
+  sess={id:Date.now().toString(36),t0:Date.now()};
+  ev('session',device());
+  const absence=settle();quests();
+  R0=newRound();
+  if(S.openRound&&S.openRound.idx>=3&&S.openRound.idx<ROUND){rIdx=S.openRound.idx;abandonRound('reload');}
+  S.openRound=null;
+  $('diff').style.setProperty('--i',S.diff);
+  document.querySelectorAll('#diff button').forEach(b=>b.setAttribute('aria-checked',+b.dataset.d===S.diff));
+  next();
+  const ds0=dayStreak(),d0=today();
+  if(migrated)setTimeout(()=>toast(`${TOPS} XP-ul e acum un rating real. Pornești de la ${START}.`),500);
+  if(absence)runModals([()=>showAbsence(absence)]);
+  else if(!met(d0)&&!riskShown){riskShown=true;setTimeout(()=>toast(S.freeze?`${SHIELD} Încă ${S.goal-d0.c} corecte azi, altfel se folosește un scut`:`${FLAME} Încă ${S.goal-d0.c} corecte azi sau pierzi ${TAX+(ds0?breakPen(ds0):0)} XP`),900);}
+  setTimeout(autoBackup,5000);
+})();
+})();
+
+</script>
+
+</body>
+</html>
