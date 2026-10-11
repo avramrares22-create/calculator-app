@@ -675,6 +675,11 @@ body.frozen #paneSeg{background:rgba(24,34,46,.84);border-color:rgba(170,225,255
 @keyframes melt{0%{opacity:1}100%{opacity:0;transform:translateY(16px) scale(1.04);filter:blur(10px)}}
 @keyframes dropF{0%{opacity:0;transform:translateY(0)}15%{opacity:1}100%{opacity:0;transform:translateY(55vh) scaleY(1.6)}}
 @media (prefers-reduced-motion:reduce){.flake{display:none}}
+
+.tile.spd{background:linear-gradient(160deg,rgba(255,214,10,.10),rgba(255,159,10,.03) 60%),linear-gradient(180deg,#1A1A23,#14141C);border-color:rgba(255,205,60,.22)}
+.tile.spd b{color:#FFE08A}
+.tile em{font-style:normal;font-size:12px;font-weight:600;color:var(--ok-text);margin-top:2px;line-height:1.3}
+.tile em.mut{color:var(--label3);font-weight:500}
 </style>
 
 <canvas id="fx" aria-hidden="true"></canvas>
@@ -823,10 +828,12 @@ body.frozen #paneSeg{background:rgba(24,34,46,.84);border-color:rgba(170,225,255
     <div class="tiles">
       <div class="tile"><b id="tRight">0</b><span>exerciții rezolvate</span></div>
       <div class="tile"><b id="tAcc">—</b><span>precizie din prima</span></div>
-      <div class="tile"><b id="tSpeed">—</b><span>viteză medie</span></div>
+      <div class="tile"><b id="tSpeed">—</b><span>viteză medie</span><em class="mut">din ultimele 30 de răspunsuri</em></div>
+      <div class="tile spd"><b id="tSpdRec">—</b><span>ritm record · 10 la rând</span><em id="tSpdCmp"></em></div>
       <div class="tile"><b id="tTime">0</b><span>timp exersat în total</span></div>
-      <div class="tile"><b id="tBest">0</b><span>record la rând</span></div>
       <div class="tile"><b id="tToday">0</b><span>timp exersat azi</span></div>
+      <div class="tile"><b id="tBest">0</b><span>record la rând</span></div>
+      <div class="tile"><b id="tBestDays">0</b><span>cea mai lungă serie</span></div>
     </div>
     <h3 class="sec">Recorduri de bătut</h3>
     <div class="group" id="recList"></div>
@@ -1133,7 +1140,7 @@ function space(){
 /*GEN-END*/
 (()=>{
 const $=s=>document.getElementById(s);
-const VERSION='5.4';
+const VERSION='5.4.1';
 const CATS=['add','sub','mul','div','neg','rad'];
 const CN={add:'Adunare',sub:'Scădere',mul:'Înmulțire',div:'Împărțire',neg:'Negative',rad:'Radicali'};
 const DIFFS=['Ușor','Mediu','Greu'];
@@ -1178,7 +1185,7 @@ const fmtX=m=>'×'+m.toFixed(1).replace('.',',');
 
 /* ---------- state ---------- */
 const fresh=()=>({v:5,cat:'mix',lastCat:'mix',diff:1,goal:20,snd:true,best:0,right:0,first:0,wrong:0,seen:0,times:[],days:{},bestDays:0,cs:{},kinds:{},mis:[],xp:START,log:[],q:null,pb:{},lastRound:null,settled:ydKey(),rated:0,
-  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0,tt:0,bc:{n:10,earned:10,spent:0,lost:0,over:0,bought:0},rbest:null});
+  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0,tt:0,spd:null,bc:{n:10,earned:10,spent:0,lost:0,over:0,bought:0},rbest:null});
 let S=fresh(),migrated=false;
 function applyState(o){
   S=fresh();migrated=false;o=o||{};
@@ -1589,6 +1596,7 @@ function check(){
     else if(cur.gold&&firstTry)burstAt(ansEl,30,9,['#FFD60A','#FFCC00','#FF9F0A','#FFFFFF']);
     else if(rating==='rapid')burstAt(ansEl,10,5);
     if(pbNew)toast(`${TROPHY} Record personal la ${CN[cur.c]} · ${sec(t)}`);
+    if(timed&&firstTry)checkSpdRecord();
     if([5,10,15,20,30,40,50,75,100].includes(streak)){toast(`${FLAME} ${streak} la rând · XP ${fmtMult(mult(streak))}`);burstAt($('extra'),24,8);}
     for(const q of qd)setTimeout(()=>{SFX.quest();toast(`${GIFT} Provocare gata · +${q.xp} XP`);burstAt($('lvBtn'),26,8);},250);
     if(chest)setTimeout(()=>{SFX.level();toast(`${GIFT} Cufărul zilei · +${chest} XP${chestC?` · +${chestC} Brain Coins`:''}`);rain();},700);
@@ -2187,13 +2195,27 @@ function playScene(o){
   });
 }
 
+/* ---------- sustained speed: fastest 10 timed answers in a row, within 20 minutes ---------- */
+let spdToastT=0;
+function bestSustained(){const A=S.log.filter(e=>e[3]>=0);let best=null,sum=0;for(let i=0;i<A.length;i++){sum+=A[i][3];if(i>=10)sum-=A[i-10][3];if(i>=9&&A[i][0]-A[i-9][0]<=1200){const avg=sum/100;if(!best||avg<best.avg)best={avg:+avg.toFixed(3),t:A[i][0]*1000};}}return best;}
+function checkSpdRecord(){
+  const A=[];for(let i=S.log.length-1;i>=0&&A.length<10;i--)if(S.log[i][3]>=0)A.push(S.log[i]);
+  if(A.length<10||A[0][0]-A[9][0]>1200)return;
+  const avg=A.reduce((x,e)=>x+e[3],0)/100;
+  if(S.spd&&avg>=S.spd.avg-.004)return;
+  const had=!!S.spd;S.spd={avg:+avg.toFixed(3),t:Date.now()};save();ev('spdrec',{avg});
+  if(had&&Date.now()-spdToastT>60000){spdToastT=Date.now();setTimeout(()=>{SFX.pb();toast(`${BOLT} Ritm record: ${sec(avg)} pe exercițiu, 10 la rând`);},500);}
+}
+
 /* ---------- records to beat ---------- */
 const CLOCK='<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2.5h5"/></svg>';
 function renderRecords(){
   const L=[],ds=dayStreak();
   const pbs=Object.entries(S.pb);
   if(pbs.length){const[k,v]=pbs.reduce((a,b)=>b[1]<a[1]?b:a);L.push([BOLT,'Cel mai rapid răspuns',sec(v),`${CN[k.slice(0,-1)]||''} · ${DIFFS[+k.slice(-1)]||''}`]);}
-  if(S.rbest)L.push([CLOCK,'Cea mai rapidă rundă',sec(S.rbest.avg),`în medie pe exercițiu · ${S.rbest.f}/10 din prima · ${dmon(S.rbest.t)}`]);
+  if(S.spd)L.push([CLOCK,'Ritmul record',sec(S.spd.avg),`media a 10 răspunsuri la rând · ${dmon(S.spd.t)}`]);
+  let fd=null;for(const[k,e]of Object.entries(S.days))if(e&&e.n>=10){const v=e.s/e.n;if(!fd||v<fd[1])fd=[k,v];}
+  if(fd)L.push([BOLT,'Cea mai rapidă zi',sec(fd[1]),`viteza medie a zilei · ${dmon(new Date(fd[0]+'T12:00:00').getTime())}`]);
   L.push([FLAME,'Cea mai lungă serie',zile(S.bestDays),S.bestDays&&ds>=S.bestDays?'Ești pe record chiar acum':`Acum ai ${zile(ds)}`]);
   L.push([CHECK,'Cele mai multe la rând',f(S.best),streak?`Acum ai ${streak}`:'Fără greșeală, una după alta']);
   let bc=null,bx=null,bt=null;
@@ -2253,7 +2275,11 @@ function renderDet(){
   $('rlChance').innerHTML=DIFFS.map((d,i)=>`<div><b>${Math.round(expect2(lv,DR[i])*100)}%</b><span>${d}</span></div>`).join('');
   $('tRight').textContent=fmtN(S.right);
   const a=pct(S.first,S.wrong);$('tAcc').textContent=a===null?'—':a+'%';
-  $('tSpeed').textContent=S.times.length?sec(S.times.reduce((x,y)=>x+y,0)/S.times.length):'—';
+  const avgNow=S.times.length?S.times.reduce((x,y)=>x+y,0)/S.times.length:null;
+  $('tSpeed').textContent=avgNow==null?'—':sec(avgNow);
+  $('tSpdRec').textContent=S.spd?sec(S.spd.avg):'—';
+  $('tSpdCmp').textContent=!S.spd?'10 răspunsuri rapide, unul după altul':avgNow==null?'':avgNow-S.spd.avg>=.05?`cu ${sec(avgNow-S.spd.avg)} sub media ta`:'media ta e chiar pe record';
+  $('tBestDays').innerHTML=`${f(S.bestDays)}<small>${S.bestDays===1?'zi':'zile'}</small>`;
   $('tBest').textContent=S.best;renderRecords();
   $('tTime').innerHTML=fmtDur(S.tt||0,true);$('tToday').innerHTML=fmtDur(dayMs(S.days[dkey(new Date())]),true);
   const rows=CATS.map(c=>{const arr=S.cs[c]||[[0,0,0,0],[0,0,0,0],[0,0,0,0]];const t=arr.reduce((o,r)=>{o.c+=r[0];o.w+=r[1];o.s+=r[2];o.n+=r[3];return o;},{c:0,w:0,s:0,n:0});const s=S.sk[c];return{k:c,arr,...t,acc:pct(t.c,t.w),r:s&&s[2]?s[0]:null};});
@@ -2475,6 +2501,7 @@ setInterval(checkDay,30000);
   else{const kv=await DB.getKV('state');try{applyState(kv?JSON.parse(kv):{});}catch(e){applyState({});}}
   sess={id:Date.now().toString(36),t0:Date.now()};
   ev('session',device());
+  {const b=bestSustained();if(b&&(!S.spd||b.avg<S.spd.avg))S.spd=b;}
   const absence=settle();quests();
   R0=newRound();
   const OR=S.openRound;S.openRound=null;
