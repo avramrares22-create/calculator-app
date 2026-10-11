@@ -466,6 +466,91 @@ h1.title{font-weight:800;letter-spacing:-.01em}
 .selfb button{background:rgba(255,255,255,.06);border:1px solid var(--line)}
 .selfb button:active{background:var(--accent);border-color:var(--accent)}
 .sw{background:rgba(255,255,255,.12)}
+
+/* living brain */
+.brain svg{max-width:280px;transition:filter .8s ease}
+.brain .rot{fill:#241C12;opacity:.6}
+.brain .syn{fill:none;stroke:rgba(255,255,255,.3);stroke-width:.5;stroke-dasharray:2 4;animation:flow 2.4s linear infinite;pointer-events:none}
+.brain .syn.still{animation:none;opacity:.5}
+.brain .breathe{transform-box:fill-box;transform-origin:50% 50%;animation:breathe 4.5s ease-in-out infinite}
+.brain .breathe.slow{animation-duration:10s}
+.brain .stem2{fill:none;stroke:#3DDC97;stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 4px rgba(61,220,151,.5))}
+.brain .leaf{fill:#3DDC97;transform-box:fill-box;transform-origin:center;animation:leafIn .6s cubic-bezier(.2,1.4,.4,1) both}
+.brain .stem2.dry{stroke:#5C5240;filter:none}
+.brain .leaf.dry{fill:#5C5240}
+.brain .soil{fill:rgba(255,255,255,.06)}
+.bcap{line-height:1.5}
+@keyframes breathe{50%{transform:scale(1.025)}}
+@keyframes flow{to{stroke-dashoffset:-12}}
+@keyframes leafIn{from{opacity:0}}
+
+/* v5.3: stock chart, living brain, practice time, roomier practice screen, motion */
+:root{--kh:clamp(46px,7.3vh,64px)}
+.app{animation:appIn .5s cubic-bezier(.2,.8,.2,1) backwards}
+.card{flex:1 0 auto;min-height:188px}
+.card>.meta{margin-bottom:auto}
+.card::after{content:"";margin-top:auto}
+.expr{font-size:clamp(40px,min(14.5vw,7.4vh),66px)}
+.expr.long{font-size:clamp(30px,min(10vw,5.2vh),48px)}
+.answer{font-size:clamp(34px,min(11vw,5.8vh),50px);gap:14px;margin-top:2px}
+.ans.ph{color:var(--label3)}
+.par{margin-top:14px}
+.toast{width:max-content;max-width:calc(100% - 32px);line-height:1.3}
+#statsView:not([hidden]){animation:fadeIn .28s ease backwards}
+.pane:not([hidden]){animation:paneIn .42s cubic-bezier(.2,.8,.2,1) backwards}
+.tab{transition:color .2s,box-shadow .25s}
+.rg{transition:background .2s,color .2s,box-shadow .2s}
+.chart svg{height:220px}
+.chart .pk line{stroke:rgba(255,255,255,.28);stroke-width:1}
+.chart .pk rect{fill:rgba(30,30,42,.92);stroke:rgba(255,255,255,.14)}
+.chart .pk text{fill:var(--label);font:600 11px var(--font-num)}
+.chart .pk circle{fill:var(--label);stroke:var(--bg);stroke-width:2}
+.chart .pulse{fill:currentColor;stroke:none;transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}
+.chart .pk,.chart .tip{transition:opacity .2s}
+.chart.scrub .pk,.chart.scrub .tip{opacity:.3}
+.chart.anim .ln{stroke-dasharray:1 1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.45,0,.15,1) forwards}
+.chart.anim .ar{animation:fadeIn .7s .45s backwards}
+.chart.anim .tip,.chart.anim .pk{animation:fadeIn .35s 1s backwards}
+.chart.bars svg{color:var(--accent)}
+.chart .bar{fill:url(#bgrad);transition:fill .15s}
+.chart .bar.cur{fill:url(#bgradH);filter:drop-shadow(0 0 6px rgba(138,99,255,.6))}
+.chart .bar.sel{fill:#fff}
+.chart .bar0{fill:rgba(255,255,255,.08)}
+.chart .bar0.sel{fill:rgba(255,255,255,.4)}
+.chart.anim .bar{transform-box:fill-box;transform-origin:50% 100%;animation:barUp .7s cubic-bezier(.2,.9,.3,1.15) backwards}
+.chart .avg{stroke:var(--hint);stroke-width:1.2;stroke-dasharray:3 4;opacity:.8}
+.chart .avl{fill:var(--hint-text);font:600 10px var(--font-num)}
+.kst{display:grid;grid-template-columns:repeat(4,1fr);margin-top:10px;padding:12px 0;border-radius:18px;background:linear-gradient(180deg,#1A1A23,#14141C);border:1px solid var(--line)}
+.kst div{display:flex;flex-direction:column;align-items:center;gap:3px;border-left:1px solid var(--line);min-width:0}
+.kst div:first-child{border-left:0}
+.kst b{font:700 18px/1.2 var(--font-num);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kst b small{font-size:12px;font-weight:600;color:var(--label2);margin-left:1px}
+.kst b.up{color:var(--ok-text)} .kst b.down{color:var(--bad-text)}
+.kst span{font-size:10.5px;font-weight:600;color:var(--label3);text-transform:uppercase;letter-spacing:.06em}
+.tile b small{font-size:15px;font-weight:600;color:var(--label2);margin-left:2px;letter-spacing:0}
+.brain{padding:14px 16px 16px;overflow:hidden}
+.brain svg{max-width:320px}
+.brain .hit{fill:transparent;cursor:pointer}
+.brain .gv{fill:none;stroke:#1B1150;stroke-opacity:.5;stroke-linecap:round}
+.brain .gh{fill:none;stroke:#fff;stroke-opacity:.2;stroke-linecap:round}
+.brain .edge{fill:none;stroke:#D9CCFF;stroke-opacity:.35;stroke-width:1.1}
+.brain .nd{fill:#fff;opacity:.85}
+.brain .pl{fill:#F0EAFF;filter:drop-shadow(0 0 3px #B39BFF)}
+.brain .bin.intro{transform-box:fill-box;transform-origin:50% 100%;animation:bgrow 1.1s cubic-bezier(.2,1.25,.4,1) backwards}
+.brain .aura{transform-box:fill-box;transform-origin:center;animation:auraP 5s ease-in-out infinite}
+.bbar{display:flex;align-items:center;gap:10px;margin:12px 2px 0;font-size:11px;font-weight:600;color:var(--label3);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.bbar .bar{flex:1;margin:0}
+.bbar .bar i{transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.bbar[hidden]{display:none}
+@keyframes appIn{from{opacity:0;transform:translateY(8px)}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes paneIn{from{opacity:0;transform:translateY(12px)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pulse{0%{opacity:.5;transform:scale(1)}80%,100%{opacity:0;transform:scale(3.4)}}
+@keyframes barUp{from{transform:scaleY(0)}}
+@keyframes bgrow{from{opacity:0;transform:scale(.6)}}
+@keyframes auraP{50%{transform:scale(1.06)}}
+@media (max-height:700px){.card{min-height:160px}}
 </style>
 
 <canvas id="fx" aria-hidden="true"></canvas>
@@ -506,7 +591,7 @@ h1.title{font-weight:800;letter-spacing:-.01em}
   <section class="card" id="card" aria-label="Exercițiul curent">
     <div class="meta"><span id="meta">Înmulțire · Mediu</span><span class="meta-r"><span class="lives" id="lives" hidden></span><span id="extra"></span><span class="rnd" id="rnd">1/10</span></span></div>
     <div class="expr" id="expr">16 · 46</div>
-    <div class="answer live" id="answer"><span class="eq">=</span><span class="ans empty" id="ans">?</span></div>
+    <div class="answer live" id="answer"><span class="eq">=</span><span class="ans ph" id="ans"></span></div>
     <div class="par" id="par" aria-hidden="true"><i id="parBar"></i></div>
     <div class="fb" id="fb" aria-live="polite"></div>
     <div class="selfq" id="selfq" hidden><span>Cum ai calculat?</span><div class="selfb"><button data-s="stiut">Știam</button><button data-s="truc">Truc</button><button data-s="numarat">Am numărat</button><button data-s="ghicit">Am ghicit</button></div></div>
@@ -551,6 +636,7 @@ h1.title{font-weight:800;letter-spacing:-.01em}
       <button class="tab" role="tab" data-m="xp" aria-selected="false">XP</button>
       <button class="tab" role="tab" data-m="acc" aria-selected="false">Precizie</button>
       <button class="tab" role="tab" data-m="spd" aria-selected="false">Viteză</button>
+      <button class="tab" role="tab" data-m="tm" aria-selected="false">Timp</button>
     </div>
     <div class="big" id="evBig">0</div>
     <div class="delta" id="evDelta"></div>
@@ -562,10 +648,10 @@ h1.title{font-weight:800;letter-spacing:-.01em}
       <button class="rg" data-r="q" aria-pressed="false">3 luni</button>
       <button class="rg" data-r="a" aria-pressed="false">Tot</button>
     </div>
-    <p class="sum" id="evSum"></p>
+    <div class="kst" id="evSum"></div>
     <h3 class="sec">Creierul tău</h3>
-    <div class="group brain"><svg id="brainSvg" viewBox="0 0 200 150" role="img" aria-label="Creierul tău: o zonă pentru fiecare categorie, mai aprinsă la nivel mai mare"></svg><p class="bcap" id="brainCap"></p></div>
-    <p class="note">Fiecare zonă e o categorie. Cu cât nivelul real e mai mare, cu atât zona e mai aprinsă, iar punctele cresc cu fiecare exercițiu. Atinge o zonă ca să vezi nivelul ei.</p>
+    <div class="group brain"><svg id="brainSvg" viewBox="6 4 228 166" role="img" aria-label="Creierul tău: crește cu XP-ul, se ofilește când nu exersezi"></svg><p class="bcap" id="brainCap"></p><div class="bbar" id="brainBar"></div></div>
+    <p class="note">Creierul crește odată cu XP-ul tău și strălucește când exersezi. Fiecare exercițiu adaugă neuroni, iar impulsurile se înmulțesc cu fiecare treaptă. Dacă XP-ul scade sau nu mai exersezi, se ofilește, iar zonele neexersate se pătează. Atinge o zonă ca să-i vezi nivelul.</p>
   </div>
 
   <div class="pane" id="pane-q" hidden>
@@ -597,6 +683,8 @@ h1.title{font-weight:800;letter-spacing:-.01em}
       <div class="tile"><b id="tAcc">—</b><span>precizie din prima</span></div>
       <div class="tile"><b id="tSpeed">—</b><span>viteză medie</span></div>
       <div class="tile"><b id="tBest">0</b><span>record la rând</span></div>
+      <div class="tile"><b id="tTime">0</b><span>timp exersat în total</span></div>
+      <div class="tile"><b id="tToday">0</b><span>timp exersat azi</span></div>
     </div>
     <h3 class="sec">Pe categorii</h3>
     <div class="group" id="catList"></div>
@@ -889,7 +977,7 @@ function space(){
 /*GEN-END*/
 (()=>{
 const $=s=>document.getElementById(s);
-const VERSION='5.1';
+const VERSION='5.3';
 const CATS=['add','sub','mul','div','neg','rad'];
 const CN={add:'Adunare',sub:'Scădere',mul:'Înmulțire',div:'Împărțire',neg:'Negative',rad:'Radicali'};
 const DIFFS=['Ușor','Mediu','Greu'];
@@ -933,7 +1021,7 @@ const fmtX=m=>'×'+m.toFixed(1).replace('.',',');
 
 /* ---------- state ---------- */
 const fresh=()=>({v:5,cat:'mix',lastCat:'mix',diff:1,goal:20,snd:true,best:0,right:0,first:0,wrong:0,seen:0,times:[],days:{},bestDays:0,cs:{},kinds:{},mis:[],xp:START,log:[],q:null,pb:{},lastRound:null,settled:ydKey(),rated:0,
-  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0});
+  sk:{},freeze:0,hd:{},hlock:{},errs:{},self:{},openRound:null,nrec:0,nkeys:0,nev:0,bk:{last:0,day:''},since:dkey(new Date()),lastRec:0,tt:0});
 let S=fresh(),migrated=false;
 function applyState(o){
   S=fresh();migrated=false;o=o||{};
@@ -960,6 +1048,7 @@ function applyState(o){
   if(!S.bk||typeof S.bk!=='object')S.bk={last:0,day:''};
   for(const m of S.mis){if(!(m.due>0))m.due=Date.now();if(!(m.st>=0))m.st=0;}
   if(S.cat==='rev'&&!S.mis.length)S.cat=S.lastCat;
+  if(typeof o.tt!=='number'||!(o.tt>=0))S.tt=Object.values(S.days).reduce((a,e)=>a+dayMs(e),0);
 }
 let saveT=0;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}clearTimeout(saveT);saveT=setTimeout(()=>DB.put('kv',JSON.stringify(S),'state'),500);}
@@ -1105,7 +1194,7 @@ function progressQuests(x){
 
 /* ---------- XP + compact log ---------- */
 function addXP(dx){dx=Math.round(dx);S.xp+=dx;const dd=today();dd.x=S.xp;dd.dx+=dx;return dx;}
-function logEv(e,dx,t,ex){S.log.push([Math.round(Date.now()/1000),dx,e,t==null?-1:Math.round(t*10),ex?CATS.indexOf(ex.c):-1,ex?ex.d:-1,S.xp,Math.round(realLevel())]);if(S.log.length>4000)S.log.splice(0,S.log.length-4000);}
+function logEv(e,dx,t,ex){S.log.push([Math.round(Date.now()/1000),dx,e,t==null?-1:Math.round(t*10),ex?CATS.indexOf(ex.c):-1,ex?ex.d:-1,S.xp,Math.round(realLevel())]);if(S.log.length>12000)S.log.splice(0,S.log.length-12000);}
 
 /* ---------- calendar settlement: every finished day, even with the app closed ---------- */
 function settle(){
@@ -1128,7 +1217,7 @@ function settle(){
     d.setDate(d.getDate()+1);
   }
   S.settled=yk;
-  if(S.log.length>4000)S.log.splice(0,S.log.length-4000);
+  if(S.log.length>12000)S.log.splice(0,S.log.length-12000);
   save();ev('settle',res);
   return res.days||res.frozen?res:null;
 }
@@ -1203,7 +1292,9 @@ function newRec(ex){
     keys:[],tries:[],hints:[],bg:0,res:null};
   S.lastRec=now;return r;
 }
-function commitRec(res,extra){if(!rec||rec.saved)return;Object.assign(rec,extra||{},{res,ms:Math.round(elapsed()*1000)});rec.saved=true;S.nrec++;S.nkeys+=rec.keys.length;DB.put('ex',rec);}
+function commitRec(res,extra){if(!rec||rec.saved)return;Object.assign(rec,extra||{},{res,ms:Math.round(elapsed()*1000)});rec.saved=true;S.nrec++;S.nkeys+=rec.keys.length;DB.put('ex',rec);trackTime(rec.ms);}
+/* time spent on exercises: total, per day and per hour (an exercise counts at most 3 minutes) */
+function trackTime(ms){ms=Math.max(0,Math.min(ms||0,18e4));if(!ms)return;S.tt=(S.tt||0)+ms;const e=today(),h=new Date().getHours();e.tm=(e.tm||0)+ms;const hr=e.hr||(e.hr={});hr[h]=(hr[h]||0)+ms;}
 
 function next(){
   clearTimeout(advT);clearTimeout(selfT);hideSelf();
@@ -1231,7 +1322,7 @@ function next(){
 }
 function hintLocked(){if(!cur)return false;if(cur.mode===2)return'Fără indicii la Greu';const l=S.hlock[cur.h.t];return l&&l>Date.now()?'Indiciu blocat 24 h':false;}
 function setHintBtn(){const l=hintLocked();hintBtn.classList.toggle('off',!!l&&!revealed);hintBtn.innerHTML=(l&&!revealed?LOCK:BULB)+(l&&!revealed?l:'Indiciu');}
-function renderAns(){const s=(sign<0?'−':'')+input;ansEl.textContent=s||'?';ansEl.classList.toggle('empty',!s);}
+function renderAns(){const s=(sign<0?'−':'')+input;ansEl.textContent=s;ansEl.classList.toggle('ph',!s);}
 function fb(t,c){fbEl.innerHTML=t;fbEl.className='fb'+(c?' '+c:'');}
 function floatXP(t,cls){if(!t)return;const s=document.createElement('span');s.className='float'+(cls?' '+cls:'');s.textContent=t;card.appendChild(s);setTimeout(()=>s.remove(),1150);}
 
@@ -1318,7 +1409,7 @@ function check(){
     if(!dd.m&&dd.c>=S.goal){dd.m=true;goalHit=true;const ds=dayStreak();if(ds>S.bestDays)S.bestDays=ds;if(ds>0&&ds%7===0&&S.freeze<2){S.freeze++;shield=true;}}
     const lvAfter=level(S.xp),tAfter=tIdx(S.xp);
     commitRec('ok',{t:+t.toFixed(3),dx:real,rating,hint:usedHint,first:firstTry,pred2:+predict(cur).toFixed(3)});
-    save();renderTop();
+    save();renderTop();checkBrainGrowth();
 
     card.classList.remove('bad','shake','hot','fire');card.classList.add('ok');ansEl.className='ans ok';answer.classList.remove('live');
     SFX.ok(streak);
@@ -1409,7 +1500,7 @@ function finishExercise(newLevel){
   clearTimeout(advT);
   rIdx++;R0.done++;
   const roundDone=rIdx>=ROUND||R0.dead;
-  S.openRound=roundDone?null:{idx:rIdx,mode:R0.mode,at:Date.now()};save();
+  S.openRound=roundDone?null:{idx:rIdx,mode:R0.mode,at:Date.now(),r:R0};save();
   const queue=[];
   if(newLevel)queue.push(()=>showLevel(newLevel));
   if(roundDone)queue.push(()=>showRound());
@@ -1423,7 +1514,7 @@ function abandonRound(why){
 let mq=[];
 function runModals(q){mq=q;nextModal();}
 function nextModal(){const fn=mq.shift();if(fn){fn();return;}closeModal();if(rIdx>=ROUND||R0.dead){rIdx=0;R0=newRound();}next();}
-function openModal(html){mcard.innerHTML=html;modal.hidden=false;modalOpen=true;pause();ev('modal',{h:html.replace(/<[^>]+>/g,' ').slice(0,60)});setTimeout(()=>{const b=mcard.querySelector('.btn.primary');if(b)b.focus({preventScroll:true});},60);}
+function openModal(html){mcard.innerHTML=html;modal.hidden=false;modalOpen=true;pause();ev('modal',{h:html.replace(/<[^>]+>/g,' ').slice(0,60)});setTimeout(()=>{const b=mcard.querySelector('.btn.primary');if(b)b.focus({preventScroll:true,focusVisible:false});},60);}
 function closeModal(){modal.hidden=true;modalOpen=false;}
 function showLevel(i){
   SFX.level();rain();
@@ -1465,7 +1556,7 @@ function openSheet(ex,all){
   sheet.dataset.shown=n;updNext();
   lastFocus=document.activeElement;sheet.hidden=false;sheetOpen=true;
   requestAnimationFrame(()=>requestAnimationFrame(()=>sheet.classList.add('open')));
-  setTimeout(()=>hNext.focus({preventScroll:true}),60);
+  setTimeout(()=>hNext.focus({preventScroll:true,focusVisible:false}),60);
 }
 function updNext(){const k=+sheet.dataset.shown,n=sheetEx.h.s.length;hNext.innerHTML=k<n?`Pasul următor <small>${k}/${n}</small>`:'Am înțeles';}
 function stepNext(){
@@ -1476,7 +1567,7 @@ function stepNext(){
 function closeSheet(){
   if(!sheetOpen)return;sheetOpen=false;sheet.classList.remove('open');
   setTimeout(()=>{if(!sheetOpen)sheet.hidden=true;},340);
-  if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
+  if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true,focusVisible:false});
 }
 
 function setCat(c){
@@ -1495,108 +1586,230 @@ function setDiff(d){
 
 /* ---------- progress screen ---------- */
 let pane='evo',resetArm=false,resetT;
-function openStats(p){pane=p||pane;pause();showPane();app.hidden=true;statsView.hidden=false;window.scrollTo(0,0);renderPane();ev('screen',{n:'progres:'+pane});$('backBtn').focus({preventScroll:true});}
+function openStats(p){pane=p||pane;evAnim=true;brainIntro=true;pause();showPane();app.hidden=true;statsView.hidden=false;window.scrollTo(0,0);renderPane();ev('screen',{n:'progres:'+pane});$('backBtn').focus({preventScroll:true,focusVisible:false});}
 function closeStats(){statsView.hidden=true;app.hidden=false;window.scrollTo(0,0);renderTop();ev('screen',{n:'antrenament'});resume();}
 function showPane(){
   const ps=['evo','q','det'];$('paneSeg').style.setProperty('--i',ps.indexOf(pane));
   document.querySelectorAll('#paneSeg button').forEach(b=>b.setAttribute('aria-selected',b.dataset.p===pane));
   for(const p of ps)$('pane-'+p).hidden=p!==pane;
 }
-function renderPane(){if(pane==='evo')renderEvo();else if(pane==='q')renderQ();else renderDet();}
+function renderPane(){if(pane==='evo')renderEvo(true);else if(pane==='q')renderQ();else renderDet();}
 
-/* evolution: stock-style chart */
+/* evolution: stock-style chart, one tick per exercise, smooth line; Timp = practice time bars */
 const RGL={d:'azi',w:'în 7 zile',m:'în 30 de zile',q:'în 3 luni',a:'de la început'};
-let evM='lv',evR='d',evPts=[],evGeo=null;
+let evM='lv',evR='d',evPts=[],evGeo=null,evAnim=true,evAnimT=0;
 function sod(){const x=new Date();x.setHours(0,0,0,0);return x;}
-function series(m,r){
-  const L=S.log,pts=[],t0=sod().getTime();
-  if(r==='d'){
-    let idx=L.findIndex(e=>e[0]*1000>=t0);if(idx<0)idx=L.length;
-    const T=L.slice(idx);
-    if(m==='xp'){const start=idx>0?L[idx-1][6]:(T.length?T[0][6]-T[0][1]:S.xp);pts.push({t:t0,v:start});T.forEach(e=>pts.push({t:e[0]*1000,v:e[6]}));if(pts.length<2)pts.push({t:Math.max(Date.now(),t0+1),v:S.xp});}
-    else if(m==='lv'){let start=null;for(let i=idx-1;i>=0;i--)if(L[i][7]!=null){start=L[i][7];break;}const TT=T.filter(e=>e[7]!=null);if(start==null)start=TT.length?TT[0][7]:Math.round(realLevel());pts.push({t:t0,v:start});TT.forEach(e=>pts.push({t:e[0]*1000,v:e[7]}));if(pts.length<2)pts.push({t:Math.max(Date.now(),t0+1),v:Math.round(realLevel())});}
-    else if(m==='acc'){const A=L.filter(e=>e[2]===0||e[2]===1);A.forEach((e,j)=>{if(e[0]*1000<t0)return;const w=A.slice(Math.max(0,j-9),j+1);pts.push({t:e[0]*1000,v:w.filter(x=>x[2]===1).length/w.length*100});});}
-    else{const A=L.filter(e=>e[3]>=0);A.forEach((e,j)=>{if(e[0]*1000<t0)return;const w=A.slice(Math.max(0,j-4),j+1);pts.push({t:e[0]*1000,v:w.reduce((s,x)=>s+x[3],0)/w.length/10});});}
-    return pts;
-  }
-  let from;
-  if(r==='a'){const ks=Object.keys(S.days).filter(k=>{const e=S.days[k];return e&&(e.a||e.c||e.w||e.dx);}).sort();from=ks.length?new Date(ks[0]+'T00:00:00'):sod();}
-  else{from=sod();from.setDate(from.getDate()-({w:7,m:30,q:90}[r]-1));}
-  const fk=dkey(from),field=m==='xp'?'x':'lv';
-  let carry=null;
-  if(m==='xp'||m==='lv'){const prev=Object.keys(S.days).filter(k=>k<fk&&S.days[k][field]!=null).sort().pop();carry=prev?S.days[prev][field]:(m==='xp'?START:null);if(carry!=null)pts.push({t:from.getTime(),v:carry});}
-  const end=Date.now();
-  for(const d=new Date(from);d.getTime()<=end;d.setDate(d.getDate()+1)){
-    const e=S.days[dkey(d)],tEnd=Math.min(d.getTime()+864e5,end);
-    if(m==='xp'||m==='lv'){if(e&&e[field]!=null)carry=e[field];if(carry!=null)pts.push({t:tEnd,v:carry});}
-    else if(m==='acc'){const a=e?(e.a||(e.c||0)+(e.w||0)):0;if(a>0){const ff=e.a?e.f:Math.max(0,(e.c||0)-(e.w||0));pts.push({t:tEnd,v:ff/a*100});}}
-    else if(e&&e.n>0)pts.push({t:tEnd,v:e.s/e.n});
-  }
-  return pts;
+function rangeFrom(r){if(r==='a')return 0;const x=sod();if(r!=='d')x.setDate(x.getDate()-({w:7,m:30,q:90}[r]-1));return x.getTime();}
+function dayMs(e){return e?(e.tm!=null?e.tm:(e.s||0)*1000):0;}
+function fmtDur(ms,h){
+  const sm=x=>h?`<small>${x}</small>`:' '+x;ms=Math.max(0,ms||0);
+  if(ms<1000)return`0${sm('min')}`;
+  if(ms<6e4)return`${Math.round(ms/1000)}${sm('s')}`;
+  const m=Math.round(ms/6e4);if(m<60)return`${m}${sm('min')}`;
+  const hh=Math.floor(m/60),mm=m%60;return`${fmtN(hh)}${sm('h')}${mm?` ${mm}${sm('min')}`:''}`;
 }
+function fmtDurS(ms){ms=Math.max(0,ms||0);const m=ms/6e4;if(ms<1000)return'0<small>min</small>';if(m<1)return`${Math.round(ms/1000)}<small>s</small>`;if(m<60)return`${Math.round(m)}<small>min</small>`;return`${(m/60).toFixed(m<600?1:0).replace('.',',')}<small>h</small>`;}
+function rawSeries(m){
+  const L=S.log,out=[];
+  if(m==='xp'||m==='lv'){
+    const fi=m==='xp'?6:7,fd=m==='xp'?'x':'lv',t0=L.length?L[0][0]*1000:Infinity;
+    for(const k of Object.keys(S.days).sort()){const e=S.days[k],t=new Date(k+'T23:59:59').getTime();if(t>=t0)break;if(e&&e[fd]!=null)out.push({t,v:e[fd],d:1});}
+    for(const e of L)if(e[fi]!=null)out.push({t:e[0]*1000,v:e[fi]});
+  }else if(m==='acc'){
+    const A=L.filter(e=>e[2]===0||e[2]===1);if(!A.length)return out;
+    let v=A.slice(0,10).filter(e=>e[2]===1).length/Math.min(10,A.length)*100;
+    A.forEach(e=>{v+=.07*((e[2]===1?100:0)-v);out.push({t:e[0]*1000,v});});
+  }else{
+    const A=L.filter(e=>e[3]>=0);if(!A.length)return out;
+    let v=A.slice(0,8).reduce((a,e)=>a+e[3],0)/Math.min(8,A.length)/10;
+    A.forEach(e=>{v+=.1*(Math.min(e[3]/10,v*3)-v);out.push({t:e[0]*1000,v});});
+  }
+  return out;
+}
+/* keep the shape when there are many ticks (largest-triangle-three-buckets) */
+function lttb(p,max){
+  const n=p.length;if(n<=max)return p;
+  const out=[p[0]],bs=(n-2)/(max-2);let a=0;
+  for(let i=0;i<max-2;i++){
+    const s=Math.floor((i+1)*bs)+1,e=Math.min(n,Math.floor((i+2)*bs)+1);let ax=0,ay=0,c=0;
+    for(let j=s;j<e;j++){ax+=p[j].i;ay+=p[j].v;c++;}
+    if(c){ax/=c;ay/=c;}else{ax=p[n-1].i;ay=p[n-1].v;}
+    const r0=Math.floor(i*bs)+1,r1=Math.min(n-1,Math.floor((i+1)*bs)+1);let best=-1,bi=r0;
+    for(let j=r0;j<r1;j++){const ar=Math.abs((p[a].i-ax)*(p[j].v-p[a].v)-(p[a].i-p[j].i)*(ay-p[a].v));if(ar>best){best=ar;bi=j;}}
+    out.push(p[bi]);a=bi;
+  }
+  out.push(p[n-1]);return out;
+}
+function series(m,r){
+  const all=rawSeries(m),from=rangeFrom(r);
+  let k=all.findIndex(p=>p.t>=from);if(k<0)k=all.length;
+  const pts=all.slice(k);
+  if(k>0&&(m==='xp'||m==='lv'))pts.unshift({t:Math.max(from,all[k-1].t),v:all[k-1].v,d:all[k-1].d,c:1});
+  const cur=m==='xp'?S.xp:m==='lv'?Math.round(realLevel()):null;
+  if(cur!=null){if(!pts.length)pts.push({t:from||Date.now(),v:cur,c:1});if(pts[pts.length-1].v!==cur)pts.push({t:Date.now(),v:cur});}
+  if(pts.length===1)pts.unshift({t:pts[0].t,v:pts[0].v,d:pts[0].d,c:1});
+  pts.forEach((p,i)=>p.i=i);
+  return lttb(pts,140);
+}
+const DOWS=['D','L','M','M','J','V','S'];
+const monS=d=>d.toLocaleDateString('ro-RO',{month:'short'}).replace('.','');
+function timeBars(r){
+  const bars=[],now=new Date();
+  if(r==='d'){const e=S.days[dkey(now)]||{},hr=e.hr||{},h=now.getHours(),t0=sod().getTime();for(let i=0;i<24;i++)bars.push({t:t0+i*36e5,v:hr[i]||0,lab:i%6===0?String(i).padStart(2,'0'):'',cur:i===h,u:'h'});return bars;}
+  if(r==='w'||r==='m'){const n=r==='w'?7:30;for(let i=n-1;i>=0;i--){const d=sod();d.setDate(d.getDate()-i);bars.push({t:d.getTime(),v:dayMs(S.days[dkey(d)]),lab:r==='w'?DOWS[d.getDay()]:(i%7===0?String(d.getDate()):''),cur:i===0,u:'d'});}return bars;}
+  let from;
+  if(r==='q'){from=sod();from.setDate(from.getDate()-90);}
+  else{const ks=Object.keys(S.days).sort();from=ks.length?new Date(ks[0]+'T00:00:00'):sod();}
+  if(r==='a'&&(now-from)/864e5>120){
+    const d=new Date(from.getFullYear(),from.getMonth(),1),sums={};
+    for(const[k,e]of Object.entries(S.days))sums[k.slice(0,7)]=(sums[k.slice(0,7)]||0)+dayMs(e);
+    while(d<=now){bars.push({t:d.getTime(),v:sums[dkey(d).slice(0,7)]||0,lab:monS(d),u:'m'});d.setMonth(d.getMonth()+1);}
+    const st=Math.ceil(bars.length/6);bars.forEach((b,i)=>{if((bars.length-1-i)%st)b.lab='';});
+  }else{
+    const d=new Date(from);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));
+    while(d<=now){let v=0;const w=new Date(d);for(let j=0;j<7;j++){v+=dayMs(S.days[dkey(w)]);w.setDate(w.getDate()+1);}bars.push({t:d.getTime(),v,lab:'',u:'w'});d.setDate(d.getDate()+7);}
+    const st=Math.max(1,Math.ceil(bars.length/4));bars.forEach((b,i)=>{if((bars.length-1-i)%st===0){const x=new Date(b.t);b.lab=`${x.getDate()} ${monS(x)}`;}});
+  }
+  if(bars.length)bars[bars.length-1].cur=true;
+  return bars;
+}
+const hhmm=t=>new Date(t).toLocaleTimeString('ro-RO',{hour:'2-digit',minute:'2-digit'});
+const dmon=t=>new Date(t).toLocaleDateString('ro-RO',{day:'numeric',month:'short'});
 function fmtVal(v){return evM==='xp'?`${fmtN(v)}<small>XP</small>`:evM==='lv'?`${fmtN(v)}<small>nivel real</small>`:evM==='acc'?`${Math.round(v)}<small>%</small>`:`${v.toFixed(1).replace('.',',')}<small>s</small>`;}
 function fmtAxis(v){return evM==='xp'||evM==='lv'?fmtN(v):evM==='acc'?Math.round(v)+'%':v.toFixed(1).replace('.',',')+' s';}
-function fmtWhen(t){return evR==='d'?new Date(t).toLocaleTimeString('ro-RO',{hour:'2-digit',minute:'2-digit'}):new Date(t-1).toLocaleDateString('ro-RO',{day:'numeric',month:'short'});}
-function renderEvo(){
+function fmtWhen(p){if(evR==='d')return p.c?'la început':hhmm(p.t);return p.d?dmon(p.t):`${dmon(p.t)}, ${hhmm(p.t)}`;}
+function barWhen(b){const d=new Date(b.t);if(b.u==='h'){const h=d.getHours();return`${String(h).padStart(2,'0')}:00 – ${String((h+1)%24).padStart(2,'0')}:00`;}if(b.u==='d')return cap(d.toLocaleDateString('ro-RO',{weekday:'long',day:'numeric',month:'short'}));if(b.u==='w')return`Săptămâna din ${dmon(b.t)}`;return cap(d.toLocaleDateString('ro-RO',{month:'long',year:'numeric'}));}
+function renderEvo(full){
   document.querySelectorAll('#mtabs .tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.m===evM));
   document.querySelectorAll('#ranges .rg').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===evR));
-  evPts=series(evM,evR);
-  const n=evPts.length,dv=n?evPts[n-1].v-evPts[0].v:0;
-  $('chart').className='chart '+((evM==='spd'?dv<=0:dv>=0)?'up':'down');
-  draw();head(null);
-  let a=0,ff=0;
-  if(evR==='d'){const e=S.days[dkey(new Date())];if(e){a=e.a||0;ff=e.f||0;}}
-  else{const fromK=evR==='a'?'':(()=>{const x=sod();x.setDate(x.getDate()-({w:7,m:30,q:90}[evR]-1));return dkey(x);})();for(const[k,e]of Object.entries(S.days))if(k>=fromK){a+=e.a||((e.c||0)+(e.w||0));ff+=e.a?e.f:Math.max(0,(e.c||0)-(e.w||0));}}
-  const xs=series('xp',evR),xd=xs.length?xs[xs.length-1].v-xs[0].v:0;
-  $('evSum').textContent=a?`${pl(a,'exercițiu','exerciții')} · ${Math.round(ff/a*100)}% din prima · ${xd>=0?'+':'−'}${fmtN(Math.abs(xd))} XP`:`Niciun exercițiu ${RGL[evR]}.`;
-  renderBrain();
+  const ch=$('chart');
+  if(evM==='tm'){evPts=timeBars(evR);ch.className='chart bars';}
+  else{evPts=series(evM,evR);const n=evPts.length,dv=n?evPts[n-1].v-evPts[0].v:0;ch.className='chart '+((evM==='spd'?dv<=0:dv>=0)?'up':'down');}
+  if(evAnim&&!reduce){ch.classList.add('anim');clearTimeout(evAnimT);evAnimT=setTimeout(()=>ch.classList.remove('anim'),1600);}
+  evAnim=false;scrubI=null;
+  draw();head(null);rangeStats();
+  if(full)renderBrain();
 }
+function rangeStats(){
+  const from=rangeFrom(evR);let a=0,ff=0,tm=0;
+  for(const[k,e]of Object.entries(S.days)){if(!e||new Date(k+'T00:00:00').getTime()<from)continue;a+=e.a||((e.c||0)+(e.w||0));ff+=e.a?(e.f||0):Math.max(0,(e.c||0)-(e.w||0));tm+=dayMs(e);}
+  const xs=series('xp',evR),xd=xs.length?xs[xs.length-1].v-xs[0].v:0;
+  $('evSum').innerHTML=`<div><b>${fmtN(a)}</b><span>exerciții</span></div><div><b>${a?Math.round(ff/a*100)+'<small>%</small>':'—'}</b><span>din prima</span></div><div><b class="${xd>0?'up':xd<0?'down':''}">${xd>0?'+':xd<0?'−':''}${fmtN(Math.abs(xd))}</b><span>XP</span></div><div><b>${fmtDurS(tm)}</b><span>timp</span></div>`;
+}
+const UPA='<svg class="i fill" viewBox="0 0 12 12"><path d="M6 1l5 9H1z"/></svg>',DNA='<svg class="i fill" viewBox="0 0 12 12"><path d="M6 11L1 2h10z"/></svg>';
 function head(i){
-  const n=evPts.length;
-  if(!n){$('evBig').innerHTML='—';$('evDelta').innerHTML='';return;}
+  const D=$('evDelta'),n=evPts.length;
+  if(evM==='tm'){
+    if(i!=null){const b=evPts[i];$('evBig').innerHTML=fmtDur(b.v,true);D.className='delta';D.innerHTML=`<span class="when">${barWhen(b)}</span>`;return;}
+    const tot=evPts.reduce((s,b)=>s+b.v,0);$('evBig').innerHTML=fmtDur(tot,true);
+    if(evR==='d'){const y=sod();y.setDate(y.getDate()-1);const yv=dayMs(S.days[dkey(y)]),dv=tot-yv;
+      if(!yv&&!tot){D.className='delta';D.innerHTML='<span class="when">exersat azi</span>';return;}
+      D.className='delta'+(Math.abs(dv)<6e4?'':dv>0?' up':' down');D.innerHTML=`${Math.abs(dv)<6e4?'':dv>0?UPA:DNA}<span>${dv>=0?'+':'−'}${fmtDur(Math.abs(dv))}</span><span class="when">față de ieri</span>`;return;}
+    const days=evR==='w'?7:evR==='m'?30:evR==='q'?91:Math.max(1,Math.round((Date.now()-(evPts.length?evPts[0].t:Date.now()))/864e5));
+    D.className='delta';D.innerHTML=`<span class="when">În medie ${fmtDur(tot/days)} pe zi · ${fmtDur(S.tt||0)} în total</span>`;return;
+  }
+  if(!n){$('evBig').innerHTML='—';D.className='delta';D.innerHTML=`<span class="when">${RGL[evR]}</span>`;return;}
   const p=i==null?evPts[n-1]:evPts[i];
   $('evBig').innerHTML=fmtVal(p.v);
-  const D=$('evDelta');
-  if(i!=null){D.className='delta';D.innerHTML=`<span class="when">${fmtWhen(p.t)}</span>`;return;}
+  if(i!=null){D.className='delta';D.innerHTML=`<span class="when">${fmtWhen(p)}</span>`;return;}
   if(n<2){D.className='delta';D.innerHTML=`<span class="when">${RGL[evR]}</span>`;return;}
   const dv=evPts[n-1].v-evPts[0].v,z=Math.abs(dv)<1e-9,good=evM==='spd'?dv<0:dv>0;
   D.className='delta'+(z?'':good?' up':' down');
-  const arrow=z?'':dv>0?'<svg class="i fill" viewBox="0 0 12 12"><path d="M6 1l5 9H1z"/></svg>':'<svg class="i fill" viewBox="0 0 12 12"><path d="M6 11L1 2h10z"/></svg>';
   const sg=dv>0?'+':dv<0?'−':'';
   let txt;
   if(evM==='xp'||evM==='lv'){txt=`${sg}${fmtN(Math.abs(dv))}${evM==='xp'?' XP':''}`;if(evPts[0].v>0)txt+=` (${sg}${(Math.abs(dv)/evPts[0].v*100).toFixed(1).replace('.',',')}%)`;}
   else if(evM==='acc')txt=`${sg}${Math.round(Math.abs(dv))} pct.`;
   else txt=`${sg}${Math.abs(dv).toFixed(1).replace('.',',')} s`;
-  D.innerHTML=`${arrow}<span>${txt}</span><span class="when">${RGL[evR]}</span>`;
+  D.innerHTML=`${z?'':dv>0?UPA:DNA}<span>${txt}</span><span class="when">${RGL[evR]}</span>`;
 }
+function niceTicks(lo,hi,n){const span=hi-lo;if(!(span>0))return[lo];const raw=span/n,mag=Math.pow(10,Math.floor(Math.log10(raw))),r=raw/mag,step=(r<1.5?1:r<3?2:r<3.5?2.5:r<7?5:10)*mag;const out=[];for(let v=Math.ceil(lo/step)*step;v<=hi+step*1e-6;v+=step)out.push(+v.toFixed(6));return out;}
+/* monotone cubic: rounded, never overshoots */
+function smoothPath(P){
+  const n=P.length,F=v=>v.toFixed(1);
+  if(n<3)return P.map((p,i)=>`${i?'L':'M'}${F(p[0])},${F(p[1])}`).join('');
+  const dx=[],m=[],t=[];
+  for(let i=0;i<n-1;i++){dx[i]=P[i+1][0]-P[i][0];m[i]=dx[i]?(P[i+1][1]-P[i][1])/dx[i]:0;}
+  t[0]=m[0];t[n-1]=m[n-2];
+  for(let i=1;i<n-1;i++)t[i]=m[i-1]*m[i]<=0?0:(m[i-1]+m[i])/2;
+  for(let i=0;i<n-1;i++){if(m[i]===0){t[i]=0;t[i+1]=0;continue;}const a=t[i]/m[i],b=t[i+1]/m[i],h=a*a+b*b;if(h>9){const k=3/Math.sqrt(h);t[i]=k*a*m[i];t[i+1]=k*b*m[i];}}
+  let d=`M${F(P[0][0])},${F(P[0][1])}`;
+  for(let i=0;i<n-1;i++){const h=dx[i]/3;d+=`C${F(P[i][0]+h)},${F(P[i][1]+t[i]*h)} ${F(P[i+1][0]-h)},${F(P[i+1][1]-t[i+1]*h)} ${F(P[i+1][0])},${F(P[i+1][1])}`;}
+  return d;
+}
+const CDEFS='<defs><linearGradient id="lgrad" x1="0" x2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".35"/><stop offset=".3" stop-color="currentColor" stop-opacity=".85"/><stop offset="1" stop-color="currentColor"/></linearGradient><linearGradient id="agrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".34"/><stop offset=".7" stop-color="currentColor" stop-opacity=".05"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient><linearGradient id="bgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A68BFF"/><stop offset="1" stop-color="#5B3FD9"/></linearGradient><linearGradient id="bgradH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D4C6FF"/><stop offset="1" stop-color="#8A63FF"/></linearGradient></defs>';
 function draw(){
-  const svg=$('chartSvg'),W=Math.max(260,Math.round($('chart').clientWidth||340)),H=210,pt=12,pb=24,pr=46;
+  const svg=$('chartSvg'),W=Math.max(260,Math.round($('chart').clientWidth||340)),H=220,pt=22,pb=26,pr=46;
   svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  if(evM==='tm')return drawBars(svg,W,H,pt,pb,pr);
   if(evPts.length<2){svg.innerHTML='';$('chartEmpty').hidden=false;evGeo=null;return;}
   $('chartEmpty').hidden=true;
-  const vs=evPts.map(p=>p.v);let lo=Math.min(...vs),hi=Math.max(...vs);const dmin=lo,dmax=hi;
-  if(hi-lo<1e-9){hi+=evM==='xp'||evM==='lv'?10:1;lo-=evM==='xp'||evM==='lv'?10:1;}
-  const pv=(hi-lo)*.14;lo-=pv;hi+=pv;
-  const t0=evPts[0].t,span=Math.max(1,evPts[evPts.length-1].t-t0);
-  const X=t=>(t-t0)/span*(W-pr),Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb);
-  const line=evPts.map((p,i)=>`${i?'L':'M'}${X(p.t).toFixed(1)},${Y(p.v).toFixed(1)}`).join('');
-  const lp=evPts[evPts.length-1];
-  const gv=dmax-dmin<1e-9?[dmax]:[dmax,(dmax+dmin)/2,dmin];
-  let h='<defs><linearGradient id="lgrad" x1="0" x2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".35"/><stop offset="1" stop-color="currentColor"/></linearGradient><linearGradient id="agrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".32"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>';
-  for(const v of gv){const y=Y(v).toFixed(1);h+=`<line class="grid" x1="0" x2="${W-pr}" y1="${y}" y2="${y}"/><text class="gl" x="${W-pr+6}" y="${y}" dominant-baseline="middle">${fmtAxis(v)}</text>`;}
-  h+=`<line class="base" x1="0" x2="${W-pr}" y1="${Y(evPts[0].v).toFixed(1)}" y2="${Y(evPts[0].v).toFixed(1)}"/>`;
-  h+=`<path class="ar" d="${line}L${X(lp.t).toFixed(1)},${H-pb}L0,${H-pb}Z"/><path class="ln" d="${line}"/>`;
-  h+=`<circle class="dot" cx="${X(lp.t).toFixed(1)}" cy="${Y(lp.v).toFixed(1)}" r="4.5"/>`;
-  h+=`<text class="gl" x="0" y="${H-6}">${fmtWhen(evPts[0].t)}</text><text class="gl" x="${W-pr}" y="${H-6}" text-anchor="end">${evR==='d'?'acum':fmtWhen(lp.t)}</text>`;
-  h+=`<g id="xh" style="opacity:0"><line class="xh" id="xhl" x1="0" x2="0" y1="${pt}" y2="${H-pb}"/><circle class="dot" id="xhd" r="5.5" cx="0" cy="0"/></g>`;
-  svg.innerHTML=h;evGeo={W,X,Y};
+  const vs=evPts.map(p=>p.v),big=evM==='xp'||evM==='lv';let lo=Math.min(...vs),hi=Math.max(...vs);
+  if(hi-lo<1e-9){const d=big?10:evM==='acc'?5:.5;hi+=d;lo-=d;}
+  const pv=(hi-lo)*.12;lo-=pv;hi+=pv;
+  if(evM==='acc'){lo=Math.max(0,lo);hi=Math.min(100,hi);}if(evM==='spd')lo=Math.max(0,lo);
+  const N=Math.max(1,evPts[evPts.length-1].i),CW=W-pr,X=i=>i/N*CW,Y=v=>pt+(1-(v-lo)/(hi-lo))*(H-pt-pb),by=H-pb;
+  const P=evPts.map(p=>[X(p.i),Y(p.v)]),line=smoothPath(P),lp=evPts[evPts.length-1],lx=X(lp.i),ly=Y(lp.v);
+  let h=CDEFS;
+  for(const v of niceTicks(lo,hi,3)){if(v<lo||v>hi)continue;const y=Y(v).toFixed(1);h+=`<line class="grid" x1="0" x2="${CW}" y1="${y}" y2="${y}"/><text class="gl" x="${CW+8}" y="${y}" dominant-baseline="middle">${fmtAxis(v)}</text>`;}
+  h+=`<line class="base" x1="0" x2="${CW}" y1="${Y(evPts[0].v).toFixed(1)}" y2="${Y(evPts[0].v).toFixed(1)}"/>`;
+  h+=`<path class="ar" d="${line}L${lx.toFixed(1)},${by}L0,${by}Z"/><path class="ln" pathLength="1" d="${line}"/>`;
+  /* the record of the range, like the callouts on a market chart */
+  if(evPts.length>=4){
+    let bi=1;for(let i=1;i<evPts.length;i++){const v=evPts[i].v;if(evM==='spd'?v<evPts[bi].v:v>evPts[bi].v)bi=i;}
+    const bp=evPts[bi];
+    if(bi<evPts.length-1&&Math.abs(bp.v-lp.v)>1e-9){
+      const x=X(bp.i),y=Y(bp.v),txt=`${evM==='spd'?'record':'max'} ${fmtAxis(bp.v)}`,w=txt.length*6.3+16;
+      const cx=Math.max(w/2,Math.min(CW-w/2,x)),up=evM==='spd'?!(by-y>=30):y-30>=0,ty=up?y-21:y+21;
+      if(Math.abs(cx-lx)<w/2+10&&Math.abs(ty-ly)<20){}else
+      h+=`<g class="pk"><line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${y.toFixed(1)}" y2="${(up?ty+9:ty-9).toFixed(1)}"/><rect x="${(cx-w/2).toFixed(1)}" y="${(ty-9).toFixed(1)}" width="${w.toFixed(1)}" height="18" rx="9"/><text x="${cx.toFixed(1)}" y="${ty.toFixed(1)}" text-anchor="middle" dominant-baseline="central">${txt}</text><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/></g>`;
+    }
+  }
+  h+=`<g class="tip"><circle class="pulse" cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="4.5"/><circle class="dot" cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="4.5"/></g>`;
+  const mid=evPts.reduce((b,p)=>Math.abs(p.i-N/2)<Math.abs(b.i-N/2)?p:b,evPts[0]);
+  const tl=p=>evR==='d'?(p.c?'00:00':hhmm(p.t)):dmon(p.t);
+  h+=`<text class="gl" x="0" y="${H-6}">${tl(evPts[0])}</text>`;
+  if(evPts.length>4&&mid.i>N*.3&&mid.i<N*.7&&tl(mid)!==tl(evPts[0]))h+=`<text class="gl" x="${X(mid.i).toFixed(1)}" y="${H-6}" text-anchor="middle">${tl(mid)}</text>`;
+  h+=`<text class="gl" x="${CW}" y="${H-6}" text-anchor="end">acum</text>`;
+  h+=`<g id="xh" style="opacity:0"><line class="xh" id="xhl" x1="0" x2="0" y1="${pt-6}" y2="${by}"/><circle class="dot" id="xhd" r="5.5" cx="0" cy="0"/></g>`;
+  svg.innerHTML=h;evGeo={kind:'line',W,CW,N,X,Y};
   const nm={lv:'nivel real',xp:'XP',acc:'precizie',spd:'viteză'}[evM];
   $('chart').setAttribute('aria-label',`Grafic ${nm} ${RGL[evR]}: de la ${fmtAxis(evPts[0].v)} la ${fmtAxis(lp.v)}`);
 }
+function drawBars(svg,W,H,pt,pb,pr){
+  const B=evPts,n=B.length,max=n?Math.max(...B.map(b=>b.v)):0;
+  if(!max){svg.innerHTML='';$('chartEmpty').hidden=false;evGeo=null;return;}
+  $('chartEmpty').hidden=true;
+  const CW=W-pr,by=H-pb,U=max<12e4?1000:6e4,mx=max/U,ticks=niceTicks(0,mx*1.08,3),top=Math.max(ticks[ticks.length-1],mx*1.08)*U;
+  const Y=v=>pt+(1-v/top)*(by-pt),slot=CW/n,bw=Math.max(3,Math.min(24,slot*.62));
+  let h=CDEFS;
+  const tlab=m=>!m?'0':U===1000?`${m} s`:m>=60?`${(m/60).toFixed(m%60?1:0).replace('.',',')} h`:`${m} min`;
+  const B0=B.filter(b=>b.v>0),avgV=evR!=='d'&&B0.length>1?B.reduce((s,b)=>s+b.v,0)/n:null,avgY=avgV==null?null:Y(avgV);
+  for(const m of ticks){const y=Y(m*U).toFixed(1);if(avgY!=null&&Math.abs(+y-avgY)<13&&m)continue;h+=`<line class="grid" x1="0" x2="${CW}" y1="${y}" y2="${y}"/><text class="gl" x="${CW+8}" y="${y}" dominant-baseline="middle">${tlab(m)}</text>`;}
+  B.forEach((b,i)=>{
+    const x=i*slot+(slot-bw)/2;
+    if(b.v<=0){h+=`<rect class="bar0" x="${x.toFixed(1)}" y="${by-2}" width="${bw.toFixed(1)}" height="2" rx="1"/>`;}
+    else{const y=Math.min(by-3,Y(b.v)),r=Math.min(bw/2,5,by-y);h+=`<path class="bar${b.cur?' cur':''}" style="animation-delay:${Math.min(i*18,500)}ms" d="M${x.toFixed(1)},${by}V${(y+r).toFixed(1)}Q${x.toFixed(1)},${y.toFixed(1)} ${(x+r).toFixed(1)},${y.toFixed(1)}H${(x+bw-r).toFixed(1)}Q${(x+bw).toFixed(1)},${y.toFixed(1)} ${(x+bw).toFixed(1)},${(y+r).toFixed(1)}V${by}Z"/>`;}
+    if(b.lab)h+=`<text class="gl" x="${(i*slot+slot/2).toFixed(1)}" y="${H-6}" text-anchor="middle">${b.lab}</text>`;
+  });
+  if(avgY!=null)h+=`<line class="avg" x1="0" x2="${CW}" y1="${avgY.toFixed(1)}" y2="${avgY.toFixed(1)}"/><text class="avl" x="${CW+8}" y="${avgY.toFixed(1)}" dominant-baseline="middle">medie</text>`;
+  svg.innerHTML=h;evGeo={kind:'bar',W,CW,slot,n};
+  $('chart').setAttribute('aria-label',`Timp de exersare ${RGL[evR]}: ${fmtDur(B.reduce((s,b)=>s+b.v,0))}`);
+}
 let scrubI=null;
-function scrubTo(i){if(!evGeo||!evPts.length)return;scrubI=Math.max(0,Math.min(evPts.length-1,i));const p=evPts[scrubI];const x=evGeo.X(p.t),y=evGeo.Y(p.v);$('xh').style.opacity=1;$('xhl').setAttribute('x1',x);$('xhl').setAttribute('x2',x);$('xhd').setAttribute('cx',x);$('xhd').setAttribute('cy',y);head(scrubI);}
-function scrubAt(e){if(!evGeo)return;const r=$('chartSvg').getBoundingClientRect();const x=(e.clientX-r.left)/r.width*evGeo.W;let bi=0,bd=Infinity;evPts.forEach((p,i)=>{const d=Math.abs(evGeo.X(p.t)-x);if(d<bd){bd=d;bi=i;}});scrubTo(bi);}
-function endScrub(){scrubI=null;const g=$('xh');if(g)g.style.opacity=0;head(null);}
+function scrubTo(i){
+  if(!evGeo||!evPts.length)return;scrubI=Math.max(0,Math.min(evPts.length-1,i));
+  if(evGeo.kind==='bar'){document.querySelectorAll('#chartSvg .bar,#chartSvg .bar0').forEach(el=>el.classList.remove('sel'));const el=$('chartSvg').querySelectorAll('.bar,.bar0')[scrubI];if(el)el.classList.add('sel');$('chart').classList.add('scrub');head(scrubI);return;}
+  const p=evPts[scrubI],x=evGeo.X(p.i),y=evGeo.Y(p.v);
+  $('xh').style.opacity=1;$('xhl').setAttribute('x1',x);$('xhl').setAttribute('x2',x);$('xhd').setAttribute('cx',x);$('xhd').setAttribute('cy',y);head(scrubI);
+}
+function scrubAt(e){
+  if(!evGeo)return;const r=$('chartSvg').getBoundingClientRect(),x=(e.clientX-r.left)/r.width*evGeo.W;
+  if(evGeo.kind==='bar'){scrubTo(Math.floor(Math.max(0,Math.min(evGeo.CW-1,x))/evGeo.slot));return;}
+  const ti=Math.max(0,Math.min(1,x/evGeo.CW))*evGeo.N;let bi=0,bd=Infinity;evPts.forEach((p,i)=>{const d=Math.abs(p.i-ti);if(d<bd){bd=d;bi=i;}});
+  if(bi!==scrubI&&navigator.vibrate)try{navigator.vibrate(4);}catch(err){}
+  scrubTo(bi);
+}
+function endScrub(){scrubI=null;const g=$('xh');if(g)g.style.opacity=0;$('chart').classList.remove('scrub');document.querySelectorAll('#chartSvg .sel').forEach(el=>el.classList.remove('sel'));head(null);}
 const chartEl=$('chart');
 chartEl.addEventListener('pointerdown',e=>scrubAt(e));
 chartEl.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'||e.buttons)scrubAt(e);});
@@ -1605,25 +1818,86 @@ chartEl.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRig
 chartEl.addEventListener('blur',()=>{if(scrubI!=null)endScrub();});
 if(window.ResizeObserver)new ResizeObserver(()=>{if(!statsView.hidden&&pane==='evo')draw();}).observe(chartEl);
 
-/* the brain: one zone per category, brighter = higher real level, more dots = more practice */
-const ZONES={add:'100,80 100,-10 -10,-10 -10,30',sub:'100,80 -10,30 -10,112',mul:'100,80 -10,112 -10,170 100,170',div:'100,80 100,-10 210,-10 210,30',neg:'100,80 210,30 210,112',rad:'100,80 210,112 210,170 100,170'};
-let brainSel=null;
-const ZL={add:[60,42,'+'],sub:[44,76,'−'],mul:[74,106,'×'],div:[140,42,'÷'],neg:[156,76,'±'],rad:[126,106,'√']};
+/* the brain: grows with your XP, glows while you practise, withers when XP falls or you stop.
+   Side view, one lobe per category; tap a lobe to see that category. */
+const BR={
+  cere:'M46 112C30 104 22 84 28 64C34 40 58 22 86 18C104 10 132 10 150 16C178 24 204 42 210 70C214 90 206 108 190 114C178 118 166 116 156 112C146 122 128 132 108 130C92 128 80 120 74 112C66 116 54 117 46 112Z',
+  cb:'M150 116C156 104 186 104 196 118C202 132 184 146 166 142C152 139 144 128 150 116Z',
+  stem:'M134 122C139 132 141 144 139 154C137 158 129 158 127 154C126 144 125 136 120 128Z',
+  main:['M70 112C88 104 106 96 124 90C138 86 152 84 168 84C176 84 182 79 184 72','M124 14C118 30 126 42 118 56C112 68 116 78 110 92'],
+  gy:['M108 22C102 34 110 44 104 56S106 76 98 88','M102 38C92 34 86 44 74 40S56 34 44 46','M100 64C90 58 82 70 70 64S50 62 38 76','M90 90C82 84 74 94 64 88S50 90 42 98','M90 22C82 28 72 22 62 30','M60 52C54 48 48 56 40 54','M88 50C82 54 84 60 78 60','M84 104C88 96 94 98 96 92','M142 18C136 32 144 44 136 56S134 74 126 86','M142 46C152 40 158 52 170 46S186 50 192 62','M148 80C148 68 160 64 166 72S174 84 184 80','M156 22C166 30 176 26 186 34','M154 60C160 64 166 58 174 62','M200 48C194 58 202 66 198 76','M190 94C198 88 202 96 207 88','M176 104C184 98 192 106 200 100','M80 119C96 110 104 118 120 110S148 102 166 96','M102 126C112 120 120 126 132 120S144 116 150 113'],
+  folia:['M154 120C164 114 182 114 192 122','M152 128C164 122 182 124 194 130','M156 136C166 132 178 134 188 138'],
+  lobes:{add:'0,0 78,0 74,50 84,106 66,114 0,140',sub:'78,0 122,0 118,40 110,70 108,94 84,106 74,50',mul:'122,0 178,0 184,86 166,82 140,84 108,94 110,70 118,40',div:'178,0 240,0 240,130 160,130 166,82 184,86',neg:'0,140 66,114 84,106 108,94 140,84 166,82 160,130 160,180 0,180'},
+  spot:{add:[48,70],sub:[96,40],mul:[150,50],div:[194,80],neg:[110,116],rad:[172,126]}
+};
+const BPTS=[[79,38.3],[162.6,78.6],[86.6,106],[154.1,91.5],[179.2,42.3],[153.9,70.5],[47.3,76.1],[199.4,98.1],[146.3,84.2],[94.7,53.9],[183.1,53.5],[53,49.2],[105.4,48.9],[202.1,81.7],[130.5,75.6],[104.1,36.1],[121.8,32.7],[93.2,65],[87.2,78.5],[140.7,41.2],[196.2,69.2],[188,91.4],[119.9,98.1],[158.6,43.4],[135.5,55.8],[38.8,62.9],[144.1,30],[110.9,86.1],[131.4,96.9],[63.7,82.6],[48.8,98],[169.3,64.5],[71.2,103],[68.6,62.6],[90.8,89.7],[163.6,53.9],[168.8,87.1],[62.4,96.4],[152,108.8],[75.8,92.8],[102.6,23.4],[171.7,107.5],[107,118.9],[118.4,73.9],[107.2,72.9],[92,21.9],[63.3,41.8],[144.7,100.9],[135.8,109.2],[180.4,65.1],[160.7,31.3],[118.7,120.3],[111.3,60.3],[122.3,60],[132.5,32.2],[76.1,49.9],[178.3,97.4],[33,83],[40.2,50.3],[76.5,77.4]];
+const BSTAGES=[['Adormit',-1e9],['Se trezește',500],['Activ',1000],['Ager',1500],['Sclipitor',2200],['Genial',3000]];
+let brainSel=null,brainIntro=true;
+const clamp01=v=>Math.max(0,Math.min(1,v));
+function zoneDays(c){const s=S.sk[c];return s&&s[3]?(Date.now()-s[3])/864e5:null;}
+function zoneFresh(c){const d=zoneDays(c);return d==null?null:clamp01(1-(d-1)/9);}
+function xpAgo(n){const d=sod();d.setDate(d.getDate()-n);const k=dkey(d);const ks=Object.keys(S.days).filter(x=>x<=k&&S.days[x]&&S.days[x].x!=null).sort();return ks.length?S.days[ks[ks.length-1]].x:START;}
+function brainHealth(){
+  const last=Math.max(0,...CATS.map(c=>S.sk[c]&&S.sk[c][3]||0)),d=last?(Date.now()-last)/864e5:0,fresh=last?clamp01(1-(d-1)/7):1;
+  const tr=clamp01(.5+(S.xp-xpAgo(7))/400);
+  return clamp01(.62*fresh+.38*tr);
+}
+function brainStage(){let i=0;for(let j=1;j<BSTAGES.length;j++)if(S.xp>=BSTAGES[j][1])i=j;return i;}
+function checkBrainGrowth(){const st=brainStage();if(S.bst==null){S.bst=st;save();return;}if(st!==S.bst){const up=st>S.bst;S.bst=st;save();if(up)setTimeout(()=>{SFX.quest();toast(`${STAR} Creierul tău a crescut: ${BSTAGES[st][0]}`);},900);}}
 function catTrend(c){const s=S.sk[c];if(!s)return null;const d=new Date();d.setDate(d.getDate()-7);const k=dkey(d);const ks=Object.keys(S.days).filter(x=>x<=k&&S.days[x].sk&&S.days[x].sk[c]!=null).sort();return ks.length?s[0]-S.days[ks[ks.length-1]].sk[c]:null;}
+function brainArt(o){
+  const H=o.H,st=o.st,droop=H<.6?(.6-H)*9:0;
+  const lobeAttr=c=>{const L=o.lobes[c];if(o.sel===c)return'fill="#FFD27A" fill-opacity=".42"';if(!L||!L.k)return'fill="#0B0918" fill-opacity=".4"';const f=L.f==null?1:L.f,wear=1-f;return wear>.05?`fill="#3B2C18" fill-opacity="${(wear*.6).toFixed(2)}"`:`fill="#fff" fill-opacity="${(.02+.12*L.t).toFixed(3)}"`;};
+  let lob='',hit='';
+  for(const c of['add','sub','mul','div','neg']){lob+=`<polygon points="${BR.lobes[c]}" ${lobeAttr(c)}/>`;hit+=`<polygon class="hit" data-z="${c}" points="${BR.lobes[c]}"/>`;}
+  let spots='';
+  for(const c of CATS){const L=o.lobes[c];if(!L||!L.k||L.f==null||L.f>.7)continue;const q=rng(hash('pata'+c)),[cx,cy]=BR.spot[c],n=Math.ceil((1-L.f)*5);
+    for(let i=0;i<n;i++)spots+=`<circle cx="${(cx+(q()-.5)*30).toFixed(1)}" cy="${(cy+(q()-.5)*24).toFixed(1)}" r="${(4+q()*7).toFixed(1)}" fill="url(#bgW)" opacity="${(.5+.5*(1-L.f)).toFixed(2)}"/>`;}
+  const groove=(d,w)=>`<path d="${d}" class="gv" stroke-width="${w}"/><path d="${d}" class="gh" transform="translate(-.5 -1)" stroke-width="${(w*.4).toFixed(2)}"/>`;
+  const nd=BPTS.slice(0,o.nN).map((q,i)=>`<circle class="nd" cx="${q[0]}" cy="${q[1]}" r="${(.9+((i*37)%10)/10).toFixed(2)}" style="animation-delay:${((i*.37)%3.2).toFixed(2)}s"/>`).join('');
+  const paths=[...BR.main,...BR.gy],np=H<.45?0:Math.min(paths.length,[1,2,4,6,9,12][st]);
+  let pulses='';for(let i=0;i<np;i++)pulses+=`<circle class="pl" r="1.7"><animateMotion dur="${(2.6+(i%4)*.7).toFixed(1)}s" begin="-${(i*.9).toFixed(1)}s" repeatCount="indefinite" path="${paths[(i*5)%paths.length]}"/></circle>`;
+  const cbA=lobeAttr('rad');
+  return `<defs>
+<linearGradient id="bgF" x1=".15" y1=".05" x2=".85" y2="1"><stop offset="0" stop-color="#B49CFF"/><stop offset=".45" stop-color="#7D5CF5"/><stop offset="1" stop-color="#3A2AA6"/></linearGradient>
+<linearGradient id="bgC" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#7C62F0"/><stop offset="1" stop-color="#2E2183"/></linearGradient>
+<linearGradient id="bgS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A37B8"/><stop offset="1" stop-color="#22195E" stop-opacity=".6"/></linearGradient>
+<radialGradient id="bgL" cx=".3" cy=".22" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<radialGradient id="bgA" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8A63FF" stop-opacity=".55"/><stop offset=".6" stop-color="#4F7BFF" stop-opacity=".12"/><stop offset="1" stop-color="#4F7BFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="bgW" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2A1E10" stop-opacity=".85"/><stop offset="1" stop-color="#2A1E10" stop-opacity="0"/></radialGradient>
+<filter id="bgBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+<clipPath id="bgClip"><path d="${BR.cere}"/></clipPath><clipPath id="bgClipC"><path d="${BR.cb}"/></clipPath>
+</defs>
+<ellipse class="aura" cx="120" cy="84" rx="${(92+22*H).toFixed(1)}" ry="${(70+16*H).toFixed(1)}" fill="url(#bgA)" opacity="${(.2+.8*H*Math.min(1,.4+st*.15)).toFixed(2)}"/>
+<g transform="rotate(${droop.toFixed(1)} 130 156)"><g transform="translate(120 86) scale(${o.size.toFixed(3)}) translate(-120 -86)"><g class="bin${o.intro?' intro':''}"><g class="breathe${H>.6?'':' slow'}">
+<path d="${BR.stem}" fill="url(#bgS)"/>
+<path d="${BR.cb}" fill="url(#bgC)"/><g clip-path="url(#bgClipC)">${BR.folia.map(d=>groove(d,1.8)).join('')}<g filter="url(#bgBlur)"><path d="${BR.cb}" ${cbA}/></g></g>
+<path d="${BR.cb}" class="edge"/><path class="hit" data-z="rad" d="${BR.cb}"/>
+<path d="${BR.cere}" fill="url(#bgF)"/>
+<g clip-path="url(#bgClip)"><g filter="url(#bgBlur)">${lob}</g>${spots}${groove(BR.gy.join(''),2.6)}${groove(BR.main.join(''),3.4)}<path d="${BR.cere}" fill="url(#bgL)"/>${nd}${pulses}${hit}</g>
+<path d="${BR.cere}" class="edge"/>
+</g></g></g></g>`;
+}
 function renderBrain(){
-  const r=rng(hash('creier')),dots=Math.min(60,Math.floor(S.nrec/15));let dh='';
-  for(let i=0;i<60;i++){const x=34+r()*132,y=18+r()*100;if(i<dots)dh+=`<circle class="nd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(1+r()*1.1).toFixed(2)}" style="animation-delay:${(r()*3).toFixed(2)}s"/>`;else r();}
-  let zh='',zl='';
-  for(const c of CATS){const s=S.sk[c];const known=s&&s[2]>0;const t=known?Math.min(1,Math.max(0,(s[0]-800)/900)):0;
-    zh+=`<polygon class="zone${known?'':' unk'}${brainSel===c?' sel':''}" data-z="${c}" points="${ZONES[c]}" style="fill-opacity:${known?(.18+.82*t).toFixed(2):1}"/>`;zl+=`<text class="zl${known?'':' unk'}" x="${ZL[c][0]}" y="${ZL[c][1]}">${ZL[c][2]}</text>`;}
-  $('brainSvg').innerHTML=`<defs><clipPath id="bclip"><circle cx="64" cy="56" r="34"/><circle cx="58" cy="90" r="30"/><circle cx="92" cy="40" r="28"/><circle cx="108" cy="40" r="28"/><circle cx="136" cy="56" r="34"/><circle cx="142" cy="90" r="30"/><circle cx="84" cy="96" r="24"/><circle cx="116" cy="96" r="24"/></clipPath></defs>
-    <g clip-path="url(#bclip)"><rect class="bbase" x="0" y="0" width="200" height="150"/>${zh}${dh}${zl}
-    <path class="gy" d="M36 52q12-14 26-4M44 78q14-6 22 6M30 98q14 4 22-6M70 30q12-10 22 2M66 64q10 10 24 2M74 104q10-8 20 2M164 52q-12-14-26-4M156 78q-14-6-22 6M170 98q-14 4-22-6M130 30q-12-10-22 2M134 64q-10 10-24 2M126 104q-10-8-20 2"/>
-    <line class="fis" x1="100" y1="10" x2="100" y2="122"/></g>
-    <circle class="cb" cx="122" cy="122" r="12"/><path class="cbg" d="M114 120q8 4 16 0M115 126q7 3 14 0"/><rect class="stem" x="94" y="114" width="12" height="26" rx="6"/>`;
+  const H=brainHealth(),st=brainStage(),xp=S.xp;
+  const size=.72+.28*Math.pow(clamp01((xp-300)/2700),.8);
+  const lobes={};for(const c of CATS){const s=S.sk[c],k=!!(s&&s[2]>0);lobes[c]={k,t:k?clamp01((s[0]-800)/900):0,f:k?zoneFresh(c):null};}
+  const svg=$('brainSvg');
+  svg.style.filter=`sepia(${((1-H)*.75).toFixed(2)}) saturate(${(.35+.65*H).toFixed(2)}) brightness(${(.72+.28*H).toFixed(2)}) drop-shadow(0 0 ${Math.round(4+14*H)}px rgba(138,99,255,${(.1+.32*H).toFixed(2)}))`;
+  svg.innerHTML=brainArt({H,st,size,lobes,nN:Math.min(BPTS.length,2+Math.floor(S.nrec/8)),sel:brainSel,intro:brainIntro&&!reduce});
+  brainIntro=false;
   const sc=brainSel;
-  if(sc){const s=S.sk[sc],tr=catTrend(sc);$('brainCap').innerHTML=s&&s[2]?`<b>${CN[sc]}</b> · ${fmtN(s[0])} ±${Math.round(uNow(s)*200)}${tr!=null&&Math.abs(tr)>=1?` · <span class="${tr>0?'up':'down'}">${tr>0?'+':'−'}${fmtN(Math.abs(tr))} în 7 zile</span>`:''}`:`<b>${CN[sc]}</b> · încă nicio dată`;}
-  else{const lv=realLevel(),u=realU();$('brainCap').innerHTML=`Nivel real <b>${fmtN(lv)}</b>${u>.6?' · provizoriu':''} · ${pl(S.nrec,'exercițiu','exerciții')} analizate`;}
+  if(sc){const s=S.sk[sc],tr=catTrend(sc),d=zoneDays(sc);
+    $('brainCap').innerHTML=s&&s[2]?`<b>Zona ${CN[sc]}</b> · nivel ${fmtN(s[0])} ±${Math.round(uNow(s)*200)}${tr!=null&&Math.abs(tr)>=1?` · <span class="${tr>0?'up':'down'}">${tr>0?'+':'−'}${fmtN(Math.abs(tr))} în 7 zile</span>`:''}<br>${d<1?'Exersată azi':d<2?'Exersată ieri':`<span class="${d>=4?'down':''}">Neexersată de ${zile(Math.floor(d))}${d>=4?', se ofilește':''}</span>`}`:`<b>Zona ${CN[sc]}</b> · încă adormită<br>Rezolvă un exercițiu de ${CN[sc].toLowerCase()} ca s-o trezești`;
+    $('brainBar').hidden=true;return;}
+  const name=H<.4?'Se ofilește':H<.6?'Obosit':BSTAGES[st][0];
+  let worst=null,wd=0;for(const c of CATS){const d=zoneDays(c);if(d!=null&&d>wd){wd=d;worst=c;}}
+  const drop=S.xp-xpAgo(7),nx=BSTAGES[st+1];
+  const tip=worst&&wd>=4?`<span class="down">Zona ${CN[worst]} se ofilește: ${zile(Math.floor(wd))} fără exersare</span>`:drop<=-20?`<span class="down">XP-ul a scăzut cu ${fmtN(-drop)} în 7 zile</span>`:nx?`Încă ${fmtN(nx[1]-xp)} XP până la „${nx[0]}”`:'Formă maximă. Ține-l în mișcare.';
+  $('brainCap').innerHTML=`<b>${name}</b> · ${fmtN(xp)} XP · sănătate ${Math.round(H*100)}%<br>${tip}`;
+  const lo=Math.max(0,BSTAGES[st][1]),hi=nx?nx[1]:lo+1,p=nx?clamp01((xp-lo)/(hi-lo)):1;
+  $('brainBar').hidden=false;
+  $('brainBar').innerHTML=`<span>${BSTAGES[st][0]}</span><div class="bar"><i style="width:${(p*100).toFixed(1)}%"></i></div><span>${nx?nx[0]:'max'}</span>`;
 }
 $('brainSvg').addEventListener('click',e=>{const z=e.target.closest('[data-z]');brainSel=z?(brainSel===z.dataset.z?null:z.dataset.z):null;renderBrain();});
 
@@ -1660,6 +1934,7 @@ function renderCal(){
   const e=S.days[sk]||{},name=sk===tk?'Azi':cap(new Date(sk+'T00:00:00').toLocaleDateString('ro-RO',{weekday:'long',day:'numeric',month:'long'}));
   const parts=e.c||e.w?[`${e.c||0} corecte`,`${e.w||0} ${e.w===1?'greșeală':'greșeli'}`]:[sk===tk?'încă nimic':'fără exerciții'];
   if(e.dx)parts.push(`${e.dx>0?'+':''}${fmtN(e.dx)} XP`);
+  if(dayMs(e)>=1000)parts.push(fmtDur(dayMs(e)));
   if(e.pen)parts.push(`din care −${e.pen} penalizare`);
   if(e.fz)parts.push('salvată de un scut');
   $('calDetail').textContent=`${name}: ${parts.join(' · ')}`;
@@ -1675,14 +1950,15 @@ function renderDet(){
   const a=pct(S.first,S.wrong);$('tAcc').textContent=a===null?'—':a+'%';
   $('tSpeed').textContent=S.times.length?sec(S.times.reduce((x,y)=>x+y,0)/S.times.length):'—';
   $('tBest').textContent=S.best;
-  const rows=CATS.map(c=>{const arr=S.cs[c]||[[0,0,0,0],[0,0,0,0],[0,0,0,0]];const t=arr.reduce((o,r)=>{o.c+=r[0];o.w+=r[1];o.s+=r[2];o.n+=r[3];return o;},{c:0,w:0,s:0,n:0});const s=S.sk[c];return{c,arr,...t,acc:pct(t.c,t.w),r:s&&s[2]?s[0]:null};});
+  $('tTime').innerHTML=fmtDur(S.tt||0,true);$('tToday').innerHTML=fmtDur(dayMs(S.days[dkey(new Date())]),true);
+  const rows=CATS.map(c=>{const arr=S.cs[c]||[[0,0,0,0],[0,0,0,0],[0,0,0,0]];const t=arr.reduce((o,r)=>{o.c+=r[0];o.w+=r[1];o.s+=r[2];o.n+=r[3];return o;},{c:0,w:0,s:0,n:0});const s=S.sk[c];return{k:c,arr,...t,acc:pct(t.c,t.w),r:s&&s[2]?s[0]:null};});
   const elig=rows.filter(r=>r.r!=null&&r.c+r.w>=5);
   const weak=elig.length>1?elig.reduce((m,r)=>r.r<m.r?r:m):null;
   $('catList').innerHTML=rows.map(r=>{
     const tot=r.c+r.w;
     const sub=tot?`${r.acc}% din prima · ${r.c+r.w} exerciții${r.n?' · '+sec(r.s/r.n):''}`:'Încă nimic rezolvat';
     const dl=tot?DIFFS.map((n,i)=>{const v=pct(r.arr[i][0],r.arr[i][1]);return`${n} ${v===null?'—':v+'%'}`;}).join(' · '):'';
-    return`<button class="li" data-go="${r.c}"><div class="main"><span class="t1">${CN[r.c]}${weak&&weak.c===r.c?'<span class="tag"><svg class="i" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg>De lucrat</span>':''}</span><span class="t2">${sub}</span>${dl?`<span class="t2">${dl}</span>`:''}${tot?`<div class="bar" aria-hidden="true"><i style="width:${Math.min(100,Math.max(4,((r.r||SK0)-600)/12)).toFixed(0)}%"></i></div>`:''}</div><span class="val">${r.r!=null?fmtN(r.r):''}</span>${CHEV}</button>`;
+    return`<button class="li" data-go="${r.k}"><div class="main"><span class="t1">${CN[r.k]}${weak&&weak.k===r.k?'<span class="tag"><svg class="i" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg>De lucrat</span>':''}</span><span class="t2">${sub}</span>${dl?`<span class="t2">${dl}</span>`:''}${tot?`<div class="bar" aria-hidden="true"><i style="width:${Math.min(100,Math.max(4,((r.r||SK0)-600)/12)).toFixed(0)}%"></i></div>`:''}</div><span class="val">${r.r!=null?fmtN(r.r):''}</span>${CHEV}</button>`;
   }).join('');
   const ks=Object.entries(S.kinds).filter(([,v])=>v.w>0).sort((a,b)=>b[1].w-a[1].w||(b[1].w/(b[1].c+b[1].w))-(a[1].w/(a[1].c+a[1].w))).slice(0,5);
   $('kindList').innerHTML=ks.length?ks.map(([t,v])=>`<div class="li"><div class="main"><span class="t1">${t}</span><span class="t2">${CN[v.cat]||''} · ${v.w} ${v.w===1?'greșeală':'greșeli'} din ${v.c+v.w}</span></div><span class="val">${Math.round(v.w/(v.c+v.w)*100)}%</span></div>`).join(''):'<div class="empty">Încă nicio greșeală. Când apar, vezi aici la ce trucuri.</div>';
@@ -1816,9 +2092,9 @@ $('scrim').addEventListener('click',closeSheet);
 $('statsBtn').addEventListener('click',()=>openStats('evo'));
 for(const id of['lvBtn','ring','daysPill'])$(id).addEventListener('click',()=>openStats('q'));
 $('backBtn').addEventListener('click',closeStats);
-$('paneSeg').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b){pane=b.dataset.p;showPane();renderPane();ev('screen',{n:'progres:'+pane});}});
-$('mtabs').addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){evM=b.dataset.m;renderEvo();ev('chart',{m:evM,r:evR});}});
-$('ranges').addEventListener('click',e=>{const b=e.target.closest('[data-r]');if(b){evR=b.dataset.r;renderEvo();ev('chart',{m:evM,r:evR});}});
+$('paneSeg').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b){if(b.dataset.p===pane)return;pane=b.dataset.p;evAnim=true;brainIntro=true;showPane();window.scrollTo({top:0});renderPane();ev('screen',{n:'progres:'+pane});}});
+$('mtabs').addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){if(b.dataset.m===evM)return;evM=b.dataset.m;evAnim=true;renderEvo(false);ev('chart',{m:evM,r:evR});}});
+$('ranges').addEventListener('click',e=>{const b=e.target.closest('[data-r]');if(b){if(b.dataset.r===evR)return;evR=b.dataset.r;evAnim=true;renderEvo(false);ev('chart',{m:evM,r:evR});}});
 $('calGrid').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b&&!b.disabled){selKey=b.dataset.k;renderCal();}});
 $('calPrev').addEventListener('click',()=>{calOff--;renderCal();});
 $('calNext').addEventListener('click',()=>{if(calOff<0){calOff++;renderCal();}});
@@ -1875,7 +2151,7 @@ window.addEventListener('online',()=>autoBackup());
 function showAbsence(r){
   SFX.down();
   if(!r.days){openModal(`<div class="mbadge frz">${SHIELD}</div><p class="eyebrow">Calendarul nu uită</p><h2>Scutul ți-a salvat seria</h2><p>${r.frozen===1?'O zi ratată a fost acoperită de un scut.':`${r.frozen} zile ratate au fost acoperite de scuturi.`} Îți mai ${S.freeze===1?'rămâne 1 scut':`rămân ${S.freeze} scuturi`}.</p><div class="acts"><button class="btn primary" data-act="next">Continuă</button></div>`);return;}
-  openModal(`<div class="mbadge bad">${DOWNI}</div><p class="eyebrow">Calendarul nu uită</p><h2>${r.days===1?'Ai ratat o zi':`Ai ratat ${pl(r.days,'zi','zile')}`}</h2><p>${r.lost?`Seria de ${zile(r.lost)} s-a rupt.`:`Fiecare zi fără obiectiv costă ${TAX} XP.`}${r.frozen?` ${r.frozen===1?'O zi a fost salvată':`${r.frozen} zile au fost salvate`} de scuturi.`:''}</p>
+  openModal(`<div class="mbadge bad">${DOWNI}</div><p class="eyebrow">Calendarul nu uită</p><h2>${r.days===1?'Ai ratat o zi':`Ai ratat ${pl(r.days,'zi','zile')}`}</h2><p>${r.lost?`Seria de ${zile(r.lost)} s-a rupt.`:`Fiecare zi fără obiectiv costă ${TAX} XP.`}${r.frozen?` ${r.frozen===1?'O zi a fost salvată':`${r.frozen} zile au fost salvate`} de ${r.frozen===1?'un scut':'scuturi'}.`:''}</p>
     <div class="mstats"><div><b>−${fmtN(r.tax)}</b><span>taxă zile</span></div><div><b>${r.brk?'−'+fmtN(r.brk):'0'}</b><span>serie ruptă</span></div><div><b>${fmtN(S.xp)}</b><span>XP acum</span></div></div>
     <div class="acts"><button class="btn primary" data-act="next">Recuperează</button></div>`);
 }
@@ -1893,8 +2169,8 @@ setInterval(checkDay,30000);
   ev('session',device());
   const absence=settle();quests();
   R0=newRound();
-  if(S.openRound&&S.openRound.idx>=3&&S.openRound.idx<ROUND){rIdx=S.openRound.idx;abandonRound('reload');}
-  S.openRound=null;
+  const OR=S.openRound;S.openRound=null;
+  if(OR&&OR.idx>0&&OR.idx<ROUND){if(OR.r&&OR.mode===S.diff&&Date.now()-(OR.at||0)<15*6e4){rIdx=OR.idx;R0=Object.assign(newRound(),OR.r,{dead:false});S.openRound=OR;}else if(OR.idx>=3){rIdx=OR.idx;abandonRound('reload');}}
   $('diff').style.setProperty('--i',S.diff);
   document.querySelectorAll('#diff button').forEach(b=>b.setAttribute('aria-checked',+b.dataset.d===S.diff));
   next();
